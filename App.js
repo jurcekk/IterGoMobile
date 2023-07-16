@@ -9,7 +9,7 @@ import Register from './src/screens/Register';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [userToken, setUserToken] = useState(null);
+  const [userToken, setUserToken] = useState(1);
 
   return (
     <NavigationContainer>

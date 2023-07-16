@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import InputField from '../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 
@@ -37,12 +37,14 @@ const Login = () => {
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            onBlur={onBlur}
-            onChangeText={onChange}
+          <InputField
+            label='Email'
+            type='email-address'
+            name='email'
             value={value}
-            placeholder='Email'
+            onChange={onChange}
+            onBlur={onBlur}
+            errors={errors}
           />
         )}
         name='email'
@@ -55,42 +57,30 @@ const Login = () => {
         }}
         defaultValue=''
       />
-      {errors.email && (
+      {/* {errors.email && (
         <Text style={styles.errorText}>{errors.email.message}</Text>
-      )}
+      )} */}
 
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
-          <View style={[styles.input]}>
-            <TextInput
-              //   style={}
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder='Password'
-              secureTextEntry={showPassword ? true : false}
-            />
-
-            <TouchableOpacity
-              style={styles.showPassword}
-              onPress={() => setShowPassword(!showPassword)}
-            >
-              <FontAwesome
-                name={showPassword ? 'eye' : 'eye-slash'}
-                size={18}
-                color={'#0C0C0C'}
-              />
-            </TouchableOpacity>
-          </View>
+          <InputField
+            label='Šifra'
+            type='default'
+            name='password'
+            value={value}
+            onChange={onChange}
+            onBlur={onBlur}
+            errors={errors}
+          />
         )}
         name='password'
         rules={{ required: 'Šifra je obavezna.' }}
         defaultValue=''
       />
-      {errors.password && (
+      {/* {errors.password && (
         <Text style={styles.errorText}>{errors.password.message}</Text>
-      )}
+      )} */}
 
       <TouchableOpacity
         style={{ alignSelf: 'flex-end', marginTop: 10, marginBottom: 30 }}
@@ -156,7 +146,8 @@ const styles = StyleSheet.create({
 
   errorText: {
     color: 'red',
-    marginBottom: 8,
+    marginBottom: 4,
+    fontSize: 12,
   },
 
   loginButton: {

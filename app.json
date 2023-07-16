@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "iter-go-mobile",
-    "slug": "iter-go-mobile",
+    "name": "IterGo",
+    "slug": "IterGo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
