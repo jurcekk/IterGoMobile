@@ -72,6 +72,8 @@ const Login = () => {
             onChange={onChange}
             onBlur={onBlur}
             errors={errors}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
           />
         )}
         name='password'

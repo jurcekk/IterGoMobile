@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Text,
   TextInput,
@@ -12,12 +12,16 @@ import InputField from '../components/InputField';
 
 const Register = () => {
   const navigation = useNavigation();
-
   const {
     control,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const password = useRef({});
+  password.current = watch('password', '');
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -118,6 +122,8 @@ const Register = () => {
             onChange={onChange}
             onBlur={onBlur}
             errors={errors}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
           />
         )}
         name='password'
@@ -139,24 +145,21 @@ const Register = () => {
             onChange={onChange}
             onBlur={onBlur}
             errors={errors}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
           />
         )}
         name='passwordRepeat'
-        rules={{ required: 'Šifra je obavezna.' }}
+        rules={{
+          required: 'Šifra je obavezna.',
+          validate: (value) =>
+            value === password.current || 'Šifre se ne poklapaju.',
+        }}
         defaultValue=''
       />
       {/* {errors.passwordRepeat && (
         <Text style={styles.errorText}>{errors.passwordRepeat.message}</Text>
       )} */}
-
-      <TouchableOpacity
-        style={{ alignSelf: 'flex-end', marginTop: 10, marginBottom: 30 }}
-        onPress={() => alert('Šifra zaboravljena?')}
-      >
-        <Text style={{ color: '#0C0C0C', fontSize: 12 }}>
-          Zaboravljena šifra?
-        </Text>
-      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.loginButton}

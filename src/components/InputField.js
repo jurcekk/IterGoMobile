@@ -7,11 +7,20 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
-const InputField = ({ label, type, name, value, onChange, onBlur, errors }) => {
-  const [showPassword, setShowPassword] = useState(true);
-
-  console.log(errors[name]);
+const InputField = ({
+  label,
+  type,
+  name,
+  value,
+  onChange,
+  onBlur,
+  onFocus,
+  errors,
+  showPassword,
+  setShowPassword,
+}) => {
   return (
     <>
       <View
@@ -24,6 +33,15 @@ const InputField = ({ label, type, name, value, onChange, onBlur, errors }) => {
             : [styles.input, { marginBottom: 16 }]
         }
       >
+        {name === 'location' ? (
+          <MaterialIcons
+            name='location-on'
+            size={27}
+            color='black'
+            style={styles.showNavigation}
+          />
+        ) : null}
+
         <TextInput
           name={name}
           style={{ flex: 1 }}
@@ -31,11 +49,12 @@ const InputField = ({ label, type, name, value, onChange, onBlur, errors }) => {
           keyboardType={type}
           onChangeText={onChange}
           value={value}
-          secureTextEntry={type === 'password' && showPassword}
+          secureTextEntry={showPassword}
           onBlur={onBlur}
+          onFocus={onFocus}
         />
 
-        {name === 'password' || name === 'passwordRepeat' ? (
+        {name === 'password' ? (
           <TouchableOpacity
             style={styles.showPassword}
             onPress={() => setShowPassword(!showPassword)}
@@ -95,6 +114,16 @@ const styles = StyleSheet.create({
     right: '3%',
     alignSelf: 'center',
     padding: 5,
+    zIndex: 1000,
+    elevation: 1000,
+  },
+
+  showNavigation: {
+    // position: 'absolute',
+    // left: '3%',
+    alignSelf: 'center',
+    // padding: 5,
+    marginRight: 10,
     zIndex: 1000,
     elevation: 1000,
   },
