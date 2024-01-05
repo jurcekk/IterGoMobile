@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-// import { scale } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { StyleSheet, TouchableOpacity } from 'react-native';
@@ -20,15 +19,15 @@ const RoundButton = ({ icon, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 45,
-    height: 45,
+    width: 60,
+    height: 60,
     borderRadius: '50%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#fafafa',
     position: 'absolute',
-    top: 70,
-    left: 20,
+    top: 50,
+    left: 30,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -38,7 +37,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
 
     elevation: 7,
-    //   ...theme.shadows.primary(theme),
   },
 });
 

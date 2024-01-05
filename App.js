@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -9,7 +8,7 @@ import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import DrawerContent from './src/components/DrawerContent';
-import AsynchStorage from '@react-native-async-storage/async-storage';
+import EditProfile from './src/screens/EditProfile';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -25,10 +24,19 @@ export default function App() {
           drawerContent={(props) => (
             <DrawerContent {...props} user={user} setUser={setUser} />
           )}
+          screenOptions={{
+            swipeEdgeWidth: 0,
+          }}
         >
           <Drawer.Screen
             name='Home'
             component={Home}
+            options={{ headerShown: false }}
+          />
+
+          <Drawer.Screen
+            name='EditProfile'
+            component={EditProfile}
             options={{ headerShown: false }}
           />
         </Drawer.Navigator>
