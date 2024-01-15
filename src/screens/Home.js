@@ -13,13 +13,13 @@ import {
   Pressable,
   TouchableOpacity,
   TextInput,
+  Alert,
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import BottomSheet from '@gorhom/bottom-sheet';
 import MenuButton from '../components/MenuButton';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import * as Location from 'expo-location';
 import * as file from '../data/export.json';
 import MapMarker from '../components/MapMarker';
 import SuggestedLocations from '../components/SuggestedLocations';
@@ -27,9 +27,12 @@ import NoDriverModal from '../components/NoDriverModal';
 import WaitingModal from '../components/WaitingModal';
 import DriverAccepted from '../components/DriverAccepted';
 import useDistance from '../hooks/useDistance';
+import useOrder from '../hooks/useOrder';
+import useLocation from '../hooks/useLocation';
+import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
 
 const Home = () => {
-  const [location, setLocation] = useState(null);
+  // const [location, setLocation] = useState(null);
   const [endLocation, setEndLocation] = useState(null);
   const [isEndLocationVisible, setIsEndLocationVisible] = useState(false);
   const [suggestedList, setSuggestedList] = useState([]);
@@ -38,8 +41,17 @@ const Home = () => {
   const [noDriverModalVisible, setNoDriverModalVisible] = useState(false);
   const [waitingModalVisible, setWaitingModalVisible] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
+  const auth = FIREBASE_AUTH;
+  const db = FIREBASE_DB;
 
   const { getDistance } = useDistance();
+  const location = useLocation();
+  const {
+    cancelOrder,
+    getOrderStatus,
+    createOrder,
+    checkIfUserHasActiveOrder,
+  } = useOrder();
 
   const timeoutRef = useRef(null);
   const mapRef = useRef(null);
@@ -53,7 +65,7 @@ const Home = () => {
     });
     if (text.length < 3) return;
     clearTimeout(timeoutRef.current);
-    console.log(text);
+    let timer;
 
     if (file?.features) {
       timer = setTimeout(() => {
@@ -82,76 +94,54 @@ const Home = () => {
     bottomSheetRef.current.snapToIndex(0);
   }, []);
 
-  const handleOnBlur = useCallback(() => {
-    bottomSheetRef.current.snapToIndex(0);
-  }, []);
-
-  const handleOnFocus = useCallback(() => {
-    bottomSheetRef.current.snapToPosition('50%');
-  }, []);
-
   const handleOnFocusKeyboard = useCallback(() => {
     bottomSheetRef.current.snapToPosition('90%');
   }, []);
 
   const handleCancelOrder = () => {
+    if (!driverAccepted) setEndLocation(null);
+    if (waitingModalVisible) cancelOrder();
     setWaitingModalVisible(false);
     setNoDriverModalVisible(false);
     setDriverAccepted(false);
     clearInterval(intervalId);
   };
 
+  const checkOrderStatus = async () => {
+    try {
+      const MAX_CHECKS = 10;
+      let checks = 0;
+
+      const interval = setInterval(async () => {
+        checks++;
+
+        const order = await getOrderStatus();
+
+        if (order.status === 'accepted') {
+          setWaitingModalVisible(false);
+          setDriverAccepted(true);
+          clearInterval(interval);
+        } else if (checks === MAX_CHECKS) {
+          setWaitingModalVisible(false);
+          setNoDriverModalVisible(true);
+          clearInterval(interval);
+          cancelOrder();
+        }
+      }, 1000);
+      setIntervalId(interval);
+    } catch (error) {
+      console.error('Greška:', error);
+      setWaitingModalVisible(false);
+    }
+  };
+
   const requestTaxi = async () => {
     setWaitingModalVisible(true);
 
-    const checkOrderStatus = async () => {
-      try {
-        const MAX_CHECKS = 10;
-        let checks = 0;
-
-        const interval = setInterval(async () => {
-          checks++;
-          console.log('CKECK');
-
-          // const response = await fetch('YOUR_API_ENDPOINT');
-          // const orderAccepted = await response.json();
-
-          if (false) {
-            setWaitingModalVisible(false);
-            setDriverAccepted(true);
-            clearInterval(interval);
-          } else if (checks === MAX_CHECKS) {
-            setWaitingModalVisible(false);
-            setNoDriverModalVisible(true);
-            clearInterval(interval);
-          }
-        }, 1000);
-        setIntervalId(interval);
-      } catch (error) {
-        console.error('Greška:', error);
-        setWaitingModalVisible(false);
-      }
-    };
+    createOrder(location, endLocation);
 
     checkOrderStatus();
   };
-
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
-
-      let location = await Location.getCurrentPositionAsync({});
-      setLocation({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        latitudeDelta: 0.0922 / 4,
-        longitudeDelta: 0.0421 / 4,
-      });
-    })();
-  }, []);
 
   useEffect(() => {
     if (
@@ -166,7 +156,6 @@ const Home = () => {
       let maxLng = endLocation.longitude;
 
       const distance = getDistance(location, endLocation);
-      console.log(distance);
 
       const northeast = { latitude: maxLat, longitude: maxLng };
       const southwest = { latitude: minLat, longitude: minLng };
@@ -190,7 +179,7 @@ const Home = () => {
         ref={mapRef}
       >
         <MapMarker
-          coordinate={location}
+          coordinate={location || { latitude: 0, longitude: 0 }}
           title='Your current location'
           iconColor='#ff6e2a'
         />
@@ -203,6 +192,28 @@ const Home = () => {
           />
         )}
       </MapView>
+
+      <TouchableOpacity
+        title='Center Map'
+        style={{
+          position: 'absolute',
+          bottom: 140,
+          right: 40,
+          borderWidth: 1,
+          borderColor: '#fafafa',
+          borderRadius: '50%',
+          width: 60,
+          height: 60,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#ff6e2a',
+        }}
+        onPress={() => {
+          mapRef.current.animateToRegion(location, 1000);
+        }}
+      >
+        <FontAwesome5 name='crosshairs' size={25} color='white' />
+      </TouchableOpacity>
 
       <Pressable style={styles.orderButton} onPress={handleOpen}>
         <FontAwesome5 name='car-side' size={20} color='white' />
@@ -278,12 +289,12 @@ const Home = () => {
               />
               <TouchableOpacity
                 style={styles.submitButton}
-                onPress={() => {
-                  if (!endLocation || endLocation.locationString === '') return;
+                onPress={async () => {
+                  if (await checkIfUserHasActiveOrder()) {
+                    Alert.alert('Već imate aktivnu vožnju');
+                    return;
+                  }
                   handleClose();
-                  console.log(
-                    `Pozovi vozilo na ${endLocation?.locationString}`
-                  );
                   setIsEndLocationVisible(true);
                   requestTaxi();
                 }}

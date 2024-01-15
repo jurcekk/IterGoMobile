@@ -6,13 +6,19 @@ import {
   StyleSheet,
   useWindowDimensions,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import { Feather, AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
+import { signOut } from 'firebase/auth';
+import { ref, get } from 'firebase/database';
 
 const drawerContent = (props) => {
   const width = useWindowDimensions().width * 0.2;
   const navigation = useNavigation();
+  const auth = FIREBASE_AUTH;
+  const db = FIREBASE_DB;
 
   return (
     <DrawerContentScrollView
@@ -43,16 +49,7 @@ const drawerContent = (props) => {
             alignItems: 'center',
           }}
         >
-          <View
-            style={{
-              width: 50,
-              height: 50,
-              borderRadius: 25,
-              backgroundColor: '#ff6e2a',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
+          <View style={styles.profileCard}>
             <Text
               style={{
                 fontSize: 20,
@@ -94,19 +91,14 @@ const drawerContent = (props) => {
         <View
           style={[
             styles.menuItemsCard,
-            { backgroundColor: '#fafafa', width: width, height: width },
+            {
+              backgroundColor: '#fafafa',
+              height: width,
+              flex: 1,
+            },
           ]}
         >
-          <View
-            style={{
-              width: '100%',
-              height: '100%',
-              justifyContent: 'space-evenly',
-              alignItems: 'flex-start',
-              padding: 10,
-              paddingTop: 5,
-            }}
-          >
+          <View style={styles.menuItemContainer}>
             <FontAwesome5 name='car-alt' size={24} color='#ff6e2a' />
             <Text
               style={{
@@ -131,19 +123,14 @@ const drawerContent = (props) => {
         <View
           style={[
             styles.menuItemsCard,
-            { backgroundColor: '#fafafa', width: width, height: width },
+            {
+              backgroundColor: '#fafafa',
+              height: width,
+              flex: 1,
+            },
           ]}
         >
-          <View
-            style={{
-              width: '100%',
-              height: '100%',
-              justifyContent: 'space-evenly',
-              alignItems: 'flex-start',
-              padding: 10,
-              paddingTop: 5,
-            }}
-          >
+          <View style={styles.menuItemContainer}>
             <FontAwesome5 name='road' size={24} color='#ff6e2a' />
             <Text
               style={{
@@ -174,9 +161,72 @@ const drawerContent = (props) => {
             margin: 15,
             flexDirection: 'row',
             gap: 10,
+            marginBottom: 10,
           },
         ]}
-        onPress={async () => {}}
+        onPress={() => {
+          // Get user data from firebase database
+
+          // Get user with uid of current user
+          const dbRef = ref(db, 'users/' + auth.currentUser.uid);
+          get(dbRef).then((snapshot) => {
+            if (!snapshot.exists()) {
+              return;
+            }
+            const user = snapshot.val();
+
+            if (user.role === 'driver') {
+              Alert.alert(
+                'Već ste vozač',
+                'Već ste vozač, ne možete ponovno postati vozač.',
+                [
+                  {
+                    text: 'U redu',
+                    onPress: () => console.log('OK Pressed'),
+                    style: 'cancel',
+                  },
+                ],
+                { cancelable: false }
+              );
+            } else {
+              props.navigation.navigate('BecomeDriver');
+            }
+          });
+        }}
+      >
+        <FontAwesome5 name='car-side' size={20} color='black' />
+        <Text
+          style={{
+            fontSize: 15,
+            color: '#000000',
+            fontWeight: 'bold',
+          }}
+        >
+          Postani vozač
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[
+          styles.menuItemsCard,
+          {
+            backgroundColor: '#fff',
+            height: 50,
+            margin: 15,
+            flexDirection: 'row',
+            gap: 10,
+            marginTop: 0,
+          },
+        ]}
+        onPress={() => {
+          signOut(auth)
+            .then(() => {
+              console.log('User signed out!');
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }}
       >
         <Feather name='log-out' size={24} color='black' />
         <Text
@@ -206,7 +256,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flexWrap: 'wrap',
     padding: 10,
-    gap: 20,
+    gap: 15,
   },
 
   menuItemsCard: {
@@ -276,6 +326,23 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  profileCard: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: '#ff6e2a',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  menuItemContainer: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-start',
+    padding: 10,
+    paddingTop: 5,
   },
 });
 

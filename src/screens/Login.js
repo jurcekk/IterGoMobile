@@ -11,32 +11,38 @@ import {
 import InputField from '../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
-
+import { FIREBASE_AUTH } from '../../firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
+  const auth = FIREBASE_AUTH;
+
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: { email: 'jurcekdavid@gmail.com', password: '123456' },
+    defaultValues: { email: 'jurcekdavid@gmail.com', password: 'david007' },
   });
 
   const onSubmit = async (data) => {
-    try {
-      console.log(data);
+    setLoading(true);
 
-      alert('Login successful!');
-    } catch (error) {
-      console.log('Error login:', error);
-      Alert.alert('Ne postoji korisnik s tim podacima.');
-    } finally {
-      setLoading(false);
-    }
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        // Login successful
+        setLoading(false);
+        console.log('User logged in:', userCredential.user);
+      })
+      .catch((error) => {
+        // Login failed
+        setLoading(false);
+        console.log('Login error:', error);
+      });
   };
 
   return (

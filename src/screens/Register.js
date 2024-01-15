@@ -1,16 +1,17 @@
 import React, { useState, useRef } from 'react';
 import {
   Text,
-  TextInput,
   View,
   StyleSheet,
   TouchableOpacity,
   KeyboardAvoidingView,
-  Alert,
 } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import InputField from '../components/InputField';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
+import { ref, push, set } from 'firebase/database';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -30,20 +31,51 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
   const password = useRef({});
+
+  const auth = FIREBASE_AUTH;
+  const db = FIREBASE_DB;
   password.current = watch('password', '');
 
   const onSubmit = async (data) => {
-    try {
-      setLoading(true);
+    setLoading(true);
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log('User:', JSON.stringify(user, null, 2));
 
-      Alert.alert('Registracija uspješna');
-    } catch (error) {
-      console.log('Error creating user:', error.message);
-    } finally {
-      setLoading(false);
-    }
+        // Store the user in Firebase database
+        set(ref(db, 'users/' + user?.uid), {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          role: 'user',
+          location: {
+            latitude: 0,
+            longitude: 0,
+          },
+          phone: '',
+          vehicle: {
+            model: '',
+            year: '',
+            color: '',
+            licencePlate: '',
+          },
+        })
+          .then(() => {
+            console.log('User stored in database');
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.log('Error storing user in database:', error);
+          });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('Error:', errorCode, errorMessage);
+      });
   };
 
   return (

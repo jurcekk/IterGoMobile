@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -9,12 +9,31 @@ import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import DrawerContent from './src/components/DrawerContent';
 import EditProfile from './src/screens/EditProfile';
+import { onAuthStateChanged } from 'firebase/auth';
+import { FIREBASE_AUTH } from './firebaseConfig';
+import { signOut } from 'firebase/auth';
+import BecomeDriver from './src/screens/BecomeDriver';
+import useLocation from './src/hooks/useLocation';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 export default function App() {
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(null);
+  const auth = FIREBASE_AUTH;
+
+  const location = useLocation();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+        signOut(auth);
+      }
+    });
+  }, []);
 
   return (
     <NavigationContainer>
@@ -22,7 +41,7 @@ export default function App() {
         <Drawer.Navigator
           initialRouteName='Home'
           drawerContent={(props) => (
-            <DrawerContent {...props} user={user} setUser={setUser} />
+            <DrawerContent {...props} location={location} />
           )}
           screenOptions={{
             swipeEdgeWidth: 0,
@@ -37,6 +56,12 @@ export default function App() {
           <Drawer.Screen
             name='EditProfile'
             component={EditProfile}
+            options={{ headerShown: false }}
+          />
+
+          <Drawer.Screen
+            name='BecomeDriver'
+            component={BecomeDriver}
             options={{ headerShown: false }}
           />
         </Drawer.Navigator>

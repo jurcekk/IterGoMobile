@@ -7,9 +7,11 @@ const DriverAccepted = ({ visible, onClose }) => {
   //after 5 seconds, the modal will close
 
   useEffect(() => {
-    setTimeout(() => {
-      onClose();
-    }, 5000);
+    if (visible) {
+      setTimeout(() => {
+        onClose();
+      }, 5000);
+    }
   }, []);
 
   return (
