@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Text,
   View,
@@ -9,13 +9,30 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, set } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import InputField from '../components/InputField';
 import { AntDesign } from '@expo/vector-icons';
+import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
+import { ref, get, update, remove } from 'firebase/database';
+import {
+  updatePassword,
+  deleteUser,
+  updateEmail,
+  updateProfile,
+  signOut,
+} from 'firebase/auth';
 
 const EditProfile = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState(null);
+
   const navigation = useNavigation();
+
+  const auth = FIREBASE_AUTH;
+  const db = FIREBASE_DB;
+
   const {
     control,
     handleSubmit,
@@ -23,30 +40,71 @@ const EditProfile = () => {
     watch,
   } = useForm({
     defaultValues: {
-      firstName: 'David',
-      lastName: 'Jurčević',
-      email: 'jurcekdavid@gmail.com',
+      firstName: auth.currentUser.displayName.split(' ')[0].toString(),
+      lastName: auth.currentUser.displayName.split(' ')[1].toString(),
+      email: auth.currentUser.email.toString(),
       password: '',
       passwordRepeat: '',
     },
   });
-  const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const password = useRef({});
   password.current = watch('password', '');
+
+  const getUserData = () => {
+    const dbRef = ref(db, 'users/' + auth.currentUser.uid);
+    get(dbRef).then((snapshot) => {
+      if (!snapshot.exists()) {
+        return;
+      }
+      const user = snapshot.val();
+      setData(user);
+    });
+  };
 
   const onSubmit = async (data) => {
     try {
       setLoading(true);
 
-      Alert.alert('Uspješno uređen profil');
+      if (data.password !== '') {
+        console.log('CHANGE PASSWORD');
+        updatePassword(auth.currentUser, data.password).then(() => {
+          console.log('Password updated');
+        });
+      } else if (data.email !== auth.currentUser.email) {
+        console.log('CHANGE EMAIL');
+
+        updateEmail(auth.currentUser, data.email).then(() => {
+          console.log('Email updated');
+        });
+      } else if (
+        data.firstName !==
+          auth.currentUser.displayName.split(' ')[0].toString() ||
+        data.lastName !== auth.currentUser.displayName.split(' ')[1].toString()
+      ) {
+        console.log('CHANGE NAME');
+
+        updateProfile(auth.currentUser, {
+          displayName: `${data.firstName} ${data.lastName}`,
+        }).then(() => {
+          console.log('Name updated', auth.currentUser.displayName);
+
+          update(ref(db, 'users/' + auth.currentUser.uid), {
+            firstName: data.firstName,
+            lastName: data.lastName,
+          }).then(() => {
+            console.log('Name updated in database');
+          });
+        });
+      }
     } catch (error) {
       console.log('Error creating user:', error.message);
-    } finally {
-      setLoading(false);
     }
   };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -195,6 +253,34 @@ const EditProfile = () => {
 
           <TouchableOpacity
             style={[styles.loginButton, { backgroundColor: '#fafafa' }]}
+            onPress={() => {
+              Alert.alert(
+                'Brisanje naloga',
+                'Da li ste sigurni da želite da obrišete nalog?',
+                [
+                  {
+                    text: 'Odustani',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                  },
+                  {
+                    text: 'Obriši',
+                    onPress: async () => {
+                      await remove(ref(db, 'users/' + auth.currentUser.uid));
+
+                      deleteUser(auth.currentUser)
+                        .then(() => {
+                          console.log('User deleted');
+                        })
+                        .catch((error) => {
+                          console.log('Error deleting user:', error);
+                        });
+                    },
+                  },
+                ],
+                { cancelable: false }
+              );
+            }}
           >
             <Text style={{ color: '#000', fontWeight: 'bold' }}>
               Obrišite profil
@@ -203,6 +289,32 @@ const EditProfile = () => {
 
           <TouchableOpacity
             style={[styles.loginButton, { backgroundColor: '#fafafa' }]}
+            onPress={() => {
+              Alert.alert(
+                'Odjava',
+                'Da li ste sigurni da želite da se odjavite?',
+                [
+                  {
+                    text: 'Odustani',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                  },
+                  {
+                    text: 'Odjavi se',
+                    onPress: () => {
+                      signOut(auth)
+                        .then(() => {
+                          console.log('User signed out!');
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                        });
+                    },
+                  },
+                ],
+                { cancelable: false }
+              );
+            }}
           >
             <Text style={{ color: '#000', fontWeight: 'bold' }}>
               Izlogujte se

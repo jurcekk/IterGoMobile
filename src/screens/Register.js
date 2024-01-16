@@ -12,6 +12,7 @@ import InputField from '../components/InputField';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { ref, push, set } from 'firebase/database';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -23,9 +24,10 @@ const Register = () => {
   } = useForm({
     defaultValues: {
       firstName: 'David',
-      lastName: 'Jurčević',
-      password: '123456',
-      passwordRepeat: '123456',
+      lastName: 'Jurcek',
+      email: 'jurcekdavid@gmail.com',
+      password: 'david007',
+      passwordRepeat: 'david007',
     },
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -44,31 +46,39 @@ const Register = () => {
         // Signed in
         const user = userCredential.user;
         console.log('User:', JSON.stringify(user, null, 2));
-
-        // Store the user in Firebase database
-        set(ref(db, 'users/' + user?.uid), {
-          firstName: data.firstName,
-          lastName: data.lastName,
-          email: data.email,
-          role: 'user',
-          location: {
-            latitude: 0,
-            longitude: 0,
-          },
-          phone: '',
-          vehicle: {
-            model: '',
-            year: '',
-            color: '',
-            licencePlate: '',
-          },
+        updateProfile(auth.currentUser, {
+          displayName: `${data.firstName} ${data.lastName}`,
         })
           .then(() => {
-            console.log('User stored in database');
-            setLoading(false);
+            console.log('User profile updated');
+            console.log(auth.currentUser.displayName);
+            set(ref(db, 'users/' + user?.uid), {
+              firstName: data.firstName,
+              lastName: data.lastName,
+              email: data.email,
+              role: 'user',
+              location: {
+                latitude: 0,
+                longitude: 0,
+              },
+              phone: '',
+              vehicle: {
+                model: '',
+                year: '',
+                color: '',
+                licencePlate: '',
+              },
+            })
+              .then(() => {
+                console.log('User stored in database');
+                setLoading(false);
+              })
+              .catch((error) => {
+                console.log('Error storing user in database:', error);
+              });
           })
           .catch((error) => {
-            console.log('Error storing user in database:', error);
+            console.log(error);
           });
       })
       .catch((error) => {

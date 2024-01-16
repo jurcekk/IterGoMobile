@@ -37,13 +37,13 @@ const useLocation = () => {
 
   const getCurrentLocation = async () => {
     let location = await Location.getCurrentPositionAsync({});
-    console.log('LOCATION', location);
     setLocation({
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
       latitudeDelta: 0.0922 / 4,
       longitudeDelta: 0.0421 / 4,
     });
+    if (!auth?.currentUser?.uid) return;
 
     set(ref(db, 'users/' + auth?.currentUser?.uid + '/location'), {
       latitude: location.coords.latitude,
@@ -62,7 +62,6 @@ const useLocation = () => {
       (async () => {
         if (!auth?.currentUser?.uid) {
           clearInterval(intervalId2);
-          return;
         }
         await checkLocationPermission();
       })();

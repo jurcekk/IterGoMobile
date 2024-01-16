@@ -1,5 +1,5 @@
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -15,10 +15,27 @@ import { signOut } from 'firebase/auth';
 import { ref, get } from 'firebase/database';
 
 const drawerContent = (props) => {
+  const [data, setData] = useState(null);
   const width = useWindowDimensions().width * 0.2;
   const navigation = useNavigation();
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
+
+  const getUserData = () => {
+    const dbRef = ref(db, 'users/' + auth.currentUser.uid);
+    get(dbRef).then((snapshot) => {
+      if (!snapshot.exists()) {
+        return;
+      }
+      const user = snapshot.val();
+      setData(user);
+      return user;
+    });
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
 
   return (
     <DrawerContentScrollView
@@ -57,7 +74,7 @@ const drawerContent = (props) => {
                 color: '#fafafa',
               }}
             >
-              A
+              {auth.currentUser?.displayName?.charAt(0)}
             </Text>
           </View>
           <View
@@ -72,7 +89,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              Ana Anić
+              {auth.currentUser?.displayName}
             </Text>
             <Text
               style={{
@@ -80,7 +97,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              @anaanic
+              {auth.currentUser?.email}
             </Text>
           </View>
         </View>
@@ -219,13 +236,30 @@ const drawerContent = (props) => {
           },
         ]}
         onPress={() => {
-          signOut(auth)
-            .then(() => {
-              console.log('User signed out!');
-            })
-            .catch((error) => {
-              console.log(error);
-            });
+          Alert.alert(
+            'Odjava',
+            'Da li ste sigurni da želite da se odjavite?',
+            [
+              {
+                text: 'Odustani',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+              },
+              {
+                text: 'Odjavi se',
+                onPress: () => {
+                  signOut(auth)
+                    .then(() => {
+                      console.log('User signed out!');
+                    })
+                    .catch((error) => {
+                      console.log(error);
+                    });
+                },
+              },
+            ],
+            { cancelable: false }
+          );
         }}
       >
         <Feather name='log-out' size={24} color='black' />

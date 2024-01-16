@@ -14,6 +14,7 @@ import { FIREBASE_AUTH } from './firebaseConfig';
 import { signOut } from 'firebase/auth';
 import BecomeDriver from './src/screens/BecomeDriver';
 import useLocation from './src/hooks/useLocation';
+import ForgotPassword from './src/screens/ForgotPassword';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -75,6 +76,11 @@ export default function App() {
           <Stack.Screen
             name='Register'
             component={Register}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='ForgotPassword'
+            component={ForgotPassword}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

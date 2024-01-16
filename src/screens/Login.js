@@ -12,7 +12,10 @@ import InputField from '../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH } from '../../firebaseConfig';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  sendEmailVerification,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -103,7 +106,9 @@ const Login = () => {
 
         <TouchableOpacity
           style={{ alignSelf: 'flex-end', marginTop: 10, marginBottom: 30 }}
-          onPress={() => alert('Šifra zaboravljena?')}
+          onPress={() => {
+            navigation.navigate('ForgotPassword');
+          }}
         >
           <Text style={{ color: '#0C0C0C', fontSize: 12 }}>
             Zaboravljena šifra?
