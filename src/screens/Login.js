@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import {
   Text,
-  TextInput,
   View,
   StyleSheet,
   TouchableOpacity,
   KeyboardAvoidingView,
-  Alert,
+  ActivityIndicator,
 } from 'react-native';
 import InputField from '../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH } from '../../firebaseConfig';
-import {
-  sendEmailVerification,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -33,6 +29,7 @@ const Login = () => {
   });
 
   const onSubmit = async (data) => {
+    if (loading) return;
     setLoading(true);
 
     signInWithEmailAndPassword(auth, data.email, data.password)
@@ -77,9 +74,6 @@ const Login = () => {
           }}
           defaultValue=''
         />
-        {/* {errors.email && (
-        <Text style={styles.errorText}>{errors.email.message}</Text>
-      )} */}
 
         <Controller
           control={control}
@@ -100,9 +94,6 @@ const Login = () => {
           rules={{ required: 'Šifra je obavezna.' }}
           defaultValue=''
         />
-        {/* {errors.password && (
-        <Text style={styles.errorText}>{errors.password.message}</Text>
-      )} */}
 
         <TouchableOpacity
           style={{ alignSelf: 'flex-end', marginTop: 10, marginBottom: 30 }}
@@ -122,6 +113,7 @@ const Login = () => {
           <Text style={{ color: '#0C0C0C', fontWeight: 'bold' }}>
             Prijavi se
           </Text>
+          {loading && <ActivityIndicator size='small' color='#0C0C0C' />}
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -191,7 +183,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'flex-start',
     borderRadius: 10,
+    flexDirection: 'row',
+    gap: 10,
   },
 
   showPassword: {

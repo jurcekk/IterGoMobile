@@ -5,13 +5,14 @@ import {
   StyleSheet,
   TouchableOpacity,
   KeyboardAvoidingView,
+  ActivityIndicator,
 } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import InputField from '../components/InputField';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
-import { ref, push, set } from 'firebase/database';
+import { ref, set } from 'firebase/database';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
@@ -40,6 +41,7 @@ const Register = () => {
   password.current = watch('password', '');
 
   const onSubmit = async (data) => {
+    if (loading) return;
     setLoading(true);
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
@@ -113,9 +115,6 @@ const Register = () => {
           }}
           defaultValue=''
         />
-        {/* {errors.firstName && (
-        <Text style={styles.errorText}>{errors.firstName.message}</Text>
-      )} */}
 
         <Controller
           control={control}
@@ -136,9 +135,6 @@ const Register = () => {
           }}
           defaultValue=''
         />
-        {/* {errors.lastName && (
-        <Text style={styles.errorText}>{errors.lastName.message}</Text>
-      )} */}
 
         <Controller
           control={control}
@@ -163,9 +159,6 @@ const Register = () => {
           }}
           defaultValue=''
         />
-        {/* {errors.email && (
-        <Text style={styles.errorText}>{errors.email.message}</Text>
-      )} */}
 
         <Controller
           control={control}
@@ -186,9 +179,6 @@ const Register = () => {
           rules={{ required: 'Šifra je obavezna.' }}
           defaultValue=''
         />
-        {/* {errors.password && (
-        <Text style={styles.errorText}>{errors.password.message}</Text>
-      )} */}
 
         <Controller
           control={control}
@@ -213,9 +203,6 @@ const Register = () => {
           }}
           defaultValue=''
         />
-        {/* {errors.passwordRepeat && (
-        <Text style={styles.errorText}>{errors.passwordRepeat.message}</Text>
-      )} */}
 
         <TouchableOpacity
           style={styles.loginButton}
@@ -224,6 +211,7 @@ const Register = () => {
           <Text style={{ color: '#0C0C0C', fontWeight: 'bold' }}>
             Registrujte se
           </Text>
+          {loading && <ActivityIndicator size='small' color='#0C0C0C' />}
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -251,7 +239,6 @@ const styles = StyleSheet.create({
     padding: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    // marginBottom: 50,
   },
 
   input: {
@@ -293,8 +280,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'flex-start',
     borderRadius: 10,
     marginTop: 20,
+    flexDirection: 'row',
+    gap: 10,
   },
 });
 
