@@ -14,6 +14,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { ref, set } from 'firebase/database';
 import { updateProfile } from 'firebase/auth';
+import Toast from 'react-native-toast-message';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -74,19 +75,48 @@ const Register = () => {
               .then(() => {
                 console.log('User stored in database');
                 setLoading(false);
+                Toast.show({
+                  type: 'success',
+                  position: 'top',
+                  topOffset: 60,
+                  text1: 'Uspešna registracija',
+                  text2: 'Uspešno ste se registrovali.',
+                });
               })
               .catch((error) => {
                 console.log('Error storing user in database:', error);
+                setLoading(false);
+                Toast.show({
+                  type: 'error',
+                  position: 'top',
+                  topOffset: 60,
+                  text1: 'Greška',
+                  text2: 'Greška prilikom registracije.',
+                });
               });
           })
           .catch((error) => {
             console.log(error);
+            Toast.show({
+              type: 'error',
+              position: 'top',
+              topOffset: 60,
+              text1: 'Greška',
+              text2: 'Greška prilikom registracije.',
+            });
           });
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('Error:', errorCode, errorMessage);
+        console.log('Error:', errorMessage);
+        setLoading(false);
+        Toast.show({
+          type: 'error',
+          position: 'top',
+          topOffset: 60,
+          text1: 'Greška',
+          text2: 'Greška prilikom registracije.',
+        });
       });
   };
 

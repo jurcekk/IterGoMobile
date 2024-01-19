@@ -12,6 +12,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import Toast from 'react-native-toast-message';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
@@ -36,12 +37,30 @@ const Login = () => {
       .then((userCredential) => {
         // Login successful
         setLoading(false);
-        console.log('User logged in:', userCredential.user);
+        Toast.show({
+          type: 'success',
+          position: 'top',
+          topOffset: 60,
+          text1: 'Uspešna prijava',
+          text2: 'Uspešno ste se prijavili na svoj nalog.',
+        });
       })
       .catch((error) => {
         // Login failed
         setLoading(false);
-        console.log('Login error:', error);
+        console.log('Login error:', error.message);
+        const message =
+          error.code === 'auth/invalid-credential'
+            ? 'Neispravni podaci za prijavu.'
+            : error.message;
+
+        Toast.show({
+          type: 'error',
+          position: 'top',
+          topOffset: 60,
+          text1: 'Greška',
+          text2: message,
+        });
       });
   };
 

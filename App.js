@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import 'react-native-gesture-handler';
+import Toast from 'react-native-toast-message';
 
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
@@ -37,54 +38,57 @@ export default function App() {
   }, []);
 
   return (
-    <NavigationContainer>
-      {user ? (
-        <Drawer.Navigator
-          initialRouteName='Home'
-          drawerContent={(props) => (
-            <DrawerContent {...props} location={location} />
-          )}
-          screenOptions={{
-            swipeEdgeWidth: 0,
-          }}
-        >
-          <Drawer.Screen
-            name='Home'
-            component={Home}
-            options={{ headerShown: false }}
-          />
+    <>
+      <NavigationContainer>
+        {user ? (
+          <Drawer.Navigator
+            initialRouteName='Home'
+            drawerContent={(props) => (
+              <DrawerContent {...props} location={location} />
+            )}
+            screenOptions={{
+              swipeEdgeWidth: 0,
+            }}
+          >
+            <Drawer.Screen
+              name='Home'
+              component={Home}
+              options={{ headerShown: false }}
+            />
 
-          <Drawer.Screen
-            name='EditProfile'
-            component={EditProfile}
-            options={{ headerShown: false }}
-          />
+            <Drawer.Screen
+              name='EditProfile'
+              component={EditProfile}
+              options={{ headerShown: false }}
+            />
 
-          <Drawer.Screen
-            name='BecomeDriver'
-            component={BecomeDriver}
-            options={{ headerShown: false }}
-          />
-        </Drawer.Navigator>
-      ) : (
-        <Stack.Navigator>
-          <Stack.Screen
-            name='Login'
-            component={Login}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name='Register'
-            component={Register}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name='ForgotPassword'
-            component={ForgotPassword}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      )}
-    </NavigationContainer>
+            <Drawer.Screen
+              name='BecomeDriver'
+              component={BecomeDriver}
+              options={{ headerShown: false }}
+            />
+          </Drawer.Navigator>
+        ) : (
+          <Stack.Navigator>
+            <Stack.Screen
+              name='Login'
+              component={Login}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='Register'
+              component={Register}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name='ForgotPassword'
+              component={ForgotPassword}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        )}
+      </NavigationContainer>
+      <Toast />
+    </>
   );
 }

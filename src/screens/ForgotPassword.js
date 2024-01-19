@@ -5,13 +5,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   KeyboardAvoidingView,
-  Alert,
 } from 'react-native';
 import InputField from '../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH } from '../../firebaseConfig';
 import { sendPasswordResetEmail } from 'firebase/auth';
+import Toast from 'react-native-toast-message';
 
 const ForgotPassword = () => {
   const auth = FIREBASE_AUTH;
@@ -28,30 +28,23 @@ const ForgotPassword = () => {
   const onSubmit = async (data) => {
     sendPasswordResetEmail(auth, data.email)
       .then(() => {
-        Alert.alert(
-          'Email poslan',
-          'Poslali smo vam email za resetiranje šifre.',
-          [
-            {
-              text: 'OK',
-              onPress: () => console.log('OK pressed'),
-            },
-          ],
-          { cancelable: false }
-        );
+        Toast.show({
+          type: 'success',
+          position: 'top',
+          topOffset: 60,
+          text1: 'Email',
+          text2: 'Poslali smo vam email za resetiranje šifre.',
+        });
       })
       .catch((error) => {
-        Alert.alert(
-          'Greška',
-          'Dogodila se greška prilikom slanja emaila za resetiranje šifre.',
-          [
-            {
-              text: 'OK',
-              onPress: () => console.log('OK pressed'),
-            },
-          ],
-          { cancelable: false }
-        );
+        Toast.show({
+          type: 'error',
+          position: 'top',
+          topOffset: 60,
+          text1: 'Greška',
+          text2:
+            'Dogodila se greška prilikom slanja emaila za restartovanje šifre.',
+        });
       });
   };
 

@@ -1,10 +1,8 @@
-// make a modal for when the driver accepts the order
 import React, { useEffect } from 'react';
 import { View, Modal, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Image } from 'expo-image';
 
 const DriverAccepted = ({ visible, onClose }) => {
-  //after 5 seconds, the modal will close
 
   useEffect(() => {
     if (visible) {

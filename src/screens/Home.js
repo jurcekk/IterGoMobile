@@ -13,7 +13,6 @@ import {
   Pressable,
   TouchableOpacity,
   TextInput,
-  Alert,
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import BottomSheet from '@gorhom/bottom-sheet';
@@ -30,6 +29,7 @@ import useDistance from '../hooks/useDistance';
 import useOrder from '../hooks/useOrder';
 import useLocation from '../hooks/useLocation';
 import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
+import Toast from 'react-native-toast-message';
 
 const Home = () => {
   // const [location, setLocation] = useState(null);
@@ -171,6 +171,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      {/* <GetLocation location={location} setLocation={setLocation} /> */}
       <MapView
         style={styles.map}
         provider={PROVIDER_GOOGLE}
@@ -201,7 +202,7 @@ const Home = () => {
           right: 40,
           borderWidth: 1,
           borderColor: '#fafafa',
-          borderRadius: '50%',
+          borderRadius: 50,
           width: 60,
           height: 60,
           alignItems: 'center',
@@ -291,7 +292,15 @@ const Home = () => {
                 style={styles.submitButton}
                 onPress={async () => {
                   if (await checkIfUserHasActiveOrder()) {
-                    Alert.alert('Već imate aktivnu vožnju');
+                    Toast.show({
+                      type: 'error',
+                      position: 'top',
+                      text1: 'Greška',
+
+                      text2: 'Već imate aktivnu vožnju',
+                      topOffset: 60,
+                    });
+
                     return;
                   }
                   handleClose();
@@ -401,7 +410,7 @@ const styles = StyleSheet.create({
     right: 40,
     borderWidth: 1,
     borderColor: '#fafafa',
-    borderRadius: '50%',
+    borderRadius: 50,
     width: 60,
     height: 60,
     alignItems: 'center',

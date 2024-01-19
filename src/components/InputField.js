@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -107,6 +106,7 @@ const styles = StyleSheet.create({
     },
     elevation: 2,
     paddingLeft: 15,
+    backgroundColor: '#F2F2F2',
   },
 
   showPassword: {

@@ -9,7 +9,7 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import { useForm, Controller, set } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import InputField from '../components/InputField';
 import { AntDesign } from '@expo/vector-icons';
@@ -22,6 +22,7 @@ import {
   updateProfile,
   signOut,
 } from 'firebase/auth';
+import Toast from 'react-native-toast-message';
 
 const EditProfile = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,6 +37,7 @@ const EditProfile = () => {
   const {
     control,
     handleSubmit,
+    setError,
     formState: { errors },
     watch,
   } = useForm({
@@ -69,19 +71,47 @@ const EditProfile = () => {
       if (data.password !== '') {
         console.log('CHANGE PASSWORD');
         updatePassword(auth.currentUser, data.password).then(() => {
+          Toast.show({
+            type: 'success',
+            position: 'top',
+            topOffset: 60,
+            text1: 'Uspešna izmena',
+            text2: 'Uspešno ste izmenili šifru.',
+          });
           console.log('Password updated');
         });
-      } else if (data.email !== auth.currentUser.email) {
+      } else if (data.email !== auth.currentUser.email && data.email !== '') {
         console.log('CHANGE EMAIL');
 
         updateEmail(auth.currentUser, data.email).then(() => {
           console.log('Email updated');
+          Toast.show({
+            type: 'success',
+            position: 'top',
+            topOffset: 60,
+            text1: 'Uspešna izmena',
+            text2: 'Uspešno ste izmenili email adresu.',
+          });
         });
       } else if (
         data.firstName !==
           auth.currentUser.displayName.split(' ')[0].toString() ||
         data.lastName !== auth.currentUser.displayName.split(' ')[1].toString()
       ) {
+        if (data.firstName === '') {
+          setError('firstName', {
+            type: 'required',
+            message: 'Ime je obavezno.',
+          });
+          return;
+        } else if (data.lastName === '') {
+          setError('lastName', {
+            type: 'required',
+            message: 'Prezime je obavezno.',
+          });
+          return;
+        }
+
         console.log('CHANGE NAME');
 
         updateProfile(auth.currentUser, {
@@ -94,11 +124,25 @@ const EditProfile = () => {
             lastName: data.lastName,
           }).then(() => {
             console.log('Name updated in database');
+            Toast.show({
+              type: 'success',
+              position: 'top',
+              topOffset: 60,
+              text1: 'Uspešna izmena',
+              text2: 'Uspešno ste izmenili ime i prezime.',
+            });
           });
         });
       }
     } catch (error) {
       console.log('Error creating user:', error.message);
+      Toast.show({
+        type: 'error',
+        position: 'top',
+        topOffset: 60,
+        text1: 'Greška',
+        text2: 'Greška prilikom izmene.',
+      });
     }
   };
 
@@ -326,7 +370,6 @@ const EditProfile = () => {
         style={{
           width: '100%',
           paddingHorizontal: 30,
-          backgroundColor: '#fafaf3',
         }}
       >
         <TouchableOpacity

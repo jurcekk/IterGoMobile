@@ -12,7 +12,8 @@ import { Feather, AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { signOut } from 'firebase/auth';
-import { ref, get } from 'firebase/database';
+import { ref, get, onValue } from 'firebase/database';
+import Toast from 'react-native-toast-message';
 
 const drawerContent = (props) => {
   const [data, setData] = useState(null);
@@ -22,15 +23,19 @@ const drawerContent = (props) => {
   const db = FIREBASE_DB;
 
   const getUserData = () => {
-    const dbRef = ref(db, 'users/' + auth.currentUser.uid);
-    get(dbRef).then((snapshot) => {
-      if (!snapshot.exists()) {
-        return;
-      }
-      const user = snapshot.val();
-      setData(user);
-      return user;
-    });
+    try {
+      const dbRef = ref(db, 'users/' + auth.currentUser.uid);
+      onValue(dbRef, (snapshot) => {
+        if (!snapshot.exists()) {
+          return;
+        }
+        const user = snapshot.val();
+        setData(user);
+        return user;
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -74,7 +79,7 @@ const drawerContent = (props) => {
                 color: '#fafafa',
               }}
             >
-              {auth.currentUser?.displayName?.charAt(0)}
+              {data?.firstName[0]}
             </Text>
           </View>
           <View
@@ -89,7 +94,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              {auth.currentUser?.displayName}
+              {data?.firstName} {data?.lastName}
             </Text>
             <Text
               style={{
@@ -97,7 +102,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              {auth.currentUser?.email}
+              {data?.email}
             </Text>
           </View>
         </View>
@@ -169,59 +174,83 @@ const drawerContent = (props) => {
           </View>
         </View>
       </View>
-      <TouchableOpacity
-        style={[
-          styles.menuItemsCard,
-          {
-            backgroundColor: '#fff',
-            height: 50,
-            margin: 15,
-            flexDirection: 'row',
-            gap: 10,
-            marginBottom: 10,
-          },
-        ]}
-        onPress={() => {
-          // Get user data from firebase database
-
-          // Get user with uid of current user
-          const dbRef = ref(db, 'users/' + auth.currentUser.uid);
-          get(dbRef).then((snapshot) => {
-            if (!snapshot.exists()) {
-              return;
-            }
-            const user = snapshot.val();
-
-            if (user.role === 'driver') {
-              Alert.alert(
-                'Već ste vozač',
-                'Već ste vozač, ne možete ponovno postati vozač.',
-                [
-                  {
-                    text: 'U redu',
-                    onPress: () => console.log('OK Pressed'),
-                    style: 'cancel',
-                  },
-                ],
-                { cancelable: false }
-              );
-            } else {
-              props.navigation.navigate('BecomeDriver');
-            }
-          });
-        }}
-      >
-        <FontAwesome5 name='car-side' size={20} color='black' />
-        <Text
-          style={{
-            fontSize: 15,
-            color: '#000000',
-            fontWeight: 'bold',
+      {data?.role === 'driver' ? (
+        <TouchableOpacity
+          style={[
+            styles.menuItemsCard,
+            {
+              backgroundColor: '#fff',
+              height: 50,
+              margin: 15,
+              flexDirection: 'row',
+              gap: 10,
+              marginBottom: 10,
+            },
+          ]}
+          onPress={() => {
+            props.navigation.navigate('Driver');
           }}
         >
-          Postani vozač
-        </Text>
-      </TouchableOpacity>
+          <FontAwesome5 name='car-side' size={20} color='black' />
+          <Text
+            style={{
+              fontSize: 15,
+              color: '#000000',
+              fontWeight: 'bold',
+            }}
+          >
+            Vozač
+          </Text>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity
+          style={[
+            styles.menuItemsCard,
+            {
+              backgroundColor: '#fff',
+              height: 50,
+              margin: 15,
+              flexDirection: 'row',
+              gap: 10,
+              marginBottom: 10,
+            },
+          ]}
+          onPress={() => {
+            const dbRef = ref(db, 'users/' + auth.currentUser.uid);
+            get(dbRef).then((snapshot) => {
+              if (!snapshot.exists()) {
+                return;
+              }
+              const user = snapshot.val();
+
+              if (user.role === 'driver') {
+                Toast.show({
+                  type: 'error',
+                  position: 'top',
+                  topOffset: 60,
+                  text1: 'Već ste vozač',
+                  text2: 'Već ste vozač, ne možete ponovno postati vozač.',
+                  visibilityTime: 3000,
+                  autoHide: true,
+                });
+              } else {
+                props.navigation.navigate('BecomeDriver');
+              }
+            });
+          }}
+        >
+          <FontAwesome5 name='car-side' size={20} color='black' />
+          <Text
+            style={{
+              fontSize: 15,
+              color: '#000000',
+              fontWeight: 'bold',
+            }}
+          >
+            Postani vozač
+          </Text>
+        </TouchableOpacity>
+      )}
 
       <TouchableOpacity
         style={[

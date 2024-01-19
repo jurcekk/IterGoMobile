@@ -1,4 +1,4 @@
-import { get, ref, set, push, onValue } from 'firebase/database';
+import { get, ref, set, push } from 'firebase/database';
 import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
 
 const useOrder = () => {

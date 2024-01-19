@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import * as Location from 'expo-location';
-import { get, ref, set } from 'firebase/database';
+import { ref, set } from 'firebase/database';
 import { Alert, Linking, Platform } from 'react-native';
 import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
+import { signOut } from 'firebase/auth';
 
 const useLocation = () => {
   const [location, setLocation] = useState(null);
@@ -28,10 +29,8 @@ const useLocation = () => {
           },
         ]
       );
-      auth.signOut();
+      signOut(auth);
       return;
-    } else {
-      await getCurrentLocation();
     }
   };
 
@@ -64,10 +63,39 @@ const useLocation = () => {
           clearInterval(intervalId2);
         }
         await checkLocationPermission();
+        await getCurrentLocation();
       })();
     }, 10000);
-
+    setIntervalId2(interval);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const isAndroid = Platform.OS == 'android';
+      const location = await Location.getCurrentPositionAsync({
+        accuracy: isAndroid ? Location.Accuracy.Low : Location.Accuracy.Lowest,
+      });
+      setLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        latitudeDelta: 0.0922 / 4,
+        longitudeDelta: 0.0421 / 4,
+      });
+
+      if (!auth?.currentUser?.uid) return;
+
+      set(ref(db, 'users/' + auth?.currentUser?.uid + '/location'), {
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      })
+        .then(() => {
+          console.log('User location stored in database');
+        })
+        .catch(() => {
+          console.log('Error storing user location in database:');
+        });
+    })();
   }, []);
 
   return location;
