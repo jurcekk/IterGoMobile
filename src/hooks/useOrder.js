@@ -66,7 +66,7 @@ const useOrder = () => {
     }
   };
 
-  const createOrder = (location, endLocation) => {
+  const createOrder = async (location, endLocation) => {
     const order = {
       orderId: '',
       userId: auth.currentUser.uid,
@@ -76,11 +76,15 @@ const useOrder = () => {
       startLocation: {
         latitude: location.latitude,
         longitude: location.longitude,
+        stringName: location.locationString,
       },
       endLocation: {
         latitude: endLocation.latitude,
         longitude: endLocation.longitude,
+        stringName: endLocation.locationString,
       },
+      distance: endLocation.distance,
+      price: 150 + endLocation.distance * 100,
     };
 
     const orderRef = push(ref(db, 'orders'));

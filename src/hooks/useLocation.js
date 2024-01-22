@@ -36,17 +36,24 @@ const useLocation = () => {
 
   const getCurrentLocation = async () => {
     let location = await Location.getCurrentPositionAsync({});
+    const locationString = await Location.reverseGeocodeAsync({
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+    });
+
     setLocation({
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
       latitudeDelta: 0.0922 / 4,
       longitudeDelta: 0.0421 / 4,
+      locationString: locationString[0]?.street,
     });
     if (!auth?.currentUser?.uid) return;
 
     set(ref(db, 'users/' + auth?.currentUser?.uid + '/location'), {
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
+      locationString: locationString[0]?.street,
     })
       .then(() => {
         console.log('User location stored in database');
@@ -76,11 +83,19 @@ const useLocation = () => {
       const location = await Location.getCurrentPositionAsync({
         accuracy: isAndroid ? Location.Accuracy.Low : Location.Accuracy.Lowest,
       });
+
+      const locationString = await Location.reverseGeocodeAsync({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
+      console.log(locationString[0].street);
+
       setLocation({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
         latitudeDelta: 0.0922 / 4,
         longitudeDelta: 0.0421 / 4,
+        locationString: locationString[0].street,
       });
 
       if (!auth?.currentUser?.uid) return;
@@ -88,6 +103,7 @@ const useLocation = () => {
       set(ref(db, 'users/' + auth?.currentUser?.uid + '/location'), {
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
+        locationString: locationString[0]?.street,
       })
         .then(() => {
           console.log('User location stored in database');

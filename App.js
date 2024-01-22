@@ -16,6 +16,7 @@ import { signOut } from 'firebase/auth';
 import BecomeDriver from './src/screens/BecomeDriver';
 import useLocation from './src/hooks/useLocation';
 import ForgotPassword from './src/screens/ForgotPassword';
+import Driver from './src/screens/Driver';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -65,6 +66,12 @@ export default function App() {
             <Drawer.Screen
               name='BecomeDriver'
               component={BecomeDriver}
+              options={{ headerShown: false }}
+            />
+
+            <Drawer.Screen
+              name='Driver'
+              component={Driver}
               options={{ headerShown: false }}
             />
           </Drawer.Navigator>

@@ -28,7 +28,12 @@ import DriverAccepted from '../components/DriverAccepted';
 import useDistance from '../hooks/useDistance';
 import useOrder from '../hooks/useOrder';
 import useLocation from '../hooks/useLocation';
-import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
+import * as Location from 'expo-location';
+import {
+  FIREBASE_DB,
+  FIREBASE_AUTH,
+  GOOGLE_MAPS_API_KEY,
+} from '../../firebaseConfig';
 import Toast from 'react-native-toast-message';
 
 const Home = () => {
@@ -77,6 +82,31 @@ const Home = () => {
         setSuggestedList(result);
       }, 1000);
     }
+
+    // fetch(
+    //   `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${GOOGLE_MAPS_API_KEY}&input=${text}&location=${location.latitude},${location.longitude}&radius=1000&language=en&components=country:rs&type=address`
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     const newArr = data?.predictions?.map(async (item) => {
+    //       const location2 = await Location.geocodeAsync(item?.description);
+    //       return {
+    //         description: item?.description,
+    //         place_id: item?.place_id,
+    //         location: {
+    //           latitude: location2[0]?.latitude,
+    //           longitude: location2[0]?.longitude,
+    //         },
+    //       };
+    //     });
+    //     Promise.all(newArr).then((values) => {
+    //       setSuggestedList(values);
+    //       console.log(values.location[0]);
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   };
 
   const navigation = useNavigation();
@@ -155,8 +185,6 @@ const Home = () => {
       let minLng = location.longitude;
       let maxLng = endLocation.longitude;
 
-      const distance = getDistance(location, endLocation);
-
       const northeast = { latitude: maxLat, longitude: maxLng };
       const southwest = { latitude: minLat, longitude: minLng };
 
@@ -180,7 +208,7 @@ const Home = () => {
         ref={mapRef}
       >
         <MapMarker
-          coordinate={location || { latitude: 0, longitude: 0 }}
+          coordinate={location}
           title='Your current location'
           iconColor='#ff6e2a'
         />
@@ -296,7 +324,6 @@ const Home = () => {
                       type: 'error',
                       position: 'top',
                       text1: 'Greška',
-
                       text2: 'Već imate aktivnu vožnju',
                       topOffset: 60,
                     });
@@ -321,6 +348,7 @@ const Home = () => {
           suggestedList={suggestedList}
           setSuggestedList={setSuggestedList}
           setEndLocation={setEndLocation}
+          endLocation={endLocation}
           setIsEndLocationVisible={setIsEndLocationVisible}
         />
       </BottomSheet>
