@@ -179,6 +179,10 @@ const Driver = (props) => {
               >
                 <MapView
                   provider={PROVIDER_GOOGLE}
+                  pitchEnabled={false}
+                  rotateEnabled={false}
+                  scrollEnabled={false}
+                  zoomEnabled={false}
                   style={{
                     width: '100%',
                     height: '100%',
@@ -194,27 +198,24 @@ const Driver = (props) => {
                   }}
                   ref={mapRef}
                   onMapReady={() => {
-                    mapRef.current.fitToCoordinates(
-                      [
-                        {
-                          latitude: item.startLocation[0],
-                          longitude: item.startLocation[1],
-                        },
-                        {
-                          latitude: item.endLocation[0],
-                          longitude: item.endLocation[1],
-                        },
-                      ],
-                      {
-                        edgePadding: {
-                          top: 15,
-                          right: 20,
-                          bottom: 15,
-                          left: 20,
-                        },
-                        animated: true,
-                      }
-                    );
+                    let minLat = item.startLocation[0];
+                    let maxLat = item.endLocation[0];
+                    let minLng = item.startLocation[1];
+                    let maxLng = item.endLocation[1];
+
+                    const northeast = { latitude: maxLat, longitude: maxLng };
+                    const southwest = { latitude: minLat, longitude: minLng };
+
+                    const bounds = [northeast, southwest];
+                    mapRef.current.fitToCoordinates(bounds, {
+                      edgePadding: {
+                        top: 50,
+                        right: 50,
+                        bottom: 50,
+                        left: 50,
+                      },
+                      animated: true,
+                    });
                   }}
                 >
                   <MapMarker

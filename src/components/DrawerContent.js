@@ -30,8 +30,8 @@ const drawerContent = (props) => {
           return;
         }
         const user = snapshot.val();
+        console.log('USER, ', user);
         setData(user);
-        return user;
       });
     } catch (error) {
       console.log(error);
@@ -39,7 +39,10 @@ const drawerContent = (props) => {
   };
 
   useEffect(() => {
+    if (!auth.currentUser) return;
     getUserData();
+
+    console.log('DATA', data);
   }, []);
 
   return (
@@ -79,7 +82,7 @@ const drawerContent = (props) => {
                 color: '#fafafa',
               }}
             >
-              {data?.firstName[0]}
+              {data?.firstName && data?.firstName[0]}
             </Text>
           </View>
           <View

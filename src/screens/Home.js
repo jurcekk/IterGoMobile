@@ -13,6 +13,7 @@ import {
   Pressable,
   TouchableOpacity,
   TextInput,
+  Dimensions,
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import BottomSheet from '@gorhom/bottom-sheet';
@@ -29,6 +30,13 @@ import useDistance from '../hooks/useDistance';
 import useOrder from '../hooks/useOrder';
 import useLocation from '../hooks/useLocation';
 import * as Location from 'expo-location';
+import Animated, {
+  useSharedValue,
+  withSpring,
+  withTiming,
+  Easing,
+} from 'react-native-reanimated';
+
 import {
   FIREBASE_DB,
   FIREBASE_AUTH,
@@ -41,6 +49,8 @@ const Home = () => {
   const [endLocation, setEndLocation] = useState(null);
   const [isEndLocationVisible, setIsEndLocationVisible] = useState(false);
   const [suggestedList, setSuggestedList] = useState([]);
+
+  const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
 
   const [driverAccepted, setDriverAccepted] = useState(false);
   const [noDriverModalVisible, setNoDriverModalVisible] = useState(false);
@@ -57,6 +67,10 @@ const Home = () => {
     createOrder,
     checkIfUserHasActiveOrder,
   } = useOrder();
+
+  const height = useSharedValue(0);
+
+  const handlePress = () => {};
 
   const timeoutRef = useRef(null);
   const mapRef = useRef(null);
@@ -116,12 +130,27 @@ const Home = () => {
   const snapPoints = useMemo(() => ['50%', '90%'], []);
 
   const handleClose = useCallback(() => {
+    console.log('CLOSE', height.value);
     bottomSheetRef.current.close();
     Keyboard.dismiss();
+    setIsBottomSheetOpen(false);
+    if (height.value <= 0) return;
+    height.value = withTiming(height.value - height.value, {
+      duration: 500,
+      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+    });
   }, []);
 
   const handleOpen = useCallback(() => {
+    console.log('OPEN', height.value);
+
     bottomSheetRef.current.snapToIndex(0);
+    setIsBottomSheetOpen(true);
+    if (height.value < height) return;
+    height.value = withTiming(Dimensions.get('window').height / 2 - 20, {
+      duration: 500,
+      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+    });
   }, []);
 
   const handleOnFocusKeyboard = useCallback(() => {
@@ -221,32 +250,57 @@ const Home = () => {
           />
         )}
       </MapView>
-
-      <TouchableOpacity
-        title='Center Map'
+      <Animated.View
         style={{
           position: 'absolute',
-          bottom: 140,
-          right: 40,
-          borderWidth: 1,
-          borderColor: '#fafafa',
-          borderRadius: 50,
-          width: 60,
-          height: 60,
-          alignItems: 'center',
+          bottom: height,
+          right: 15,
+          width: 100,
+          height: 200,
           justifyContent: 'center',
-          backgroundColor: '#ff6e2a',
-        }}
-        onPress={() => {
-          mapRef.current.animateToRegion(location, 1000);
+          alignItems: 'center',
+          gap: 15,
         }}
       >
-        <FontAwesome5 name='crosshairs' size={25} color='white' />
-      </TouchableOpacity>
+        <TouchableOpacity
+          title='Center Map'
+          style={{
+            // position: 'absolute',
+            // bottom: isBottomSheetOpen
+            //   ? Dimensions.get('window').height / 2 + 90
+            //   : 140,
+            // right: 40,
+            borderWidth: 1,
+            borderColor: '#fafafa',
+            borderRadius: 50,
+            width: 60,
+            height: 60,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#ff6e2a',
+          }}
+          onPress={() => {
+            mapRef.current.animateToRegion(location, 1000);
+          }}
+        >
+          <FontAwesome5 name='crosshairs' size={25} color='white' />
+        </TouchableOpacity>
 
-      <Pressable style={styles.orderButton} onPress={handleOpen}>
-        <FontAwesome5 name='car-side' size={20} color='white' />
-      </Pressable>
+        <TouchableOpacity
+          style={[
+            styles.orderButton,
+            {
+              // bottom: height.value,
+              // bottom: isBottomSheetOpen
+              //   ? Dimensions.get('window').height / 2 + 20
+              //   : 70,
+            },
+          ]}
+          onPress={handleOpen}
+        >
+          <FontAwesome5 name='car-side' size={20} color='white' />
+        </TouchableOpacity>
+      </Animated.View>
 
       <MenuButton icon='menu-outline' onPress={() => navigation.openDrawer()} />
 
@@ -254,7 +308,6 @@ const Home = () => {
         ref={bottomSheetRef}
         index={-1}
         snapPoints={snapPoints}
-        enablePanDownToClose={true}
         style={styles.bottomSheet}
         keyboardBehavior='interactive'
       >
@@ -352,6 +405,7 @@ const Home = () => {
           setIsEndLocationVisible={setIsEndLocationVisible}
         />
       </BottomSheet>
+
       <NoDriverModal
         visible={noDriverModalVisible}
         onCancel={handleCancelOrder}
@@ -433,9 +487,9 @@ const styles = StyleSheet.create({
   },
 
   orderButton: {
-    position: 'absolute',
-    bottom: 70,
-    right: 40,
+    // position: 'absolute',
+    // bottom: 70,
+    // right: 40,
     borderWidth: 1,
     borderColor: '#fafafa',
     borderRadius: 50,
