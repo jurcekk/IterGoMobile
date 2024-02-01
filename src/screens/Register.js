@@ -48,7 +48,7 @@ const Register = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log('User:', JSON.stringify(user, null, 2));
+        // console.log('User:', JSON.stringify(user, null, 2));
         updateProfile(auth.currentUser, {
           displayName: `${data.firstName} ${data.lastName}`,
         })

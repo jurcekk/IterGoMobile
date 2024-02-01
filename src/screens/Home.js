@@ -10,7 +10,6 @@ import {
   View,
   StyleSheet,
   Keyboard,
-  Pressable,
   TouchableOpacity,
   TextInput,
   Dimensions,
@@ -29,13 +28,15 @@ import DriverAccepted from '../components/DriverAccepted';
 import useDistance from '../hooks/useDistance';
 import useOrder from '../hooks/useOrder';
 import useLocation from '../hooks/useLocation';
-import * as Location from 'expo-location';
+import MapViewDirections from 'react-native-maps-directions';
+
 import Animated, {
   useSharedValue,
   withSpring,
   withTiming,
   Easing,
 } from 'react-native-reanimated';
+import { get, onValue, ref } from 'firebase/database';
 
 import {
   FIREBASE_DB,
@@ -43,6 +44,7 @@ import {
   GOOGLE_MAPS_API_KEY,
 } from '../../firebaseConfig';
 import Toast from 'react-native-toast-message';
+import ActiveOrderSheet from '../components/ActiveOrderSheet';
 
 const Home = () => {
   // const [location, setLocation] = useState(null);
@@ -74,6 +76,69 @@ const Home = () => {
 
   const timeoutRef = useRef(null);
   const mapRef = useRef(null);
+
+  const handleDriverOrder = () => {
+    try {
+      const dbRef = ref(db, 'orders');
+
+      const drRefUser = ref(db, 'users/' + auth.currentUser.uid);
+
+      get(drRefUser).then((snapshot) => {
+        if (!snapshot.exists()) {
+          return;
+        }
+        const user = snapshot.val();
+        if (user.role !== 'driver') return;
+        onValue(dbRef, (snapshot) => {
+          if (!snapshot.exists()) {
+            return;
+          }
+          const orders = snapshot.val();
+          const order = Object.values(orders).find(
+            (order) =>
+              order.driverId === auth.currentUser.uid &&
+              order.status === 'accepted' &&
+              order.userId !== ''
+          );
+
+          setEndLocation({
+            latitude: order?.startLocation?.latitude,
+            longitude: order?.startLocation?.longitude,
+            locationString: order?.startLocation?.locationString,
+          });
+
+          setIsEndLocationVisible(true);
+          setDriverAccepted(false);
+          setWaitingModalVisible(false);
+        });
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const getRoute = async () => {
+  //   try {
+  //     fetch(
+  //       `https://routes.googleapis.com/directions/v2:computeRoutes?key=${GOOGLE_MAPS_API_KEY}`,
+  //       {
+  //         method: 'POST',
+  //         body: JSON.stringify({
+  //           origin: `${location.latitude},${location.longitude}`,
+  //           destination: `${endLocation.latitude},${endLocation.longitude}`,
+  //           travelMode: 'DRIVE',
+  //         }),
+  //       }
+  //     )
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         const route = data.routes[0];
+  //         console.log('ROUTE', route);
+  //       });
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
 
   const handleInputChanges = (text) => {
     setEndLocation((prevState) => {
@@ -226,6 +291,13 @@ const Home = () => {
     }
   }, [location, endLocation]);
 
+  useEffect(() => {
+    handleDriverOrder();
+    // if (location && endLocation) {
+    //   getRoute();
+    // }
+  }, []);
+
   return (
     <View style={styles.container}>
       {/* <GetLocation location={location} setLocation={setLocation} /> */}
@@ -249,6 +321,14 @@ const Home = () => {
             iconColor='#ff6e2a'
           />
         )}
+        <MapViewDirections
+          origin={location}
+          destination={endLocation}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeColor='#ff6e2a'
+          strokeWidth={3}
+          mode='DRIVING'
+        />
       </MapView>
       <Animated.View
         style={{
@@ -405,6 +485,8 @@ const Home = () => {
           setIsEndLocationVisible={setIsEndLocationVisible}
         />
       </BottomSheet>
+
+      <ActiveOrderSheet height={height} />
 
       <NoDriverModal
         visible={noDriverModalVisible}

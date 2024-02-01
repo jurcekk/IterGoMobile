@@ -30,7 +30,6 @@ const drawerContent = (props) => {
           return;
         }
         const user = snapshot.val();
-        console.log('USER, ', user);
         setData(user);
       });
     } catch (error) {
@@ -202,7 +201,7 @@ const drawerContent = (props) => {
               fontWeight: 'bold',
             }}
           >
-            Vozač
+            Vožnje
           </Text>
         </TouchableOpacity>
       ) : (
