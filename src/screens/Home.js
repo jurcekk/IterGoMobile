@@ -25,14 +25,15 @@ import SuggestedLocations from '../components/SuggestedLocations';
 import NoDriverModal from '../components/NoDriverModal';
 import WaitingModal from '../components/WaitingModal';
 import DriverAccepted from '../components/DriverAccepted';
-import useDistance from '../hooks/useDistance';
 import useOrder from '../hooks/useOrder';
 import useLocation from '../hooks/useLocation';
+import useDistance from '../hooks/useDistance';
 import MapViewDirections from 'react-native-maps-directions';
+import useUser from '../hooks/useUser';
+import * as Haptics from 'expo-haptics';
 
 import Animated, {
   useSharedValue,
-  withSpring,
   withTiming,
   Easing,
 } from 'react-native-reanimated';
@@ -47,10 +48,10 @@ import Toast from 'react-native-toast-message';
 import ActiveOrderSheet from '../components/ActiveOrderSheet';
 
 const Home = () => {
-  // const [location, setLocation] = useState(null);
   const [endLocation, setEndLocation] = useState(null);
   const [isEndLocationVisible, setIsEndLocationVisible] = useState(false);
   const [suggestedList, setSuggestedList] = useState([]);
+  const [activeOrder, setActiveOrder] = useState();
 
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
 
@@ -61,8 +62,9 @@ const Home = () => {
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
 
-  const { getDistance } = useDistance();
   const location = useLocation();
+  const { getDistance } = useDistance();
+  const getRole = useUser();
   const {
     cancelOrder,
     getOrderStatus,
@@ -71,8 +73,6 @@ const Home = () => {
   } = useOrder();
 
   const height = useSharedValue(0);
-
-  const handlePress = () => {};
 
   const timeoutRef = useRef(null);
   const mapRef = useRef(null);
@@ -106,6 +106,7 @@ const Home = () => {
             longitude: order?.startLocation?.longitude,
             locationString: order?.startLocation?.locationString,
           });
+          setActiveOrder(order);
 
           setIsEndLocationVisible(true);
           setDriverAccepted(false);
@@ -116,29 +117,6 @@ const Home = () => {
       console.log(error);
     }
   };
-
-  // const getRoute = async () => {
-  //   try {
-  //     fetch(
-  //       `https://routes.googleapis.com/directions/v2:computeRoutes?key=${GOOGLE_MAPS_API_KEY}`,
-  //       {
-  //         method: 'POST',
-  //         body: JSON.stringify({
-  //           origin: `${location.latitude},${location.longitude}`,
-  //           destination: `${endLocation.latitude},${endLocation.longitude}`,
-  //           travelMode: 'DRIVE',
-  //         }),
-  //       }
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         const route = data.routes[0];
-  //         console.log('ROUTE', route);
-  //       });
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
 
   const handleInputChanges = (text) => {
     setEndLocation((prevState) => {
@@ -161,31 +139,6 @@ const Home = () => {
         setSuggestedList(result);
       }, 1000);
     }
-
-    // fetch(
-    //   `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=${GOOGLE_MAPS_API_KEY}&input=${text}&location=${location.latitude},${location.longitude}&radius=1000&language=en&components=country:rs&type=address`
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     const newArr = data?.predictions?.map(async (item) => {
-    //       const location2 = await Location.geocodeAsync(item?.description);
-    //       return {
-    //         description: item?.description,
-    //         place_id: item?.place_id,
-    //         location: {
-    //           latitude: location2[0]?.latitude,
-    //           longitude: location2[0]?.longitude,
-    //         },
-    //       };
-    //     });
-    //     Promise.all(newArr).then((values) => {
-    //       setSuggestedList(values);
-    //       console.log(values.location[0]);
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
   };
 
   const navigation = useNavigation();
@@ -244,6 +197,8 @@ const Home = () => {
         if (order.status === 'accepted') {
           setWaitingModalVisible(false);
           setDriverAccepted(true);
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+
           clearInterval(interval);
         } else if (checks === MAX_CHECKS) {
           setWaitingModalVisible(false);
@@ -261,13 +216,11 @@ const Home = () => {
 
   const requestTaxi = async () => {
     setWaitingModalVisible(true);
-
     createOrder(location, endLocation);
-
     checkOrderStatus();
   };
 
-  useEffect(() => {
+  const centerMap = () => {
     if (
       location?.latitude &&
       location?.longitude &&
@@ -283,19 +236,62 @@ const Home = () => {
       const southwest = { latitude: minLat, longitude: minLng };
 
       const bounds = [northeast, southwest];
+      console.log('CENTRIRANO1');
 
       mapRef.current.fitToCoordinates(bounds, {
-        edgePadding: { top: 200, right: 100, bottom: 200, left: 100 },
+        edgePadding: { top: 200, right: 50, bottom: 300, left: 50 },
         animated: true,
       });
+    } else {
+      console.log('CENTRIRANO2');
+
+      mapRef.current.animateToRegion(location, 1000);
     }
-  }, [location, endLocation]);
+  };
+
+  useEffect(() => {
+    centerMap();
+  }, [endLocation]);
 
   useEffect(() => {
     handleDriverOrder();
-    // if (location && endLocation) {
-    //   getRoute();
-    // }
+  }, []);
+
+  useEffect(() => {
+    getRole().then((user) => {
+      if (user?.role === 'driver' && activeOrder?.status === 'accepted') {
+        const interval = setInterval(() => {
+          const dist = getDistance(location, activeOrder?.startLocation);
+          // const finalDist = getDistance(location, activeOrder?.endLocation);
+          if (dist <= 99) {
+            Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+
+            Toast.show({
+              type: 'success',
+              position: 'top',
+              text1: 'Putnik je stigao',
+              text2: 'Vaša vožnja je počela',
+              topOffset: 60,
+            });
+          }
+          setEndLocation({
+            latitude: activeOrder.endLocation.latitude,
+            longitude: activeOrder.endLocation.latitude,
+            stringName: activeOrder.endLocation.stringName,
+          });
+          clearInterval(interval);
+        }, 1000);
+      } else if (user.role === 'user' && activeOrder?.status === 'accepted') {
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+        Toast.show({
+          type: 'success',
+          position: 'top',
+          text1: 'Vozač je stigao',
+          text2: 'Vaša vožnja je počela',
+          topOffset: 60,
+        });
+      }
+    });
   }, []);
 
   return (
@@ -307,6 +303,11 @@ const Home = () => {
         region={location}
         onPress={handleClose}
         ref={mapRef}
+        showsUserLocation
+        onUserLocationChange={({ nativeEvent: { coordinate } }) => {
+          const { latitude, longitude } = coordinate;
+          console.log(latitude, longitude);
+        }}
       >
         <MapMarker
           coordinate={location}
@@ -345,11 +346,6 @@ const Home = () => {
         <TouchableOpacity
           title='Center Map'
           style={{
-            // position: 'absolute',
-            // bottom: isBottomSheetOpen
-            //   ? Dimensions.get('window').height / 2 + 90
-            //   : 140,
-            // right: 40,
             borderWidth: 1,
             borderColor: '#fafafa',
             borderRadius: 50,
@@ -360,24 +356,13 @@ const Home = () => {
             backgroundColor: '#ff6e2a',
           }}
           onPress={() => {
-            mapRef.current.animateToRegion(location, 1000);
+            centerMap();
           }}
         >
           <FontAwesome5 name='crosshairs' size={25} color='white' />
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[
-            styles.orderButton,
-            {
-              // bottom: height.value,
-              // bottom: isBottomSheetOpen
-              //   ? Dimensions.get('window').height / 2 + 20
-              //   : 70,
-            },
-          ]}
-          onPress={handleOpen}
-        >
+        <TouchableOpacity style={styles.orderButton} onPress={handleOpen}>
           <FontAwesome5 name='car-side' size={20} color='white' />
         </TouchableOpacity>
       </Animated.View>
@@ -486,7 +471,10 @@ const Home = () => {
         />
       </BottomSheet>
 
-      <ActiveOrderSheet height={height} />
+      <ActiveOrderSheet
+        setEndLocation={setEndLocation}
+        setIsEndLocationVisible={setIsEndLocationVisible}
+      />
 
       <NoDriverModal
         visible={noDriverModalVisible}

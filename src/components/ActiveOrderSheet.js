@@ -11,7 +11,6 @@ import {
   StyleSheet,
   TouchableOpacity,
   Linking,
-  Dimensions,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -20,14 +19,8 @@ import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { ref, get, onValue } from 'firebase/database';
 import useOrder from '../hooks/useOrder';
 import useDistance from '../hooks/useDistance';
-import Animated, {
-  useSharedValue,
-  withSpring,
-  withTiming,
-  Easing,
-} from 'react-native-reanimated';
 
-const ActiveOrderSheet = ({ height }) => {
+const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
   const [activeOrder, setActiveOrder] = useState(null);
   const [driverData, setDriverData] = useState(null);
 
@@ -44,20 +37,10 @@ const ActiveOrderSheet = ({ height }) => {
 
   const handleOpen = useCallback(() => {
     activeOrderSheetRef.current.snapToIndex(0);
-    if (height.value < height) return;
-    height.value = withTiming(Dimensions.get('window').height / 2 - 180, {
-      duration: 500,
-      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
-    });
   }, []);
 
   const handleClose = useCallback(() => {
     activeOrderSheetRef.current.close();
-    if (height.value <= 0) return;
-    height.value = withTiming(height.value - height.value, {
-      duration: 500,
-      easing: Easing.bezier(0.25, 0.1, 0.25, 1),
-    });
   }, []);
 
   const getTime = () => {
@@ -120,6 +103,13 @@ const ActiveOrderSheet = ({ height }) => {
             handleOpen();
             getDriverData(order?.driverId);
             setActiveOrder(order);
+
+            setEndLocation({
+              latitude: order?.endLocation?.latitude,
+              longitude: order?.endLocation?.longitude,
+            });
+
+            setIsEndLocationVisible(true);
           } else {
             handleClose();
           }

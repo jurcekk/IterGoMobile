@@ -26,42 +26,36 @@ const Driver = (props) => {
 
   const assignOrder = async (orderId) => {
     const dbRef = ref(db, 'orders/' + orderId);
-    const snapshot = await get(dbRef);
-    if (snapshot.exists()) {
-      const order = snapshot.val();
 
-      update(ref(db, 'orders/' + orderId), {
-        status: 'accepted',
-        driverId: auth.currentUser.uid,
-      })
-        .then(() => {
-          Toast.show({
-            type: 'success',
-            position: 'top',
-            text1: 'Uspešno ste prihvatili vožnju',
-            visibilityTime: 3000,
-            autoHide: true,
-            topOffset: 30,
-            bottomOffset: 40,
-          });
-
-          console.log('Driver id added to order');
-        })
-        .catch(() => {
-          Toast.show({
-            type: 'error',
-            position: 'top',
-            text1: 'Greška pri prihvatanju vožnje',
-            visibilityTime: 3000,
-            autoHide: true,
-            topOffset: 30,
-            bottomOffset: 40,
-          });
-          console.log('Error adding driver id to order');
+    update(dbRef, {
+      status: 'accepted',
+      driverId: auth.currentUser.uid,
+    })
+      .then(() => {
+        Toast.show({
+          type: 'success',
+          position: 'top',
+          text1: 'Uspešno ste prihvatili vožnju',
+          visibilityTime: 3000,
+          autoHide: true,
+          topOffset: 30,
+          bottomOffset: 40,
         });
-    } else {
-      console.log('No data available');
-    }
+
+        console.log('Driver id added to order');
+      })
+      .catch(() => {
+        Toast.show({
+          type: 'error',
+          position: 'top',
+          text1: 'Greška pri prihvatanju vožnje',
+          visibilityTime: 3000,
+          autoHide: true,
+          topOffset: 30,
+          bottomOffset: 40,
+        });
+        console.log('Error adding driver id to order');
+      });
   };
 
   const getPendingOrders = async () => {
@@ -138,7 +132,7 @@ const Driver = (props) => {
           </Text>
         </View>
 
-        {!data && (
+        {data && (
           <View
             style={{
               flex: 1,
@@ -154,7 +148,7 @@ const Driver = (props) => {
                 color: '#00000099',
               }}
             >
-              Nema vožnji
+              Trenutno nema vožnji
             </Text>
           </View>
         )}
@@ -198,6 +192,11 @@ const Driver = (props) => {
                   }}
                   ref={mapRef}
                   onMapReady={() => {
+                    if (
+                      item.startLocation === undefined ||
+                      item.endLocation === undefined
+                    )
+                      return;
                     let minLat = item.startLocation[0];
                     let maxLat = item.endLocation[0];
                     let minLng = item.startLocation[1];
