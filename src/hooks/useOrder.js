@@ -1,9 +1,16 @@
 import { get, ref, set, push } from 'firebase/database';
 import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
+import { useContext } from 'react';
+import { LocationContext } from '../context/LocationContext';
+import { UserContext } from '../context/UserContext';
 
 const useOrder = () => {
   const db = FIREBASE_DB;
   const auth = FIREBASE_AUTH;
+
+  const { user } = useContext(UserContext);
+  const { location, setLocation, endLocation, setEndLocation } =
+    useContext(LocationContext);
 
   const checkIfUserHasActiveOrder = async () => {
     const snapshot = await get(ref(db, 'orders'));
@@ -66,7 +73,7 @@ const useOrder = () => {
     }
   };
 
-  const createOrder = async (location, endLocation) => {
+  const createOrder = async () => {
     const order = {
       orderId: '',
       userId: auth.currentUser.uid,
@@ -76,12 +83,12 @@ const useOrder = () => {
       startLocation: {
         latitude: location.latitude,
         longitude: location.longitude,
-        stringName: location.locationString,
+        locationString: location.locationString,
       },
       endLocation: {
         latitude: endLocation.latitude,
         longitude: endLocation.longitude,
-        stringName: endLocation.locationString,
+        locationString: endLocation.locationString,
       },
       distance: endLocation.distance,
       price: 150 + endLocation.distance * 100,

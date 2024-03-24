@@ -74,12 +74,12 @@ const Driver = (props) => {
         const startLocation = [
           order.startLocation.latitude,
           order.startLocation.longitude,
-          order.startLocation.stringName,
+          order.startLocation.locationString,
         ];
         const endLocation = [
           order.endLocation.latitude,
           order.endLocation.longitude,
-          order.endLocation.stringName,
+          order.endLocation.locationString,
         ];
         return {
           ...order,
@@ -187,8 +187,8 @@ const Driver = (props) => {
                   initialRegion={{
                     latitude: item.startLocation[0],
                     longitude: item.startLocation[1],
-                    latitudeDelta: 0.0922 / 4,
-                    longitudeDelta: 0.0421 / 4,
+                    latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
+                    longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
                   }}
                   ref={mapRef}
                   onMapReady={() => {

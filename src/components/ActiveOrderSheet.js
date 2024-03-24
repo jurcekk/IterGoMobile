@@ -136,7 +136,7 @@ const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
         <View style={styles.headerTextContainer}>
           <Text style={styles.headerText}>Aktivna vožnja</Text>
           <Text style={styles.subHeaderText}>
-            {activeOrder?.endLocation?.stringName} {activeOrder?.distance} km
+            {activeOrder?.endLocation?.locationString} {activeOrder?.distance} km
           </Text>
         </View>
 

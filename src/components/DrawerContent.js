@@ -1,5 +1,5 @@
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   View,
   Text,
@@ -14,35 +14,38 @@ import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { signOut } from 'firebase/auth';
 import { ref, get, onValue } from 'firebase/database';
 import Toast from 'react-native-toast-message';
+import { UserContext } from '../context/UserContext';
 
 const drawerContent = (props) => {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
   const width = useWindowDimensions().width * 0.2;
   const navigation = useNavigation();
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
 
-  const getUserData = () => {
-    try {
-      const dbRef = ref(db, 'users/' + auth.currentUser.uid);
-      onValue(dbRef, (snapshot) => {
-        if (!snapshot.exists()) {
-          return;
-        }
-        const user = snapshot.val();
-        setData(user);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { user } = useContext(UserContext);
 
-  useEffect(() => {
-    if (!auth.currentUser) return;
-    getUserData();
+  // const getUserData = () => {
+  //   try {
+  //     const dbRef = ref(db, 'users/' + auth.currentUser.uid);
+  //     onValue(dbRef, (snapshot) => {
+  //       if (!snapshot.exists()) {
+  //         return;
+  //       }
+  //       const user = snapshot.val();
+  //       setData(user);
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-    console.log('DATA', data);
-  }, []);
+  // useEffect(() => {
+  //   if (!auth.currentUser) return;
+  //   getUserData();
+
+  //   console.log('DATA', data);
+  // }, []);
 
   return (
     <DrawerContentScrollView
@@ -81,7 +84,7 @@ const drawerContent = (props) => {
                 color: '#fafafa',
               }}
             >
-              {data?.firstName && data?.firstName[0]}
+              {user?.firstName && user?.firstName[0]}
             </Text>
           </View>
           <View
@@ -96,7 +99,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              {data?.firstName} {data?.lastName}
+              {user?.firstName} {user?.lastName}
             </Text>
             <Text
               style={{
@@ -104,7 +107,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              {data?.email}
+              {user?.email}
             </Text>
           </View>
         </View>
@@ -176,7 +179,7 @@ const drawerContent = (props) => {
           </View>
         </View>
       </View>
-      {data?.role === 'driver' ? (
+      {user?.role === 'driver' ? (
         <TouchableOpacity
           style={[
             styles.menuItemsCard,
