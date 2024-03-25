@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
-import InputField from '../components/InputField';
+import InputField from '../../components/InputField';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
+import { FIREBASE_AUTH, FIREBASE_DB } from '../../../firebaseConfig';
 import { ref, set } from 'firebase/database';
 import { updateProfile } from 'firebase/auth';
 import Toast from 'react-native-toast-message';

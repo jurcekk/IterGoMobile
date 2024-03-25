@@ -42,9 +42,8 @@ import {
 } from '../../firebaseConfig';
 import ActiveOrderSheet from '../components/ActiveOrderSheet';
 import NewOrderSheet from '../components/NewOrderSheet';
-import { UserContext } from '../context/UserContext';
-import { OrderContext } from '../context/OrderContext';
 import { LocationContext } from '../context/LocationContext';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Home = () => {
   const [isEndLocationVisible, setIsEndLocationVisible] = useState(false);
@@ -57,63 +56,14 @@ const Home = () => {
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
 
-  const { user } = useContext(UserContext);
-  const { activeOrder } = useContext(OrderContext);
+  const { userData } = useContext(AuthContext);
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
 
   const { getDistance } = useDistance();
-  const {
-    cancelOrder,
-    getOrderStatus,
-    createOrder,
-    checkIfUserHasActiveOrder,
-  } = useOrder();
+  // const { cancelOrder } = useOrder();
 
   const mapRef = useRef(null);
-
-  // const handleDriverOrder = () => {
-  //   try {
-  //     const dbRef = ref(db, 'orders');
-
-  //     const drRefUser = ref(db, 'users/' + auth.currentUser.uid);
-
-  //     get(drRefUser).then((snapshot) => {
-  //       if (!snapshot.exists()) {
-  //         return;
-  //       }
-  //       const user = snapshot.val();
-  //       if (user.role !== 'driver') return;
-  //       onValue(dbRef, (snapshot) => {
-  //         if (!snapshot.exists()) {
-  //           return;
-  //         }
-  //         const orders = snapshot.val();
-  //         const order = Object.values(orders).find(
-  //           (order) =>
-  //             order.driverId === auth.currentUser.uid &&
-  //             order.status === 'accepted' &&
-  //             order.userId !== ''
-  //         );
-
-  //         setEndLocation({
-  //           latitude: order?.startLocation?.latitude,
-  //           longitude: order?.startLocation?.longitude,
-  //           locationString: order?.startLocation?.locationString,
-  //           latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
-  //           longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
-  //         });
-  //         setActiveOrder(order);
-
-  //         setIsEndLocationVisible(true);
-  //         setDriverAccepted(false);
-  //         setWaitingModalVisible(false);
-  //       });
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const navigation = useNavigation();
 
@@ -143,7 +93,7 @@ const Home = () => {
 
   const handleCancelOrder = () => {
     if (!driverAccepted) setEndLocation(null);
-    if (waitingModalVisible) cancelOrder();
+    // if (waitingModalVisible) cancelOrder();
     setWaitingModalVisible(false);
     setNoDriverModalVisible(false);
     setDriverAccepted(false);
@@ -185,10 +135,9 @@ const Home = () => {
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${desc}&key=${GOOGLE_MAPS_API_KEY}`
       );
       const data = await response.json();
+      console.log('ADRESA', data?.results[0]?.formatted_address.split(',')[0]);
 
-      console.log('ADRESA', data.results[0].formatted_address.split(',')[0]);
-
-      return data.results[0].formatted_address.split(',')[0];
+      return data?.results[0]?.formatted_address.split(',')[0];
     } catch (error) {
       console.error(error);
     }
@@ -197,49 +146,6 @@ const Home = () => {
   useEffect(() => {
     centerMap();
   }, [location, endLocation]);
-
-  // useEffect(() => {
-  //   handleDriverOrder();
-  // }, []);
-
-  // useEffect(() => {
-  //   getRole().then((user) => {
-  //     if (user?.role === 'driver' && activeOrder?.status === 'accepted') {
-  //       const interval = setInterval(() => {
-  //         const dist = getDistance(location, activeOrder?.startLocation);
-  //         // const finalDist = getDistance(location, activeOrder?.endLocation);
-  //         if (dist <= 99) {
-  //           Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-
-  //           Toast.show({
-  //             type: 'success',
-  //             position: 'top',
-  //             text1: 'Putnik je stigao',
-  //             text2: 'Vaša vožnja je počela',
-  //             topOffset: 60,
-  //           });
-  //         }
-  //         setEndLocation({
-  //           latitude: activeOrder.endLocation.latitude,
-  //           longitude: activeOrder.endLocation.latitude,
-  //           stringName: activeOrder.endLocation.stringName,
-  //           latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
-  //           longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
-  //         });
-  //         clearInterval(interval);
-  //       }, 1000);
-  //     } else if (user.role === 'user' && activeOrder?.status === 'accepted') {
-  //       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-  //       Toast.show({
-  //         type: 'success',
-  //         position: 'top',
-  //         text1: 'Vozač je stigao',
-  //         text2: 'Vaša vožnja je počela',
-  //         topOffset: 60,
-  //       });
-  //     }
-  //   });
-  // }, []);
 
   return (
     <View style={styles.container}>
@@ -274,8 +180,6 @@ const Home = () => {
                 latitude,
                 longitude,
                 locationString: address,
-                latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
-                longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
               });
             })
             .catch((error) => {
@@ -283,12 +187,6 @@ const Home = () => {
             });
         }}
       >
-        {/* <MapMarker
-          coordinate={location}
-          title='Your current location'
-          iconColor='#ff6e2a'
-        /> */}
-
         <MapMarker
           coordinate={endLocation}
           title='Your destination'
@@ -304,36 +202,16 @@ const Home = () => {
           mode='DRIVING'
         />
       </MapView>
-      <Animated.View
-        style={{
-          position: 'absolute',
-          bottom: height && 0,
-          right: 15,
-          width: 100,
-          height: 200,
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: 15,
-        }}
-      >
+      <Animated.View style={styles.animatedView}>
         <TouchableOpacity
           title='Center Map'
-          style={{
-            borderWidth: 1,
-            borderColor: '#fafafa',
-            borderRadius: 50,
-            width: 60,
-            height: 60,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#ff6e2a',
-          }}
+          style={styles.centerMapButton}
           onPress={centerMap}
         >
           <FontAwesome5 name='crosshairs' size={25} color='white' />
         </TouchableOpacity>
 
-        {user.role === 'user' && (
+        {userData?.role === 'user' && (
           <TouchableOpacity style={styles.orderButton} onPress={handleOpen}>
             <FontAwesome5 name='car-side' size={20} color='white' />
           </TouchableOpacity>
@@ -435,6 +313,28 @@ const styles = StyleSheet.create({
     // position: 'absolute',
     // bottom: 70,
     // right: 40,
+    borderWidth: 1,
+    borderColor: '#fafafa',
+    borderRadius: 50,
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ff6e2a',
+  },
+
+  animatedView: {
+    position: 'absolute',
+    bottom: 0,
+    right: 15,
+    width: 100,
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 15,
+  },
+
+  centerMapButton: {
     borderWidth: 1,
     borderColor: '#fafafa',
     borderRadius: 50,

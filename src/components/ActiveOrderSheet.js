@@ -24,7 +24,7 @@ const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
   const [activeOrder, setActiveOrder] = useState(null);
   const [driverData, setDriverData] = useState(null);
 
-  const { checkIfUserHasActiveOrder } = useOrder();
+  // const { checkIfUserHasActiveOrder } = useOrder();
   const { getDistance } = useDistance();
 
   const activeOrderSheetRef = useRef(null);
@@ -136,7 +136,8 @@ const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
         <View style={styles.headerTextContainer}>
           <Text style={styles.headerText}>Aktivna vožnja</Text>
           <Text style={styles.subHeaderText}>
-            {activeOrder?.endLocation?.locationString} {activeOrder?.distance} km
+            {activeOrder?.endLocation?.locationString} {activeOrder?.distance}{' '}
+            km
           </Text>
         </View>
 

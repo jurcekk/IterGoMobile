@@ -2,13 +2,13 @@ import { get, ref, set, push } from 'firebase/database';
 import { FIREBASE_DB, FIREBASE_AUTH } from '../../firebaseConfig';
 import { useContext } from 'react';
 import { LocationContext } from '../context/LocationContext';
-import { UserContext } from '../context/UserContext';
+import { AuthProvider } from '../provider/AuthProvider';
 
 const useOrder = () => {
   const db = FIREBASE_DB;
   const auth = FIREBASE_AUTH;
 
-  const { user } = useContext(UserContext);
+  const { userData } = useContext(AuthProvider);
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
 
@@ -83,12 +83,12 @@ const useOrder = () => {
       startLocation: {
         latitude: location.latitude,
         longitude: location.longitude,
-        locationString: location.locationString,
+        locationString: location?.locationString,
       },
       endLocation: {
         latitude: endLocation.latitude,
         longitude: endLocation.longitude,
-        locationString: endLocation.locationString,
+        locationString: endLocation?.locationString,
       },
       distance: endLocation.distance,
       price: 150 + endLocation.distance * 100,

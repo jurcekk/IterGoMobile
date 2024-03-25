@@ -54,12 +54,12 @@ const NewOrderSheet = ({
   const [suggestedList, setSuggestedList] = useState([]);
   const timeoutRef = useRef(null);
   const [intervalId, setIntervalId] = useState(null);
-  const {
-    getOrderStatus,
-    cancelOrder,
-    checkIfUserHasActiveOrder,
-    createOrder,
-  } = useOrder();
+  // const {
+  //   getOrderStatus,
+  //   cancelOrder,
+  //   checkIfUserHasActiveOrder,
+  //   createOrder,
+  // } = useOrder();
 
   const snapPoints = useMemo(() => ['50%', '90%'], []);
 

@@ -7,10 +7,10 @@ import {
   KeyboardAvoidingView,
   ActivityIndicator,
 } from 'react-native';
-import InputField from '../components/InputField';
+import InputField from '../../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
-import { FIREBASE_AUTH } from '../../firebaseConfig';
+import { FIREBASE_AUTH } from '../../../firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import Toast from 'react-native-toast-message';
 
