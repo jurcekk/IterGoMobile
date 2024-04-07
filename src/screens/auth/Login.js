@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   ActivityIndicator,
+  ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import InputField from '../../components/InputField';
 import { useForm, Controller } from 'react-hook-form';
@@ -26,7 +28,10 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: { email: 'jurcekdavid@gmail.com', password: 'david007' },
+    defaultValues: {
+      email: 'jurcekdavid@gmail.com',
+      password: 'david007',
+    },
   });
 
   const onSubmit = async (data) => {
@@ -65,92 +70,106 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontSize: 30, fontWeight: 'bold', marginBottom: 40 }}>
-        Prijava
-      </Text>
-      <KeyboardAvoidingView behavior='padding'>
-        <Controller
-          control={control}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputField
-              label='Email'
-              type='email-address'
-              name='email'
-              value={value}
-              onChange={onChange}
-              onBlur={onBlur}
-              errors={errors}
-            />
-          )}
-          name='email'
-          rules={{
-            required: 'Email je obavezan.',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'Ne ispravna email adresa.',
-            },
-          }}
-          defaultValue=''
-        />
-
-        <Controller
-          control={control}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <InputField
-              label='Šifra'
-              type='default'
-              name='password'
-              value={value}
-              onChange={onChange}
-              onBlur={onBlur}
-              errors={errors}
-              showPassword={showPassword}
-              setShowPassword={setShowPassword}
-            />
-          )}
-          name='password'
-          rules={{ required: 'Šifra je obavezna.' }}
-          defaultValue=''
-        />
-
-        <TouchableOpacity
-          style={{ alignSelf: 'flex-end', marginTop: 10, marginBottom: 30 }}
-          onPress={() => {
-            navigation.navigate('ForgotPassword');
-          }}
-        >
-          <Text style={{ color: '#0C0C0C', fontSize: 12 }}>
-            Zaboravljena šifra?
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.loginButton}
-          onPress={handleSubmit(onSubmit)}
-        >
-          <Text style={{ color: '#0C0C0C', fontWeight: 'bold' }}>
-            Prijavi se
-          </Text>
-          {loading && <ActivityIndicator size='small' color='#0C0C0C' />}
-        </TouchableOpacity>
-
-        <TouchableOpacity
+    <KeyboardAvoidingView
+      behavior='height'
+      enabled
+      style={{ flex: 1, backgroundColor: '#fafafa' }}
+    >
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 20,
+        }}
+        scrollEnabled={false}
+      >
+        <View
           style={{
-            alignSelf: 'center',
-            flexDirection: 'row',
-            marginTop: 50,
-            marginBottom: 30,
+            flexGrow: 1,
+            paddingHorizontal: 20,
+            paddingBottom: 20,
+            justifyContent: 'center',
           }}
-          onPress={() => navigation.navigate('Register')}
         >
-          <Text style={{ color: '#0C0C0C', fontSize: 12 }}>Nemate nalog? </Text>
-          <Text style={{ color: '#1E4DEA', fontWeight: 'bold', fontSize: 12 }}>
-            Registrujte se
+          <Text style={{ fontSize: 30, fontWeight: 'bold', marginBottom: 40 }}>
+            Prijava
           </Text>
-        </TouchableOpacity>
-      </KeyboardAvoidingView>
-    </View>
+          <InputField
+            control={control}
+            errors={errors}
+            label='Email'
+            name='email'
+            type='email-address'
+            defaultValue=''
+            rules={{
+              required: 'Email je obavezan.',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Ne ispravna email adresa.',
+              },
+            }}
+          />
+
+          <InputField
+            control={control}
+            errors={errors}
+            label='Password'
+            name='password'
+            defaultValue=''
+            rules={{
+              required: 'Šifra je obavezna.',
+              minLength: {
+                value: 6,
+                message: 'Šifra mora imati najmanje 6 karaktera',
+              },
+            }}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+          />
+
+          <TouchableOpacity
+            style={{ alignSelf: 'flex-end', marginTop: 10, marginBottom: 30 }}
+            onPress={() => {
+              navigation.navigate('ForgotPassword');
+            }}
+          >
+            <Text style={{ color: '#0C0C0C', fontSize: 12 }}>
+              Zaboravljena šifra?
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.loginButton}
+            onPress={handleSubmit(onSubmit)}
+          >
+            <Text style={{ color: '#0C0C0C', fontWeight: 'bold' }}>
+              Prijavi se
+            </Text>
+            {loading && <ActivityIndicator size='small' color='#0C0C0C' />}
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{
+              alignSelf: 'center',
+              flexDirection: 'row',
+              marginTop: 50,
+              marginBottom: 30,
+            }}
+            onPress={() => navigation.navigate('Register')}
+          >
+            <Text style={{ color: '#0C0C0C', fontSize: 12 }}>
+              Nemate nalog?{' '}
+            </Text>
+            <Text
+              style={{ color: '#1E4DEA', fontWeight: 'bold', fontSize: 12 }}
+            >
+              Registrujte se
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -164,7 +183,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     height: 50,
     width: '100%',
@@ -199,7 +218,7 @@ const styles = StyleSheet.create({
       height: 1,
       width: 0,
     },
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     alignItems: 'center',
     justifyContent: 'flex-start',

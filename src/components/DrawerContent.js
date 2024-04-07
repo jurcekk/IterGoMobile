@@ -15,6 +15,7 @@ import { signOut } from 'firebase/auth';
 import { ref, get, onValue } from 'firebase/database';
 import Toast from 'react-native-toast-message';
 import { AuthContext } from '../provider/AuthProvider';
+import { Image } from 'expo-image';
 
 const drawerContent = (props) => {
   const width = useWindowDimensions().width * 0.2;
@@ -24,10 +25,13 @@ const drawerContent = (props) => {
 
   const { userData } = useContext(AuthContext);
 
+  console.log(userData);
+
   return (
     <DrawerContentScrollView
       {...props}
       contentContainerStyle={styles.container}
+      scrollEnabled={false}
     >
       <View style={styles.header}>
         <TouchableOpacity
@@ -54,15 +58,28 @@ const drawerContent = (props) => {
           }}
         >
           <View style={styles.profileCard}>
-            <Text
-              style={{
-                fontSize: 20,
-                fontWeight: 'bold',
-                color: '#fafafa',
-              }}
-            >
-              {userData?.firstName && userData?.firstName[0]}
-            </Text>
+            {userData?.profileImage === '' ? (
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  color: '#fafafa',
+                }}
+              >
+                {userData?.firstName && userData?.firstName[0]}
+              </Text>
+            ) : (
+              <Image
+                source={{ uri: userData?.profileImage }}
+                style={{
+                  width: 50,
+                  height: 50,
+                  borderRadius: 25,
+                  borderWidth: 1,
+                  borderColor: '#ff6e2a',
+                }}
+              />
+            )}
           </View>
           <View
             style={{
@@ -84,7 +101,7 @@ const drawerContent = (props) => {
                 color: '#000000',
               }}
             >
-              {userData?.email}
+              {userData?.phone}
             </Text>
           </View>
         </View>
@@ -309,14 +326,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
+    backgroundColor: '#f2f2f2',
     elevation: 5,
   },
 

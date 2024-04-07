@@ -1,89 +1,84 @@
+import React from 'react';
+import { Controller } from 'react-hook-form';
 import {
-  StyleSheet,
-  Text,
-  TextInput,
   View,
+  TextInput,
+  Text,
   TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 
 const InputField = ({
-  label,
-  type,
-  name,
-  value,
-  onChange,
-  onBlur,
-  onFocus,
+  control,
   errors,
+  label,
+  name,
+  type,
+  defaultValue,
+  rules,
+  onFocus,
   showPassword,
   setShowPassword,
+  editable = true,
+  onPressIn,
 }) => {
   return (
-    <>
-      <View
-        style={
-          errors[name]
-            ? [
-                styles.input,
-                { borderWidth: 1, borderColor: 'red', marginVertical: 4 },
-              ]
-            : [styles.input, { marginBottom: 16 }]
-        }
-      >
-        {name === 'location' ? (
-          <MaterialIcons
-            name='location-on'
-            size={27}
-            color='black'
-            style={styles.showNavigation}
-          />
-        ) : null}
-
-        <TextInput
-          name={name}
-          style={{ flex: 1 }}
-          placeholder={label}
-          keyboardType={type}
-          onChangeText={onChange}
-          value={value}
-          secureTextEntry={showPassword}
-          onBlur={onBlur}
-          onFocus={onFocus}
-        />
-
-        {name === 'password' ? (
-          <TouchableOpacity
-            style={styles.showPassword}
-            onPress={() => setShowPassword(!showPassword)}
+    <Controller
+      control={control}
+      render={({ field: { onChange, onBlur, value } }) => (
+        <>
+          <View
+            style={
+              errors[name]
+                ? [
+                    styles.input,
+                    { borderWidth: 1, borderColor: 'red', marginVertical: 4 },
+                  ]
+                : [styles.input, { marginBottom: 16 }]
+            }
           >
-            <FontAwesome
-              name={showPassword ? 'eye' : 'eye-slash'}
-              size={18}
-              color={'#0C0C0C'}
+            <TextInput
+              name={name}
+              style={{ flex: 1 }}
+              placeholder={label}
+              keyboardType={type}
+              onChangeText={onChange}
+              value={value}
+              secureTextEntry={showPassword}
+              onBlur={onBlur}
+              onFocus={onFocus}
+              autoCapitalize='none'
+              editable={editable}
+              onPressIn={onPressIn}
             />
-          </TouchableOpacity>
-        ) : null}
-      </View>
-      {errors[name] && (
-        <Text style={styles.errorText}>{errors[name].message}</Text>
+
+            {name === 'password' && (
+              <TouchableOpacity
+                style={styles.showPassword}
+                onPress={() => setShowPassword(!showPassword)}
+              >
+                <FontAwesome
+                  name={showPassword ? 'eye-slash' : 'eye'}
+                  size={18}
+                  color={'black'}
+                />
+              </TouchableOpacity>
+            )}
+          </View>
+          {errors[name] && (
+            <Text style={styles.errorText}>{errors[name].message}</Text>
+          )}
+        </>
       )}
-    </>
+      name={name}
+      defaultValue={defaultValue}
+      rules={rules}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  inputField: {
-    width: '100%',
-    marginBottom: 10,
-  },
-  label: {
-    marginBottom: 5,
-    color: '#0C0C0C',
-    fontSize: 12,
-  },
-
   errorText: {
     color: 'red',
     fontSize: 12,
@@ -91,7 +86,6 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: 'white',
     flexDirection: 'row',
     height: 50,
     width: '100%',
@@ -119,13 +113,10 @@ const styles = StyleSheet.create({
   },
 
   showNavigation: {
-    // position: 'absolute',
-    // left: '3%',
     alignSelf: 'center',
-    // padding: 5,
     marginRight: 10,
-    zIndex: 1000,
-    elevation: 1000,
+    zIndex: 9000,
+    elevation: 9000,
   },
 });
 

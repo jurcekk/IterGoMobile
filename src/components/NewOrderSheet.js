@@ -45,6 +45,9 @@ import {
 } from '../../firebaseConfig';
 import Toast from 'react-native-toast-message';
 import { LocationContext } from '../context/LocationContext';
+import { AuthContext } from '../provider/AuthProvider';
+import { OrderContext } from '../provider/OrderProvider';
+import * as streets from '../data/streets.json';
 
 const NewOrderSheet = ({
   bottomSheetRef,
@@ -115,6 +118,22 @@ const NewOrderSheet = ({
   };
 
   const handleInputChanges = (text) => {
+    // const radius = 500;
+    // if (text.length < 4) return;
+    // fetch(
+    //   `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${text}&location=${location?.latitude}%2C${location?.longitude}&radius=${radius}&types=geocode&key=${GOOGLE_MAPS_API_KEY}`
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // Process the response data here
+    //     console.log(JSON.stringify(data, null, 2));
+    //     if (data?.predictions.length === 0) return;
+    //     setSuggestedList(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
+
     bottomSheetRef.current.snapToPosition('90%');
     setEndLocation((prevState) => {
       return {
@@ -125,17 +144,26 @@ const NewOrderSheet = ({
     if (text.length < 3) return;
     clearTimeout(timeoutRef.current);
     let timer;
-
-    if (file?.features) {
+    // console.log(JSON.stringify(streets.default.newArr, null, 2));
+    if (streets.default.newArr) {
       timer = setTimeout(() => {
-        const result = file?.features?.filter((item) =>
-          item?.properties['name:sr-Latn']
-            ?.toLowerCase()
-            .includes(text.toLowerCase())
+        const result = streets?.default?.newArr.filter((item) =>
+          item?.streetName?.toLowerCase().includes(text.toLowerCase())
         );
         setSuggestedList(result);
       }, 1000);
     }
+
+    // if (file?.features) {
+    //   timer = setTimeout(() => {
+    //     const result = file?.features?.filter((item) =>
+    //       item?.properties['name:sr-Latn']
+    //         ?.toLowerCase()
+    //         .includes(text.toLowerCase())
+    //     );
+    //     setSuggestedList(result);
+    //   }, 1000);
+    // }
   };
 
   return (
@@ -256,14 +284,14 @@ const styles = StyleSheet.create({
   },
 
   bottomSheet: {
-    shadowColor: '#000',
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 3,
     },
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
-
+    backgroundColor: '#f2f2f2',
     elevation: 7,
   },
 

@@ -612,7 +612,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     flexDirection: 'row',
     height: 50,
     width: '100%',

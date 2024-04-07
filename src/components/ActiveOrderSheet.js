@@ -183,8 +183,8 @@ const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
 
 const styles = StyleSheet.create({
   bottomSheet: {
-    backgroundColor: 'white',
-    shadowColor: '#000',
+    backgroundColor: '#f2f2f2',
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: -5,

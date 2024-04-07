@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     height: 50,
     width: '100%',
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
       height: 1,
       width: 0,
     },
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,

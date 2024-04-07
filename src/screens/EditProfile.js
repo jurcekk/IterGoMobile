@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import {
   Text,
   View,
@@ -8,13 +8,18 @@ import {
   Alert,
   SafeAreaView,
   ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import InputField from '../components/InputField';
 import { AntDesign } from '@expo/vector-icons';
-import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
-import { ref, get, update, remove } from 'firebase/database';
+import {
+  FIREBASE_AUTH,
+  FIREBASE_DB,
+  FIREBASE_STORAGE,
+} from '../../firebaseConfig';
+import { ref, get, update, remove, set } from 'firebase/database';
 import {
   updatePassword,
   deleteUser,
@@ -23,16 +28,32 @@ import {
   signOut,
 } from 'firebase/auth';
 import Toast from 'react-native-toast-message';
+import { AuthContext } from '../provider/AuthProvider';
+import * as ImagePicker from 'expo-image-picker';
+import { Image } from 'expo-image';
+import { FontAwesome5 } from '@expo/vector-icons';
+import {
+  deleteObject,
+  ref as refStorage,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage';
 
 const EditProfile = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
+  const [uploading, setUploading] = useState(false);
+
+  const { userData, setUserData } = useContext(AuthContext);
+
+  const [profileImage, setProfileImage] = useState(userData?.profileImage);
 
   const navigation = useNavigation();
 
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
+  const storage = FIREBASE_STORAGE;
 
   const {
     control,
@@ -40,11 +61,14 @@ const EditProfile = () => {
     setError,
     formState: { errors },
     watch,
+    setValue,
+    clearErrors,
   } = useForm({
     defaultValues: {
-      firstName: auth.currentUser.displayName.split(' ')[0].toString(),
-      lastName: auth.currentUser.displayName.split(' ')[1].toString(),
-      email: auth.currentUser.email.toString(),
+      profileImage: userData.profileImage,
+      firstName: userData.firstName.toString(),
+      lastName: userData.lastName.toString(),
+      email: userData.email.toString(),
       password: '',
       passwordRepeat: '',
     },
@@ -62,6 +86,69 @@ const EditProfile = () => {
       const user = snapshot.val();
       setData(user);
     });
+  };
+
+  const uploadImage = async (uri) => {
+    setUploading(true);
+
+    const response = await fetch(uri);
+    const blob = await response.blob();
+    const filename = uri.substring(uri.lastIndexOf('/') + 1);
+
+    const storageRef = refStorage(storage, 'images/' + filename);
+
+    const uploadTask = uploadBytesResumable(storageRef, blob);
+
+    return new Promise((resolve, reject) => {
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+            case 'paused':
+              console.log('Upload is paused');
+              break;
+            case 'running':
+              console.log('Upload is running');
+              break;
+          }
+        },
+        (error) => {
+          console.log('Error uploading image:', error);
+          setUploading(false);
+          Toast.show({
+            type: 'error',
+            position: 'top',
+            topOffset: 60,
+            text1: 'Greška',
+            text2: 'Greška prilikom slanja slike.',
+          });
+          reject(error);
+        },
+        async () => {
+          const url = await getDownloadURL(uploadTask.snapshot.ref);
+          console.log('File available at', url);
+          setUploading(false);
+          resolve(url);
+        }
+      );
+    });
+  };
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+    if (!result.canceled) {
+      setValue('profileImage', result.assets[0].uri);
+      setProfileImage(result.assets[0].uri);
+      console.log(result.assets[0].uri);
+    }
   };
 
   const onSubmit = async (data) => {
@@ -92,11 +179,11 @@ const EditProfile = () => {
             text1: 'Uspešna izmena',
             text2: 'Uspešno ste izmenili email adresu.',
           });
+          setUserData({ ...userData, email: data.email });
         });
       } else if (
-        data.firstName !==
-          auth.currentUser.displayName.split(' ')[0].toString() ||
-        data.lastName !== auth.currentUser.displayName.split(' ')[1].toString()
+        data.firstName !== userData.firstName ||
+        data.lastName !== userData.lastName
       ) {
         if (data.firstName === '') {
           setError('firstName', {
@@ -131,8 +218,55 @@ const EditProfile = () => {
               text1: 'Uspešna izmena',
               text2: 'Uspešno ste izmenili ime i prezime.',
             });
+            setUserData({
+              ...userData,
+              firstName: data.firstName,
+              lastName: data.lastName,
+            });
           });
         });
+      } else if (data.profileImage !== userData.profileImage) {
+        console.log('CHANGE PROFILE IMAGE');
+
+        const imageName = decodeURIComponent(
+          userData.profileImage.split('/')[7].split('?')[0]
+        );
+
+        const oldImageRef = refStorage(storage, imageName);
+        deleteObject(oldImageRef)
+          .then(async () => {
+            console.log('Old image deleted');
+            const url = await uploadImage(data.profileImage);
+            console.log('URL', url);
+
+            updateProfile(auth.currentUser, {
+              photoURL: url,
+            })
+              .then(() => {
+                console.log('Profile image updated', auth.currentUser.photoURL);
+
+                set(ref(db, 'users/' + auth.currentUser.uid), {
+                  ...userData,
+                  profileImage: url,
+                }).then(() => {
+                  console.log('Profile image updated in database');
+                  Toast.show({
+                    type: 'success',
+                    position: 'top',
+                    topOffset: 60,
+                    text1: 'Uspešna izmena',
+                    text2: 'Uspešno ste izmenili profilnu sliku.',
+                  });
+                  setUserData({ ...userData, profileImage: url });
+                });
+              })
+              .catch((error) => {
+                console.log('Error updating profile image:', error);
+              });
+          })
+          .catch((error) => {
+            console.log('Error deleting old image:', error);
+          });
       }
     } catch (error) {
       console.log('Error creating user:', error.message);
@@ -165,135 +299,140 @@ const EditProfile = () => {
           Uređivanje profila
         </Text>
       </View>
-      <ScrollView
-        style={{
-          width: '100%',
-          height: '100%',
-          paddingHorizontal: 30,
-          paddingVertical: 20,
-        }}
-      >
-        <KeyboardAvoidingView behavior='padding'>
+      <KeyboardAvoidingView behavior='height' enabled style={{ flex: 1 }}>
+        <ScrollView
+          contentContainerStyle={{
+            flexGrow: 1,
+            justifyContent: 'center',
+            padding: 20,
+            paddingHorizontal: 40,
+          }}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 16,
+                alignSelf: 'center',
+                marginRight: 15,
+              }}
+            >
+              Profilna Slika:
+            </Text>
+            <TouchableOpacity
+              onPress={pickImage}
+              style={[
+                styles.imagePicker,
+                !profileImage && {
+                  padding: 40,
+                },
+              ]}
+            >
+              {profileImage ? (
+                <Image
+                  style={{
+                    width: 80,
+                    height: 80,
+                    borderRadius: 50,
+                    backgroundColor: '#f0f0f0',
+                  }}
+                  source={profileImage}
+                  contentFit='cover'
+                  transition={500}
+                />
+              ) : (
+                <View
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <FontAwesome5 name='plus' size={25} color='#0C0C0C80' />
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
           <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
             Ime i prezime
           </Text>
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Ime'
-                type='default'
-                name='firstName'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
+            errors={errors}
+            label='Ime'
             name='firstName'
-            defaultValue=''
+            rules={{ required: 'Ime je obavezno.' }}
           />
-          {/* {errors.firstName && (
-        <Text style={styles.errorText}>{errors.firstName.message}</Text>
-      )} */}
 
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Prezime'
-                type='default'
-                name='lastName'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
+            errors={errors}
+            label='Prezime'
             name='lastName'
-            defaultValue=''
+            rules={{ required: 'Ime je obavezno.' }}
           />
-          {/* {errors.lastName && (
-        <Text style={styles.errorText}>{errors.lastName.message}</Text>
-      )} */}
+
           <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
             Mejl adresa
           </Text>
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Email'
-                type='email-address'
-                name='email'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
+            errors={errors}
+            label='Email'
             name='email'
+            type='email-address'
+            defaultValue=''
             rules={{
+              required: 'Email je obavezan',
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: 'Ne ispravna email adresa.',
+                message: 'Ne ispravna email adresa',
               },
             }}
-            defaultValue=''
           />
-          {/* {errors.email && (
-        <Text style={styles.errorText}>{errors.email.message}</Text>
-      )} */}
+
           <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
             Šifra
           </Text>
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Šifra'
-                type='default'
-                name='password'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-                showPassword={showPassword}
-                setShowPassword={setShowPassword}
-              />
-            )}
+            errors={errors}
+            label='Šifra'
             name='password'
             defaultValue=''
+            rules={{
+              minLength: {
+                value: 6,
+                message: 'Šifra mora imati najmanje 6 karaktera',
+              },
+            }}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
           />
-          {/* {errors.password && (
-        <Text style={styles.errorText}>{errors.password.message}</Text>
-      )} */}
 
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Ponovite šifru'
-                type='default'
-                name='passwordRepeat'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-                showPassword={showPassword}
-                setShowPassword={setShowPassword}
-              />
-            )}
+            errors={errors}
+            label='Ponovite šifru'
             name='passwordRepeat'
+            defaultValue=''
             rules={{
               validate: (value) =>
                 value === password.current || 'Šifre se ne poklapaju.',
             }}
-            defaultValue=''
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
           />
-          {/* {errors.passwordRepeat && (
-        <Text style={styles.errorText}>{errors.passwordRepeat.message}</Text>
-      )} */}
 
           <TouchableOpacity
             style={[styles.loginButton, { backgroundColor: '#fafafa' }]}
@@ -364,8 +503,8 @@ const EditProfile = () => {
               Izlogujte se
             </Text>
           </TouchableOpacity>
-        </KeyboardAvoidingView>
-      </ScrollView>
+        </ScrollView>
+      </KeyboardAvoidingView>
       <View
         style={{
           width: '100%',
@@ -387,6 +526,9 @@ const EditProfile = () => {
           <Text style={{ color: '#fafafa', fontWeight: 'bold' }}>
             Izmenite profil
           </Text>
+          {loading && uploading && (
+            <ActivityIndicator size='small' color='#fafafa' style={{}} />
+          )}
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -397,12 +539,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 30,
-    alignItems: 'center',
+
     // marginBottom: 50,
   },
 
   input: {
-    backgroundColor: 'white',
+    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     height: 50,
     width: '100%',

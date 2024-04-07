@@ -1,0 +1,6964 @@
+{
+  "newArr": [
+    {
+      "place_id": "ChIJ7_D9EOpgQ0cRKCp5ccKNn_w",
+      "streetName": "Adačka",
+      "coordinates": {
+        "lat": 46.0675012,
+        "lng": 19.6825378
+      }
+    },
+    {
+      "place_id": "ChIJnRAW9bhmQ0cRxyhJxaDBvOM",
+      "streetName": "Adama Mickijevića",
+      "coordinates": {
+        "lat": 46.10744,
+        "lng": 19.6635626
+      }
+    },
+    {
+      "place_id": "ChIJIyWUxMpmQ0cRML3OX-2u5QI",
+      "streetName": "Adolfa Singera",
+      "coordinates": {
+        "lat": 46.10218,
+        "lng": 19.6766907
+      }
+    },
+    {
+      "place_id": "ChIJy4iA9M5mQ0cRLmfCjyLIAVQ",
+      "streetName": "Age Mamužića",
+      "coordinates": {
+        "lat": 46.0983882,
+        "lng": 19.6655926
+      }
+    },
+    {
+      "place_id": "ChIJ0R2WN_BhQ0cR9Q_tbhbWnuk",
+      "streetName": "Aksentija Marodića",
+      "coordinates": {
+        "lat": 46.0698135,
+        "lng": 19.6715717
+      }
+    },
+    {
+      "place_id": "ChIJyxKv4h5nQ0cRW-ka7s5T7Fo",
+      "streetName": "Albe Franciškovića",
+      "coordinates": {
+        "lat": 46.0880771,
+        "lng": 19.6349197
+      }
+    },
+    {
+      "place_id": "ChIJL9Zg-85mQ0cRN1eETKVquxU",
+      "streetName": "Albe Malagurskog",
+      "coordinates": {
+        "lat": 46.098723,
+        "lng": 19.6645897
+      }
+    },
+    {
+      "place_id": "ChIJAebD1M5gQ0cRq-yHpso_84M",
+      "streetName": "Albe Vidakovića",
+      "coordinates": {
+        "lat": 46.0714788,
+        "lng": 19.6651564
+      }
+    },
+    {
+      "place_id": "ChIJYXwPdDFhQ0cRt0dcG07d0mM",
+      "streetName": "Alberta Ajnštajna",
+      "coordinates": {
+        "lat": 46.0956028,
+        "lng": 19.6816188
+      }
+    },
+    {
+      "place_id": "ChIJhXwGdqZmQ0cRcsd97tLeucE",
+      "streetName": "Alberta Sentđerđija",
+      "coordinates": {
+        "lat": 46.1196852,
+        "lng": 19.6733969
+      }
+    },
+    {
+      "place_id": "ChIJA7YPNsdmQ0cRycxlIe6-yJk",
+      "streetName": "Aleja Maršala Tita",
+      "coordinates": {
+        "lat": 46.1051902,
+        "lng": 19.6591148
+      }
+    },
+    {
+      "place_id": "ChIJBQpKYP1gQ0cRiA-Io8jetiU",
+      "streetName": "Aleksandrovi salaši",
+      "coordinates": {
+        "lat": 46.076777,
+        "lng": 19.7065705
+      }
+    },
+    {
+      "place_id": "ChIJ06eF4TVhQ0cRqEuTNEkCUTc",
+      "streetName": "Alekse Dundića",
+      "coordinates": {
+        "lat": 46.1012799,
+        "lng": 19.6842009
+      }
+    },
+    {
+      "place_id": "ChIJXac0yrRmQ0cRlhd0GPlTpqk",
+      "streetName": "Alekse Ivića",
+      "coordinates": {
+        "lat": 46.1067586,
+        "lng": 19.681052
+      }
+    },
+    {
+      "place_id": "ChIJlStNqZ5mQ0cR-KO65YnzOwY",
+      "streetName": "Alekse Kokića",
+      "coordinates": {
+        "lat": 46.1226176,
+        "lng": 19.6566846
+      }
+    },
+    {
+      "place_id": "ChIJyeXg3YpmQ0cRPFN-yOZNH_Q",
+      "streetName": "Aleksinačka",
+      "coordinates": {
+        "lat": 46.1126124,
+        "lng": 19.6301436
+      }
+    },
+    {
+      "place_id": "ChIJp92G6cJmQ0cRsF7_7fXisLI",
+      "streetName": "Alibunarska",
+      "coordinates": {
+        "lat": 46.099978,
+        "lng": 19.6493858
+      }
+    },
+    {
+      "place_id": "ChIJAbJ3ffpmQ0cRbEQquBWXW0c",
+      "streetName": "Anđe Ranković",
+      "coordinates": {
+        "lat": 46.1015808,
+        "lng": 19.6302443
+      }
+    },
+    {
+      "place_id": "ChIJQ-YTjCpnQ0cRWZz8Uv0rWfY",
+      "streetName": "Andrije Kujundžića",
+      "coordinates": {
+        "lat": 46.0850491,
+        "lng": 19.662131
+      }
+    },
+    {
+      "place_id": "ChIJXb6wpC1hQ0cRhnrXNVgFpRc",
+      "streetName": "Andrije Medulića",
+      "coordinates": {
+        "lat": 46.0923384,
+        "lng": 19.6751393
+      }
+    },
+    {
+      "place_id": "ChIJUQmouepmQ0cRpeXrX4THlwM",
+      "streetName": "Andrije Štampara",
+      "coordinates": {
+        "lat": 46.1072607,
+        "lng": 19.6511883
+      }
+    },
+    {
+      "place_id": "EhtBbmUgRnJhbmssIFN1Ym90aWNhLCBTZXJiaWEiLiosChQKEgkxfGwabGRDRxG224D3nlvwIhIUChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Ane Frank",
+      "coordinates": {
+        "lat": 46.1457958,
+        "lng": 19.6878512
+      }
+    },
+    {
+      "place_id": "ChIJbTZbRDhkQ0cRUZW9nhwYzms",
+      "streetName": "Anke Butorac",
+      "coordinates": {
+        "lat": 46.1433676,
+        "lng": 19.665732
+      }
+    },
+    {
+      "place_id": "ChIJHdMBfplmQ0cROgUFh8ayTRw",
+      "streetName": "Ante Evetovića Miroljuba",
+      "coordinates": {
+        "lat": 46.1204029,
+        "lng": 19.6546513
+      }
+    },
+    {
+      "place_id": "ChIJw5XsucpmQ0cRbaOFb_sKyd8",
+      "streetName": "Ante Parčetića",
+      "coordinates": {
+        "lat": 46.1027938,
+        "lng": 19.6777904
+      }
+    },
+    {
+      "place_id": "ChIJs4WAsUthQ0cRgyMm2WN1-w0",
+      "streetName": "Antona Aškerca",
+      "coordinates": {
+        "lat": 46.1051444,
+        "lng": 19.6846783
+      }
+    },
+    {
+      "place_id": "ChIJmXAc1MdmQ0cRnpGaT45hF9o",
+      "streetName": "Antonija Hadžića",
+      "coordinates": {
+        "lat": 46.1039146,
+        "lng": 19.6643931
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Antuna B. Šimića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJvUFDgelmQ0cR9uDliianuhE",
+      "streetName": "Antuna Mihanovića",
+      "coordinates": {
+        "lat": 46.1038737,
+        "lng": 19.6467668
+      }
+    },
+    {
+      "place_id": "ChIJ79BsPuVmQ0cR4G0dJLzVJWA",
+      "streetName": "Antuna Suturovića",
+      "coordinates": {
+        "lat": 46.0993643,
+        "lng": 19.6343923
+      }
+    },
+    {
+      "place_id": "ChIJzbHPxqVmQ0cR4wXaBvAOOzk",
+      "streetName": "Antuna Vrančića",
+      "coordinates": {
+        "lat": 46.1178117,
+        "lng": 19.6718383
+      }
+    },
+    {
+      "place_id": "ChIJxQRwh5JmQ0cRvPynu_ghZek",
+      "streetName": "Apatinska",
+      "coordinates": {
+        "lat": 46.1131814,
+        "lng": 19.6415162
+      }
+    },
+    {
+      "place_id": "ChIJPeLY_rRmQ0cRYYpv7NzasTE",
+      "streetName": "Aranđelovačka",
+      "coordinates": {
+        "lat": 46.1061226,
+        "lng": 19.6768731
+      }
+    },
+    {
+      "place_id": "ChIJD4h0q-lgQ0cRCZAtLbFL3-Y",
+      "streetName": "Arnold Juraja",
+      "coordinates": {
+        "lat": 46.0694652,
+        "lng": 19.6865414
+      }
+    },
+    {
+      "place_id": "ChIJ6YYscKZmQ0cRNuBLz9_dvTQ",
+      "streetName": "Arpadova",
+      "coordinates": {
+        "lat": 46.1196852,
+        "lng": 19.6733969
+      }
+    },
+    {
+      "place_id": "ChIJY-6FnLhmQ0cR3eSISxIxwZU",
+      "streetName": "Arsenija Čarnojevića",
+      "coordinates": {
+        "lat": 46.1067499,
+        "lng": 19.6617179
+      }
+    },
+    {
+      "place_id": "ChIJCfKSrWdmQ0cRiVIKWuho5So",
+      "streetName": "Artura Munka",
+      "coordinates": {
+        "lat": 46.115851,
+        "lng": 19.618834
+      }
+    },
+    {
+      "place_id": "ChIJIegHXcRmQ0cRzyiGIyHkxjE",
+      "streetName": "Atile Jožefa",
+      "coordinates": {
+        "lat": 46.1001852,
+        "lng": 19.6561992
+      }
+    },
+    {
+      "place_id": "ChIJ0Sz8OOlmQ0cRqDj0zI-wccI",
+      "streetName": "Augusta Cesarca",
+      "coordinates": {
+        "lat": 46.1037281,
+        "lng": 19.642786
+      }
+    },
+    {
+      "place_id": "ChIJv5mI-7BmQ0cRXkbhUtRwwz0",
+      "streetName": "Avalska",
+      "coordinates": {
+        "lat": 46.1112525,
+        "lng": 19.6729761
+      }
+    },
+    {
+      "place_id": "ChIJ9cua7U9hQ0cR1-MBhDDWbfY",
+      "streetName": "Avnojska",
+      "coordinates": {
+        "lat": 46.1090172,
+        "lng": 19.6960368
+      }
+    },
+    {
+      "place_id": "ChIJ56f6g9lmQ0cRvbdTy5ytiqA",
+      "streetName": "Bačka",
+      "coordinates": {
+        "lat": 46.0926263,
+        "lng": 19.6529433
+      }
+    },
+    {
+      "place_id": "ChIJtcpMvLxmQ0cRRyfWEah1QQ8",
+      "streetName": "Bagremova",
+      "coordinates": {
+        "lat": 46.1147703,
+        "lng": 19.6634891
+      }
+    },
+    {
+      "place_id": "ChIJEcqz1bJmQ0cRCDGpPXOGNb0",
+      "streetName": "Bajmočka",
+      "coordinates": {
+        "lat": 46.1099918,
+        "lng": 19.6828989
+      }
+    },
+    {
+      "place_id": "ChIJr7w0ZyhhQ0cRgfsJZv3-LfA",
+      "streetName": "Bajnatska",
+      "coordinates": {
+        "lat": 46.0856388,
+        "lng": 19.678585
+      }
+    },
+    {
+      "place_id": "ChIJE5POZO9mQ0cRPYkhBhBnxRo",
+      "streetName": "Bajski put",
+      "coordinates": {
+        "lat": 46.1027194,
+        "lng": 19.6377075
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Balaž Viraga",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJpye9SVhmQ0cRXFh_TpfDDdM",
+      "streetName": "Balinta Vujkova",
+      "coordinates": {
+        "lat": 46.1054228,
+        "lng": 19.6194133
+      }
+    },
+    {
+      "place_id": "ChIJ_-pN5y9hQ0cRSWJt9oarHbc",
+      "streetName": "Balkanska",
+      "coordinates": {
+        "lat": 46.0920805,
+        "lng": 19.6831602
+      }
+    },
+    {
+      "place_id": "ChIJ-T1-tXpmQ0cREw_oPaYcF3g",
+      "streetName": "Balzakova",
+      "coordinates": {
+        "lat": 46.1238897,
+        "lng": 19.6231218
+      }
+    },
+    {
+      "place_id": "ChIJmQ11VghDUEcRhoK0IYpTG48",
+      "streetName": "Banatska",
+      "coordinates": {
+        "lat": 44.9837797,
+        "lng": 21.34501
+      }
+    },
+    {
+      "place_id": "ChIJKcFxHEthQ0cRib5tFn1ymXw",
+      "streetName": "Banijska",
+      "coordinates": {
+        "lat": 46.1051711,
+        "lng": 19.68231
+      }
+    },
+    {
+      "place_id": "ChIJcW-fFUVhQ0cRANKYN4QfvpI",
+      "streetName": "Banjalučka",
+      "coordinates": {
+        "lat": 46.1085231,
+        "lng": 19.6991883
+      }
+    },
+    {
+      "place_id": "ChIJNdT7oiZnQ0cRPn5aORaX5W4",
+      "streetName": "Baranjska",
+      "coordinates": {
+        "lat": 46.0850085,
+        "lng": 19.6452819
+      }
+    },
+    {
+      "place_id": "ChIJOVg2Z4pmQ0cRNwYwA1q6Gj0",
+      "streetName": "Barska",
+      "coordinates": {
+        "lat": 46.1149073,
+        "lng": 19.630771
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Bartola Kašića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJo1n4arJmQ0cRhXzdH6x1NhY",
+      "streetName": "Baštovanska",
+      "coordinates": {
+        "lat": 46.1119492,
+        "lng": 19.6794533
+      }
+    },
+    {
+      "place_id": "ChIJdeZwGmVmQ0cROJLtQBT700c",
+      "streetName": "Batajnička",
+      "coordinates": {
+        "lat": 46.1214952,
+        "lng": 19.6219327
+      }
+    },
+    {
+      "place_id": "ChIJ79nsMDxnQ0cReY_OCNvSyF0",
+      "streetName": "Batinska",
+      "coordinates": {
+        "lat": 46.0767788,
+        "lng": 19.6339133
+      }
+    },
+    {
+      "place_id": "ChIJTQ65lzFhQ0cR0aLtdhkxidA",
+      "streetName": "Bečejska",
+      "coordinates": {
+        "lat": 46.0946698,
+        "lng": 19.6812129
+      }
+    },
+    {
+      "place_id": "ChIJZ_8NO3BmQ0cRgw2FE_0z5PQ",
+      "streetName": "Bečka",
+      "coordinates": {
+        "lat": 46.124117,
+        "lng": 19.6172587
+      }
+    },
+    {
+      "place_id": "ChIJRWg88fBmQ0cRdyrGzq9CymY",
+      "streetName": "Begejska",
+      "coordinates": {
+        "lat": 46.1035153,
+        "lng": 19.6311522
+      }
+    },
+    {
+      "place_id": "ChIJ5dkOSU5hQ0cR95xP86k2k6E",
+      "streetName": "Bele Bartoka",
+      "coordinates": {
+        "lat": 46.1091372,
+        "lng": 19.6930951
+      }
+    },
+    {
+      "place_id": "ChIJcYyQcOtmQ0cR20avPoibPXs",
+      "streetName": "Bele Čikoša",
+      "coordinates": {
+        "lat": 46.1072479,
+        "lng": 19.6460106
+      }
+    },
+    {
+      "place_id": "ChIJC24FddFmQ0cR7FuI7-z-Osk",
+      "streetName": "Bele Gabrića",
+      "coordinates": {
+        "lat": 46.0935667,
+        "lng": 19.6627525
+      }
+    },
+    {
+      "place_id": "ChIJg9ool2BmQ0cRUdSXuxz0O7g",
+      "streetName": "Bele Kuna",
+      "coordinates": {
+        "lat": 46.1138842,
+        "lng": 19.6234006
+      }
+    },
+    {
+      "place_id": "ChIJTbxfdNZjQ0cRf5N-HpDavgU",
+      "streetName": "Beli golub",
+      "coordinates": {
+        "lat": 46.1140962,
+        "lng": 19.7363752
+      }
+    },
+    {
+      "place_id": "ChIJq8bee0xhQ0cRrzcnccX1SL4",
+      "streetName": "Belocrkvanska",
+      "coordinates": {
+        "lat": 46.1071729,
+        "lng": 19.6856922
+      }
+    },
+    {
+      "place_id": "ChIJw2w6E_pmQ0cRpmU_VfJYcEg",
+      "streetName": "Beočinska",
+      "coordinates": {
+        "lat": 46.101575,
+        "lng": 19.6283153
+      }
+    },
+    {
+      "place_id": "ChIJWQZrhhZkQ0cRdc4ZDllYz3s",
+      "streetName": "Beogradska",
+      "coordinates": {
+        "lat": 46.1379542,
+        "lng": 19.6782517
+      }
+    },
+    {
+      "place_id": "ChIJU9HgSNBgQ0cRTvGQznd3dBU",
+      "streetName": "Beogradski put",
+      "coordinates": {
+        "lat": 46.077654,
+        "lng": 19.6764812
+      }
+    },
+    {
+      "place_id": "ChIJt8Gek41mQ0cRnxqPTGHLDPU",
+      "streetName": "Bezdanska",
+      "coordinates": {
+        "lat": 46.1131972,
+        "lng": 19.6415055
+      }
+    },
+    {
+      "place_id": "ChIJadv9RDphQ0cRRgdi6tfuULs",
+      "streetName": "Bihaćka",
+      "coordinates": {
+        "lat": 46.0940471,
+        "lng": 19.6877204
+      }
+    },
+    {
+      "place_id": "ChIJnU2T2YxgQ0cRaxZcMCPRhyY",
+      "streetName": "Bikovački put",
+      "coordinates": {
+        "lat": 46.0500098,
+        "lng": 19.7057002
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Biskupa Lajče Budanovića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJgytipzNhQ0cRWaBCsQ3b6no",
+      "streetName": "Bistrička",
+      "coordinates": {
+        "lat": 46.0966525,
+        "lng": 19.6776563
+      }
+    },
+    {
+      "place_id": "ChIJlaxpXDFhQ0cR-d45CeSWyhM",
+      "streetName": "Bitoljska",
+      "coordinates": {
+        "lat": 46.097237,
+        "lng": 19.6813383
+      }
+    },
+    {
+      "place_id": "ChIJhSEyWiFnQ0cRrJza5RX78eo",
+      "streetName": "Bjelovarska",
+      "coordinates": {
+        "lat": 46.0852082,
+        "lng": 19.6427574
+      }
+    },
+    {
+      "place_id": "ChIJX5Sy1NZnQ0cRFGhyXBd9Nvs",
+      "streetName": "Blaha Lujze",
+      "coordinates": {
+        "lat": 46.0986792,
+        "lng": 19.6668032
+      }
+    },
+    {
+      "place_id": "ChIJTwMyOithQ0cRaWXc0Y5N10k",
+      "streetName": "Blaška Rajića",
+      "coordinates": {
+        "lat": 46.0882645,
+        "lng": 19.6688417
+      }
+    },
+    {
+      "place_id": "ChIJ5WORC8RgQ0cR5AzVod7OH68",
+      "streetName": "Blaže Jovanovića",
+      "coordinates": {
+        "lat": 46.0701713,
+        "lng": 19.6764356
+      }
+    },
+    {
+      "place_id": "ChIJ98rHTc5mQ0cRievYMIopOAU",
+      "streetName": "Bledska",
+      "coordinates": {
+        "lat": 46.0980326,
+        "lng": 19.6640575
+      }
+    },
+    {
+      "place_id": "ChIJl0mKLi9hQ0cRsi1CY3Wf8bM",
+      "streetName": "Bogoboja Atanackovića",
+      "coordinates": {
+        "lat": 46.088948,
+        "lng": 19.6799469
+      }
+    },
+    {
+      "place_id": "ChIJNXMAIzRhQ0cR0_DRHzVR8eo",
+      "streetName": "Bohinjska",
+      "coordinates": {
+        "lat": 46.0991374,
+        "lng": 19.6821678
+      }
+    },
+    {
+      "place_id": "ChIJxSih1iFnQ0cR9gx3v5lA7uE",
+      "streetName": "Bojanska",
+      "coordinates": {
+        "lat": 46.0878706,
+        "lng": 19.6388373
+      }
+    },
+    {
+      "place_id": "ChIJE3HHqUVhQ0cRHW8Of7dfEf8",
+      "streetName": "Bokeljska",
+      "coordinates": {
+        "lat": 46.1066866,
+        "lng": 19.6988464
+      }
+    },
+    {
+      "place_id": "ChIJrRHCJzJhQ0cRfkp42JPsrm4",
+      "streetName": "Bolmanska",
+      "coordinates": {
+        "lat": 46.0947772,
+        "lng": 19.6799204
+      }
+    },
+    {
+      "place_id": "ChIJ4_IRObhmQ0cRavogx3ZUThg",
+      "streetName": "Bore Stankovića",
+      "coordinates": {
+        "lat": 46.1075731,
+        "lng": 19.6647656
+      }
+    },
+    {
+      "place_id": "ChIJ18K_f6hmQ0cR60Th6ILaDzk",
+      "streetName": "Borisa Krajgera",
+      "coordinates": {
+        "lat": 46.1195662,
+        "lng": 19.6769857
+      }
+    },
+    {
+      "place_id": "ChIJLaAzL8lgQ0cRftG95tZigNA",
+      "streetName": "Borivoja Mišića",
+      "coordinates": {
+        "lat": 46.069844,
+        "lng": 19.6661872
+      }
+    },
+    {
+      "place_id": "ChIJT3frLmNhQ0cRe55Fvgubx4M",
+      "streetName": "Borova",
+      "coordinates": {
+        "lat": 46.1117532,
+        "lng": 19.7278438
+      }
+    },
+    {
+      "place_id": "ChIJrVvnQyxhQ0cRD3Zx2m-hphQ",
+      "streetName": "Borska",
+      "coordinates": {
+        "lat": 46.091053,
+        "lng": 19.6747878
+      }
+    },
+    {
+      "place_id": "ChIJO59y0MtmQ0cRyrXK6Kqo-V8",
+      "streetName": "Bose Milićević",
+      "coordinates": {
+        "lat": 46.1013621,
+        "lng": 19.6709714
+      }
+    },
+    {
+      "place_id": "ChIJl-9FnbRmQ0cRvTeRRCkLSnU",
+      "streetName": "Boška Buhe",
+      "coordinates": {
+        "lat": 46.10802,
+        "lng": 19.6794028
+      }
+    },
+    {
+      "place_id": "ChIJm_BZyMlmQ0cRAiCXtHxscLo",
+      "streetName": "Boška Vujića",
+      "coordinates": {
+        "lat": 46.1040268,
+        "lng": 19.6691701
+      }
+    },
+    {
+      "place_id": "ChIJF91KNZNmQ0cRgNzPfOqlfE8",
+      "streetName": "Bosutska",
+      "coordinates": {
+        "lat": 46.1089046,
+        "lng": 19.6451479
+      }
+    },
+    {
+      "place_id": "ChIJ6aUYLDFhQ0cRhOnQTZGAxz0",
+      "streetName": "Boze Šarčevića",
+      "coordinates": {
+        "lat": 46.0970796,
+        "lng": 19.6837059
+      }
+    },
+    {
+      "place_id": "ChIJiUFzdC1hQ0cRz-BQmt0W3Hk",
+      "streetName": "Božidara Adžije",
+      "coordinates": {
+        "lat": 46.0930403,
+        "lng": 19.67462
+      }
+    },
+    {
+      "place_id": "ChIJd39vlsBmQ0cRKVC9unWzWN8",
+      "streetName": "Braće Jugović",
+      "coordinates": {
+        "lat": 46.1063086,
+        "lng": 19.6568102
+      }
+    },
+    {
+      "place_id": "ChIJ-Yl0d8FmQ0cRBPC3GvtvtTY",
+      "streetName": "Braće Majer",
+      "coordinates": {
+        "lat": 46.1027625,
+        "lng": 19.6541589
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Braće Milašin",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJP0GPFi1hQ0cReHWmaJ4KZ4k",
+      "streetName": "Braće Radić",
+      "coordinates": {
+        "lat": 46.0917626,
+        "lng": 19.6717125
+      }
+    },
+    {
+      "place_id": "ChIJ-Yl0d8FmQ0cRBPC3GvtvtTY",
+      "streetName": "Braće Ribnikar",
+      "coordinates": {
+        "lat": 46.1027625,
+        "lng": 19.6541589
+      }
+    },
+    {
+      "place_id": "ChIJ1wrho7pmQ0cRKvrQwoyFybw",
+      "streetName": "Braće Sudarević",
+      "coordinates": {
+        "lat": 46.1136116,
+        "lng": 19.6708059
+      }
+    },
+    {
+      "place_id": "ChIJsS51XCJkQ0cRADQaeVMt-7c",
+      "streetName": "Bračka",
+      "coordinates": {
+        "lat": 46.1328131,
+        "lng": 19.6692075
+      }
+    },
+    {
+      "place_id": "ChIJy1h8rs5mQ0cR1_17Wn_gOEM",
+      "streetName": "Branislava Nušića",
+      "coordinates": {
+        "lat": 46.1001296,
+        "lng": 19.6679061
+      }
+    },
+    {
+      "place_id": "ChIJ8Y8ngNxmQ0cRy6DfBIc6GCU",
+      "streetName": "Branka Radičevića",
+      "coordinates": {
+        "lat": 46.0954405,
+        "lng": 19.6515757
+      }
+    },
+    {
+      "place_id": "ChIJ3VjPctBgQ0cRJBQ8L01_zYg",
+      "streetName": "Bregalnička",
+      "coordinates": {
+        "lat": 46.0768352,
+        "lng": 19.6737282
+      }
+    },
+    {
+      "place_id": "ChIJJa2oz3xhQ0cRm5CsN0V53pU",
+      "streetName": "Breskvina",
+      "coordinates": {
+        "lat": 46.1109855,
+        "lng": 19.7281557
+      }
+    },
+    {
+      "place_id": "ChIJxXtMY4pmQ0cRXZQOscMUvdk",
+      "streetName": "Brestovačka",
+      "coordinates": {
+        "lat": 46.1151195,
+        "lng": 19.6301661
+      }
+    },
+    {
+      "place_id": "ChIJs6T8VfNmQ0cRBP9mi3xY9Eo",
+      "streetName": "Brezova",
+      "coordinates": {
+        "lat": 46.1112767,
+        "lng": 19.6339626
+      }
+    },
+    {
+      "place_id": "ChIJN49dhKJmQ0cRxZU8rQ2ajh4",
+      "streetName": "Brionska",
+      "coordinates": {
+        "lat": 46.1182367,
+        "lng": 19.6610403
+      }
+    },
+    {
+      "place_id": "ChIJYSw_RNdmQ0cRQfDpRvmBCsM",
+      "streetName": "Brodska",
+      "coordinates": {
+        "lat": 46.0916945,
+        "lng": 19.6565192
+      }
+    },
+    {
+      "place_id": "ChIJxeuA5_JmQ0cRkvjTrKuaAvQ",
+      "streetName": "Budvanska",
+      "coordinates": {
+        "lat": 46.1099124,
+        "lng": 19.6362698
+      }
+    },
+    {
+      "place_id": "ChIJudU73bRmQ0cRLRvLwDkdxW4",
+      "streetName": "Bukovička",
+      "coordinates": {
+        "lat": 46.1064966,
+        "lng": 19.6796949
+      }
+    },
+    {
+      "place_id": "ChIJSfhqW5RmQ0cR6Jjjyuuk3Qc",
+      "streetName": "Čačanska",
+      "coordinates": {
+        "lat": 46.11138,
+        "lng": 19.650376
+      }
+    },
+    {
+      "place_id": "ChIJ5dcM62BmQ0cR1f52-UYofC0",
+      "streetName": "Čajetinska",
+      "coordinates": {
+        "lat": 46.114747,
+        "lng": 19.6231914
+      }
+    },
+    {
+      "place_id": "ChIJk2AYiNZmQ0cRRCBkYCf1ja0",
+      "streetName": "Cankareva",
+      "coordinates": {
+        "lat": 46.0891885,
+        "lng": 19.6601493
+      }
+    },
+    {
+      "place_id": "ChIJrQEi49JfQ0cRXLJcLqfUXy8",
+      "streetName": "Čantavirski put",
+      "coordinates": {
+        "lat": 46.0332348,
+        "lng": 19.6870579
+      }
+    },
+    {
+      "place_id": "ChIJUfX9vM5mQ0cRRn-Abh9DN1M",
+      "streetName": "Cara Dušana",
+      "coordinates": {
+        "lat": 46.0992052,
+        "lng": 19.6675581
+      }
+    },
+    {
+      "place_id": "ChIJfWxMqcdmQ0cRX06O85m-LeU",
+      "streetName": "Cara Lazara",
+      "coordinates": {
+        "lat": 46.1047402,
+        "lng": 19.6616477
+      }
+    },
+    {
+      "place_id": "ChIJMd3Tz0FkQ0cRrIwOqpePfgs",
+      "streetName": "Čavolj",
+      "coordinates": {
+        "lat": 46.1469044,
+        "lng": 19.6787131
+      }
+    },
+    {
+      "place_id": "ChIJ4_T5WuxmQ0cRxbO96pEIS9I",
+      "streetName": "Čavoljska",
+      "coordinates": {
+        "lat": 46.1067859,
+        "lng": 19.6423127
+      }
+    },
+    {
+      "place_id": "ChIJf-Tt-_NmQ0cR3xJgdXE-d5U",
+      "streetName": "Čede Žice",
+      "coordinates": {
+        "lat": 46.1069818,
+        "lng": 19.6307659
+      }
+    },
+    {
+      "place_id": "ChIJU4YP2zdkQ0cR6XfrO28bmPs",
+      "streetName": "Celjska",
+      "coordinates": {
+        "lat": 46.1458712,
+        "lng": 19.6636605
+      }
+    },
+    {
+      "place_id": "ChIJp-XlyMdmQ0cRkWwcd8nRPPo",
+      "streetName": "Celovečka",
+      "coordinates": {
+        "lat": 46.1035302,
+        "lng": 19.6635453
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Čempresa",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJU7P3-spmQ0cRv_BnQhNDQeM",
+      "streetName": "Cerska",
+      "coordinates": {
+        "lat": 46.1015589,
+        "lng": 19.6749151
+      }
+    },
+    {
+      "place_id": "ChIJUfMkHelmQ0cRO63KOIKq_Cg",
+      "streetName": "Cetinjska",
+      "coordinates": {
+        "lat": 46.1020435,
+        "lng": 19.6445328
+      }
+    },
+    {
+      "place_id": "ChIJe7aSP-xmQ0cRdqS5PlZY2po",
+      "streetName": "Čikerijska",
+      "coordinates": {
+        "lat": 46.106312,
+        "lng": 19.6429094
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Crnog peska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJW-wOTGVmQ0cREl2pDKkYmPw",
+      "streetName": "Crnogorska",
+      "coordinates": {
+        "lat": 46.1221254,
+        "lng": 19.6206054
+      }
+    },
+    {
+      "place_id": "ChIJSdF7w-VjQ0cRrEkB2DYWuto",
+      "streetName": "Crvenih ruža",
+      "coordinates": {
+        "lat": 46.1261399,
+        "lng": 19.7137105
+      }
+    },
+    {
+      "place_id": "ChIJkbKkmelmQ0cR33JkGtN2AMU",
+      "streetName": "Cvetka Manojlovića",
+      "coordinates": {
+        "lat": 46.102846,
+        "lng": 19.6459133
+      }
+    },
+    {
+      "place_id": "ChIJY51FREVhQ0cRn9C_2KcMGnQ",
+      "streetName": "Cvetna",
+      "coordinates": {
+        "lat": 46.1091017,
+        "lng": 19.6987224
+      }
+    },
+    {
+      "place_id": "ChIJt_NYANhmQ0cRVGhq2G5sXGQ",
+      "streetName": "Đakovska",
+      "coordinates": {
+        "lat": 46.0880938,
+        "lng": 19.6525873
+      }
+    },
+    {
+      "place_id": "ChIJE0GDfSBkQ0cRMrHBSc5qok8",
+      "streetName": "Dalija",
+      "coordinates": {
+        "lat": 46.1265629,
+        "lng": 19.6624026
+      }
+    },
+    {
+      "place_id": "ChIJccBKRy9hQ0cRDwjzamBnhoA",
+      "streetName": "Dalmatinska",
+      "coordinates": {
+        "lat": 46.088871,
+        "lng": 19.681423
+      }
+    },
+    {
+      "place_id": "ChIJLR5DFx9nQ0cRk4e67TdbeOk",
+      "streetName": "Danče Bertuša",
+      "coordinates": {
+        "lat": 46.0877092,
+        "lng": 19.6357589
+      }
+    },
+    {
+      "place_id": "ChIJ47HjVTxkQ0cRMXDYZQnwsAY",
+      "streetName": "Darinke Radović",
+      "coordinates": {
+        "lat": 46.1370733,
+        "lng": 19.6697009
+      }
+    },
+    {
+      "place_id": "ChIJ8cB8WvBmQ0cRrniyg8RACko",
+      "streetName": "Daruvarska",
+      "coordinates": {
+        "lat": 46.1037085,
+        "lng": 19.6321281
+      }
+    },
+    {
+      "place_id": "ChIJHRSgyCFnQ0cRwdVWbEgZ8R8",
+      "streetName": "Debarska",
+      "coordinates": {
+        "lat": 46.087378,
+        "lng": 19.6396011
+      }
+    },
+    {
+      "place_id": "ChIJgUeKgMVgQ0cRB90P6f648wI",
+      "streetName": "Dečanska",
+      "coordinates": {
+        "lat": 46.0726222,
+        "lng": 19.6703959
+      }
+    },
+    {
+      "place_id": "ChIJPU-IrrZmQ0cRbnmG5xO-rSs",
+      "streetName": "Dedinjska",
+      "coordinates": {
+        "lat": 46.1089533,
+        "lng": 19.6740681
+      }
+    },
+    {
+      "place_id": "ChIJa2ZgbsRgQ0cRlqmZFNg3_JE",
+      "streetName": "Deliblatska",
+      "coordinates": {
+        "lat": 46.0706666,
+        "lng": 19.6754325
+      }
+    },
+    {
+      "place_id": "ChIJ--7MTUphQ0cRZtCgMwQMHEA",
+      "streetName": "Deligradska",
+      "coordinates": {
+        "lat": 46.1045122,
+        "lng": 19.6840668
+      }
+    },
+    {
+      "place_id": "ChIJrR3L2tFmQ0cRfZflos8anlk",
+      "streetName": "Delnička",
+      "coordinates": {
+        "lat": 46.0957562,
+        "lng": 19.663747
+      }
+    },
+    {
+      "place_id": "ChIJdefoEcFmQ0cRSO9e1O-oKeg",
+      "streetName": "Đerđa Dože",
+      "coordinates": {
+        "lat": 46.1040605,
+        "lng": 19.6540487
+      }
+    },
+    {
+      "place_id": "ChIJ63GMqT5kQ0cRGTRqU7VCyiE",
+      "streetName": "Đerđa Lukača",
+      "coordinates": {
+        "lat": 46.1397533,
+        "lng": 19.6686172
+      }
+    },
+    {
+      "place_id": "ChIJL6P43JJmQ0cRnEnA1iQTDMY",
+      "streetName": "Đerdapska",
+      "coordinates": {
+        "lat": 46.1109129,
+        "lng": 19.6438766
+      }
+    },
+    {
+      "place_id": "ChIJXU-CTjdhQ0cRf8p68msWLpM",
+      "streetName": "Desanke Maksimović",
+      "coordinates": {
+        "lat": 46.0970476,
+        "lng": 19.6871397
+      }
+    },
+    {
+      "place_id": "ChIJG6EsAVBhQ0cR1jxUgMTSi-U",
+      "streetName": "Đevđelijska",
+      "coordinates": {
+        "lat": 46.1102577,
+        "lng": 19.6978851
+      }
+    },
+    {
+      "place_id": "ChIJH-RrEjZhQ0cRo03B6HwiOuY",
+      "streetName": "Deže Kostolanjija",
+      "coordinates": {
+        "lat": 46.1011784,
+        "lng": 19.6852261
+      }
+    },
+    {
+      "place_id": "ChIJ55qmjYpmQ0cRNEs_B8HbLoU",
+      "streetName": "Dežea Forgača",
+      "coordinates": {
+        "lat": 46.1138098,
+        "lng": 19.6299344
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Diljska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJhTHhqshmQ0cRVm-vSHc2Hyw",
+      "streetName": "Dimitrija Tucovića",
+      "coordinates": {
+        "lat": 46.1014378,
+        "lng": 19.6625742
+      }
+    },
+    {
+      "place_id": "ChIJEQ5C96tCQ0cRmNm17PqbjrM",
+      "streetName": "Dinarska",
+      "coordinates": {
+        "lat": 46.0656316,
+        "lng": 19.5300948
+      }
+    },
+    {
+      "place_id": "ChIJV61LodVmQ0cRT_dba7IqmXE",
+      "streetName": "Dinka Šimunovića",
+      "coordinates": {
+        "lat": 46.0875239,
+        "lng": 19.6633248
+      }
+    },
+    {
+      "place_id": "ChIJS07FEtBmQ0cRsOL4cIBNZkY",
+      "streetName": "Dinka Zlatarića",
+      "coordinates": {
+        "lat": 46.095571,
+        "lng": 19.6595103
+      }
+    },
+    {
+      "place_id": "ChIJ1SkYPEphQ0cRkF7HREQrZ-U",
+      "streetName": "Dobojska",
+      "coordinates": {
+        "lat": 46.1039545,
+        "lng": 19.6854184
+      }
+    },
+    {
+      "place_id": "ChIJeceHBUthQ0cR4tYFJGL6tC8",
+      "streetName": "Dolenjska",
+      "coordinates": {
+        "lat": 46.1056205,
+        "lng": 19.6831763
+      }
+    },
+    {
+      "place_id": "ChIJoRsSfmBmQ0cRV1ysbwy5Owc",
+      "streetName": "Donska",
+      "coordinates": {
+        "lat": 46.1132148,
+        "lng": 19.624157
+      }
+    },
+    {
+      "place_id": "ChIJrSoL8zlhQ0cR5YK43P7UiBM",
+      "streetName": "Đorđa Natoševića",
+      "coordinates": {
+        "lat": 46.0967299,
+        "lng": 19.6898178
+      }
+    },
+    {
+      "place_id": "ChIJB4QS1R9nQ0cRk89H63ZFTB4",
+      "streetName": "Doroslovačka",
+      "coordinates": {
+        "lat": 46.090838,
+        "lng": 19.6373159
+      }
+    },
+    {
+      "place_id": "ChIJt13QA9RmQ0cRjY31d8uwQ3Q",
+      "streetName": "Dositejeva",
+      "coordinates": {
+        "lat": 46.0908991,
+        "lng": 19.6627176
+      }
+    },
+    {
+      "place_id": "ChIJw3bcENVlQ0cRKM2EUkzD5_g",
+      "streetName": "Dr Ferenca Bodrogvarija",
+      "coordinates": {
+        "lat": 46.13196,
+        "lng": 19.638824
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Dr Franje Sudarevića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ9RkzmidkQ0cRaNfpTvVacY8",
+      "streetName": "Dr Josipa Andrića",
+      "coordinates": {
+        "lat": 46.1284497,
+        "lng": 19.6555909
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Dr Vinka Perčića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJZSi8tS1hQ0cRtU2I-IeucdU",
+      "streetName": "Dragiše Mišovića",
+      "coordinates": {
+        "lat": 46.0917318,
+        "lng": 19.6755639
+      }
+    },
+    {
+      "place_id": "ChIJs-TN_NdmQ0cRbLdiB2zaNJA",
+      "streetName": "Dragojle Jarnević",
+      "coordinates": {
+        "lat": 46.0886906,
+        "lng": 19.6536416
+      }
+    },
+    {
+      "place_id": "ChIJ91TFP9VgQ0cRLynZP4xJBLQ",
+      "streetName": "Dragutina Domjanića",
+      "coordinates": {
+        "lat": 46.0843001,
+        "lng": 19.6665016
+      }
+    },
+    {
+      "place_id": "ChIJUw4RLShnQ0cR27LtO0MdiHY",
+      "streetName": "Dravogradska",
+      "coordinates": {
+        "lat": 46.087639,
+        "lng": 19.6556779
+      }
+    },
+    {
+      "place_id": "ChIJy1xVRjBhQ0cRsTkOw_7oAK4",
+      "streetName": "Dravska",
+      "coordinates": {
+        "lat": 46.0941378,
+        "lng": 19.684453
+      }
+    },
+    {
+      "place_id": "ChIJacIEfNVmQ0cRPYuaz2RPMh8",
+      "streetName": "Drinska",
+      "coordinates": {
+        "lat": 46.0860963,
+        "lng": 19.6626946
+      }
+    },
+    {
+      "place_id": "ChIJN7spX9FgQ0cRQYw39xFLF8s",
+      "streetName": "Drvarska",
+      "coordinates": {
+        "lat": 46.0797463,
+        "lng": 19.6693908
+      }
+    },
+    {
+      "place_id": "ChIJLz7pO8NmQ0cRYG-PjoNuFO8",
+      "streetName": "Držićeva",
+      "coordinates": {
+        "lat": 46.0991824,
+        "lng": 19.6516567
+      }
+    },
+    {
+      "place_id": "ChIJ8-ZQ-O5mQ0cRPXdENLaZ-YY",
+      "streetName": "Dubrovačka",
+      "coordinates": {
+        "lat": 46.1034967,
+        "lng": 19.6391559
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Đule Valia",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJOZjqRERhQ0cRSJtTz5sdLOM",
+      "streetName": "Dunavska",
+      "coordinates": {
+        "lat": 46.1063465,
+        "lng": 19.7001771
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Dunja",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJG4EAEdVmQ0cRZKIMK0ZfGSo",
+      "streetName": "Đurđinska",
+      "coordinates": {
+        "lat": 46.0880471,
+        "lng": 19.6645315
+      }
+    },
+    {
+      "place_id": "ChIJHcb2cslmQ0cRlMwbGuBD2B4",
+      "streetName": "Đure Đakovića",
+      "coordinates": {
+        "lat": 46.1022991,
+        "lng": 19.6686769
+      }
+    },
+    {
+      "place_id": "ChIJA7WZS9FmQ0cRmZJvjJC-XwI",
+      "streetName": "Đure Daničića",
+      "coordinates": {
+        "lat": 46.0916708,
+        "lng": 19.6615015
+      }
+    },
+    {
+      "place_id": "ChIJK3sHi9VgQ0cRubF_NDIsGXc",
+      "streetName": "Đure Stantića",
+      "coordinates": {
+        "lat": 46.0848735,
+        "lng": 19.6702236
+      }
+    },
+    {
+      "place_id": "ChIJP3toVSZnQ0cRDzOo9FX1dCc",
+      "streetName": "Durmitorska",
+      "coordinates": {
+        "lat": 46.0867099,
+        "lng": 19.6476458
+      }
+    },
+    {
+      "place_id": "ChIJw16bVcdmQ0cRIsG9JWAV_jo",
+      "streetName": "Dušana Krnjajskog",
+      "coordinates": {
+        "lat": 46.1066024,
+        "lng": 19.6602219
+      }
+    },
+    {
+      "place_id": "ChIJw16bVcdmQ0cRIsG9JWAV_jo",
+      "streetName": "Dušana Petrovića",
+      "coordinates": {
+        "lat": 46.1066024,
+        "lng": 19.6602219
+      }
+    },
+    {
+      "place_id": "ChIJYSMEAbJmQ0cRc0xybr8uCuE",
+      "streetName": "Edea Telča",
+      "coordinates": {
+        "lat": 46.1130041,
+        "lng": 19.6783839
+      }
+    },
+    {
+      "place_id": "ChIJh8qBVYtmQ0cR4iF9Aq9O5q8",
+      "streetName": "Edisonova",
+      "coordinates": {
+        "lat": 46.1112767,
+        "lng": 19.6339626
+      }
+    },
+    {
+      "place_id": "ChIJaz6IwEVhQ0cRwfObDVDI7GI",
+      "streetName": "Eduarda Rusijana",
+      "coordinates": {
+        "lat": 46.1059983,
+        "lng": 19.6971411
+      }
+    },
+    {
+      "place_id": "ChIJzeLMDYtmQ0cR0KHNRtQBuqo",
+      "streetName": "Edvina Zdovca",
+      "coordinates": {
+        "lat": 46.112538,
+        "lng": 19.6345961
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Eleka Benedeka",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Endre Bajči Žilinskog",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Endrea Adia",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJmSsm5XxmQ0cRCEP9si-oCfs",
+      "streetName": "Erdutska",
+      "coordinates": {
+        "lat": 46.123242,
+        "lng": 19.6302785
+      }
+    },
+    {
+      "place_id": "ChIJT6SbnaZmQ0cRgZaay8uFgdE",
+      "streetName": "Ernea Kiša",
+      "coordinates": {
+        "lat": 46.1194249,
+        "lng": 19.6708918
+      }
+    },
+    {
+      "place_id": "ChIJIQnb9c5mQ0cR07eDURsapCU",
+      "streetName": "Ernea Lanjia",
+      "coordinates": {
+        "lat": 46.0983882,
+        "lng": 19.6655926
+      }
+    },
+    {
+      "place_id": "ChIJwzdi965mQ0cRtQ2XycbuURE",
+      "streetName": "Ernesta Kuna",
+      "coordinates": {
+        "lat": 46.1165914,
+        "lng": 19.6787882
+      }
+    },
+    {
+      "place_id": "ChIJd3KqpeRmQ0cRtlheV2Ikmbk",
+      "streetName": "Eržebet Silađi",
+      "coordinates": {
+        "lat": 46.0972697,
+        "lng": 19.6318346
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Esperanta",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ7zpQJ9NmQ0cRsugQeBEKQy8",
+      "streetName": "Evgenija Kumičića",
+      "coordinates": {
+        "lat": 46.0924786,
+        "lng": 19.6692395
+      }
+    },
+    {
+      "place_id": "ChIJoQW0ssFgQ0cRKgf9G-kEImo",
+      "streetName": "Feketićka",
+      "coordinates": {
+        "lat": 46.0662748,
+        "lng": 19.6780567
+      }
+    },
+    {
+      "place_id": "ChIJn2xmmr5mQ0cRKe4B7su4jwQ",
+      "streetName": "Ferenca Baloga",
+      "coordinates": {
+        "lat": 46.1111607,
+        "lng": 19.6601665
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Ferenca Čakia",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJn2xmmr5mQ0cRKe4B7su4jwQ",
+      "streetName": "Ferenca Đeria",
+      "coordinates": {
+        "lat": 46.1111607,
+        "lng": 19.6601665
+      }
+    },
+    {
+      "place_id": "ChIJD7WBkepmQ0cRdaUr6RAyiT4",
+      "streetName": "Ferenca Gala",
+      "coordinates": {
+        "lat": 46.1064983,
+        "lng": 19.6502173
+      }
+    },
+    {
+      "place_id": "ChIJ75xZ3jVhQ0cREDcC6G9rDOo",
+      "streetName": "Ferenca Kiša",
+      "coordinates": {
+        "lat": 46.1009712,
+        "lng": 19.6841902
+      }
+    },
+    {
+      "place_id": "ChIJqd6Aqr9mQ0cRS9C2118qbCg",
+      "streetName": "Ferenca Sepa",
+      "coordinates": {
+        "lat": 46.1093742,
+        "lng": 19.6570998
+      }
+    },
+    {
+      "place_id": "ChIJ39MlwZBmQ0cRPI001Ef5NSQ",
+      "streetName": "Filipa Filipovića",
+      "coordinates": {
+        "lat": 46.1174994,
+        "lng": 19.651657
+      }
+    },
+    {
+      "place_id": "ChIJxbftn9lmQ0cRhbuBcA-6Zzo",
+      "streetName": "Filipa Kljajića",
+      "coordinates": {
+        "lat": 46.0916771,
+        "lng": 19.6525049
+      }
+    },
+    {
+      "place_id": "ChIJTVu9MtdmQ0cRJ3w18vbumzk",
+      "streetName": "Filipa Višnjića",
+      "coordinates": {
+        "lat": 46.0919429,
+        "lng": 19.6582425
+      }
+    },
+    {
+      "place_id": "ChIJX_m6BB5nQ0cRRwRrH_xdOU4",
+      "streetName": "Fočanska",
+      "coordinates": {
+        "lat": 46.0909756,
+        "lng": 19.6344674
+      }
+    },
+    {
+      "place_id": "ChIJrZDql-NmQ0cRnEASvQ-e3p0",
+      "streetName": "Frana Supila",
+      "coordinates": {
+        "lat": 46.0939941,
+        "lng": 19.6328535
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Franca Lista",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJg5g44yBnQ0cRXJ3uOO41k5k",
+      "streetName": "Franje Kluza",
+      "coordinates": {
+        "lat": 46.0825361,
+        "lng": 19.6358106
+      }
+    },
+    {
+      "place_id": "ChIJUSSYj8NmQ0cRANOh9JnlaRs",
+      "streetName": "Franje Kuhača",
+      "coordinates": {
+        "lat": 46.101053,
+        "lng": 19.6548522
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Franjevački trg",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJHzra7TBhQ0cRAnZtbjAsGlw",
+      "streetName": "Frederika Šopena",
+      "coordinates": {
+        "lat": 46.0952856,
+        "lng": 19.6852367
+      }
+    },
+    {
+      "place_id": "ChIJc_l3h-dmQ0cRg8FgaHHPtyQ",
+      "streetName": "Fruškogorska",
+      "coordinates": {
+        "lat": 46.0968918,
+        "lng": 19.6444344
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Futoška",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJZ0ZnFt1mQ0cRyjt8XhCvf_E",
+      "streetName": "Gajeva",
+      "coordinates": {
+        "lat": 46.0971993,
+        "lng": 19.6476746
+      }
+    },
+    {
+      "place_id": "ChIJBT9YJStnQ0cRqii6dzF6HqU",
+      "streetName": "Gašpara Ulmera",
+      "coordinates": {
+        "lat": 46.0832815,
+        "lng": 19.6633172
+      }
+    },
+    {
+      "place_id": "ChIJAWfapDRhQ0cR0ws3hdjgMkw",
+      "streetName": "Gavrila Principa",
+      "coordinates": {
+        "lat": 46.098665,
+        "lng": 19.6770662
+      }
+    },
+    {
+      "place_id": "ChIJYevnh2tmQ0cR4J73oAMgAaA",
+      "streetName": "Gelegunja",
+      "coordinates": {
+        "lat": 46.120615,
+        "lng": 19.6089897
+      }
+    },
+    {
+      "place_id": "ChIJr5XAN91gQ0cRyMmzZ8WqZsk",
+      "streetName": "Generala Kutuzova",
+      "coordinates": {
+        "lat": 46.0731301,
+        "lng": 19.6838434
+      }
+    },
+    {
+      "place_id": "ChIJdZdGsNxmQ0cREnnHxRdX6MQ",
+      "streetName": "Georgija Dimitrova",
+      "coordinates": {
+        "lat": 46.0978555,
+        "lng": 19.6520371
+      }
+    },
+    {
+      "place_id": "ChIJ46w920thQ0cR6LMMC9hW4J8",
+      "streetName": "Geze Čata",
+      "coordinates": {
+        "lat": 46.1050626,
+        "lng": 19.6858048
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Geze Saboa",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJv9iF7-VmQ0cR-y5wUq2LcoI",
+      "streetName": "Glamočka",
+      "coordinates": {
+        "lat": 46.0998348,
+        "lng": 19.6385255
+      }
+    },
+    {
+      "place_id": "ChIJd3M9I69mQ0cRSEmaWGmflGo",
+      "streetName": "Goce Delčeva",
+      "coordinates": {
+        "lat": 46.1180342,
+        "lng": 19.6762776
+      }
+    },
+    {
+      "place_id": "ChIJC1Cyz91mQ0cRWXy3Tve8FjI",
+      "streetName": "Gogoljeva",
+      "coordinates": {
+        "lat": 46.0945396,
+        "lng": 19.646886
+      }
+    },
+    {
+      "place_id": "ChIJQXZOMt1mQ0cRM1M1dv2PG-U",
+      "streetName": "Golubova",
+      "coordinates": {
+        "lat": 46.0985023,
+        "lng": 19.6484901
+      }
+    },
+    {
+      "place_id": "ChIJrbFC_YpmQ0cR_VRdsB7BCPo",
+      "streetName": "Gornja",
+      "coordinates": {
+        "lat": 46.1135221,
+        "lng": 19.6317637
+      }
+    },
+    {
+      "place_id": "ChIJgbwfOQhfQ0cRjztPKo7lA6Q",
+      "streetName": "Gornji Verušić",
+      "coordinates": {
+        "lat": 46.0042533,
+        "lng": 19.682097
+      }
+    },
+    {
+      "place_id": "ChIJIdq4LK5mQ0cR-mmg_xNypfM",
+      "streetName": "Gošina",
+      "coordinates": {
+        "lat": 46.1142561,
+        "lng": 19.6751538
+      }
+    },
+    {
+      "place_id": "ChIJjf35taZmQ0cRyfzF29sOJzU",
+      "streetName": "Gospićka",
+      "coordinates": {
+        "lat": 46.1208453,
+        "lng": 19.6700174
+      }
+    },
+    {
+      "place_id": "ChIJs8Xru91mQ0cRtAoJG1DC1cU",
+      "streetName": "Gostivarska",
+      "coordinates": {
+        "lat": 46.0962805,
+        "lng": 19.6459026
+      }
+    },
+    {
+      "place_id": "ChIJ9_5PAJdmQ0cRdmcO3TkK55E",
+      "streetName": "Grabovačka",
+      "coordinates": {
+        "lat": 46.1151633,
+        "lng": 19.6542465
+      }
+    },
+    {
+      "place_id": "ChIJgfQPf-lgQ0cRI7SFi2pxfCE",
+      "streetName": "Gradišćanska",
+      "coordinates": {
+        "lat": 46.067261,
+        "lng": 19.685019
+      }
+    },
+    {
+      "place_id": "Eh5HcmFuacSNYXJza2EsIFN1Ym90aWNhLCBTZXJiaWEiLiosChQKEgmr2lkQTWRDRxH4MHrT6e1zARIUChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Graničarska",
+      "coordinates": {
+        "lat": 46.1663287,
+        "lng": 19.6338667
+      }
+    },
+    {
+      "place_id": "ChIJrefXv05hQ0cR-8mk5COvsIs",
+      "streetName": "Grdelička",
+      "coordinates": {
+        "lat": 46.1079711,
+        "lng": 19.6914321
+      }
+    },
+    {
+      "place_id": "ChIJS2kdledmQ0cRAtVZfJRI_x0",
+      "streetName": "Gregora Kreka",
+      "coordinates": {
+        "lat": 46.0988572,
+        "lng": 19.6453704
+      }
+    },
+    {
+      "place_id": "ChIJw5jXQC1hQ0cRw8OfHxPHEN4",
+      "streetName": "Grge Čevapovića",
+      "coordinates": {
+        "lat": 46.0929659,
+        "lng": 19.6721631
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Grgura Peštalića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ06knWsFgQ0cR-Z_nUSjoqy4",
+      "streetName": "Grmečka",
+      "coordinates": {
+        "lat": 46.0687932,
+        "lng": 19.6770031
+      }
+    },
+    {
+      "place_id": "ChIJ8QMPAptmQ0cRvNR8QfOMmAk",
+      "streetName": "Grnčarska",
+      "coordinates": {
+        "lat": 46.1207328,
+        "lng": 19.6507231
+      }
+    },
+    {
+      "place_id": "ChIJPbeji2NmQ0cRkXLlwmMpQuk",
+      "streetName": "Gročanska",
+      "coordinates": {
+        "lat": 46.1189091,
+        "lng": 19.6248218
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Grožđa",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJub8TA-lgQ0cR_55dBd2O2tY",
+      "streetName": "Gružanska",
+      "coordinates": {
+        "lat": 46.0696342,
+        "lng": 19.6872359
+      }
+    },
+    {
+      "place_id": "ChIJadblFtdmQ0cRl1RA6aFTDYQ",
+      "streetName": "Gundulićeva",
+      "coordinates": {
+        "lat": 46.0904138,
+        "lng": 19.6567833
+      }
+    },
+    {
+      "place_id": "ChIJx6-vjrlmQ0cRLtEGE34jeJ0",
+      "streetName": "Gustava Tonča",
+      "coordinates": {
+        "lat": 46.1097153,
+        "lng": 19.6660262
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Gutenbergova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJtQRpaq9mQ0cRiFvn8ud1fdE",
+      "streetName": "Hajduk Stanka",
+      "coordinates": {
+        "lat": 46.1180342,
+        "lng": 19.6762776
+      }
+    },
+    {
+      "place_id": "ChIJG_0nh8JmQ0cRM_UJXJRC7qI",
+      "streetName": "Hajduk Veljka",
+      "coordinates": {
+        "lat": 46.1013451,
+        "lng": 19.648296
+      }
+    },
+    {
+      "place_id": "ChIJia9O0sJmQ0cR2lTQKBZOPHY",
+      "streetName": "Hanibala Lucića",
+      "coordinates": {
+        "lat": 46.0989516,
+        "lng": 19.6493947
+      }
+    },
+    {
+      "place_id": "ChIJA5soIdBmQ0cRoehNG2_9tBg",
+      "streetName": "Harambašićeva",
+      "coordinates": {
+        "lat": 46.0963333,
+        "lng": 19.6608797
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Henrika Acela",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJvZi2BsRmQ0cRFI-6rjFGD74",
+      "streetName": "Henrika Sjenkjeviča",
+      "coordinates": {
+        "lat": 46.1022619,
+        "lng": 19.6561235
+      }
+    },
+    {
+      "place_id": "ChIJTRdR9kthQ0cRSkqGAhOguKY",
+      "streetName": "Heroja Pinkija",
+      "coordinates": {
+        "lat": 46.1051289,
+        "lng": 19.6880687
+      }
+    },
+    {
+      "place_id": "ChIJpfvdVOZmQ0cRBYK2EglsQF8",
+      "streetName": "Hilandarska",
+      "coordinates": {
+        "lat": 46.0979843,
+        "lng": 19.6424469
+      }
+    },
+    {
+      "place_id": "ChIJm8MysOBmQ0cRturQU9xC9xs",
+      "streetName": "Hipodromska",
+      "coordinates": {
+        "lat": 46.0947407,
+        "lng": 19.6419736
+      }
+    },
+    {
+      "place_id": "ChIJJZLfkbZmQ0cREWBCwGbfz2c",
+      "streetName": "Hrastova",
+      "coordinates": {
+        "lat": 46.1078744,
+        "lng": 19.6730965
+      }
+    },
+    {
+      "place_id": "ChIJc_5MIs5mQ0cRlw36OXTLEbI",
+      "streetName": "Huga Badalića",
+      "coordinates": {
+        "lat": 46.0965288,
+        "lng": 19.6640692
+      }
+    },
+    {
+      "place_id": "ChIJdaY6fbVmQ0cR0dlntyuMI_8",
+      "streetName": "Husinska",
+      "coordinates": {
+        "lat": 46.1041087,
+        "lng": 19.6767385
+      }
+    },
+    {
+      "place_id": "ChIJQYd2MtdmQ0cRWWHZXebk-nQ",
+      "streetName": "Hvarska",
+      "coordinates": {
+        "lat": 46.0919429,
+        "lng": 19.6582425
+      }
+    },
+    {
+      "place_id": "ChIJkXkHhNVmQ0cRuKTwVffPklo",
+      "streetName": "Ibarska",
+      "coordinates": {
+        "lat": 46.0868348,
+        "lng": 19.6629471
+      }
+    },
+    {
+      "place_id": "ChIJd3BR-E1hQ0cRiiF8Z_G7-_o",
+      "streetName": "Ibolje Ferenci",
+      "coordinates": {
+        "lat": 46.1107343,
+        "lng": 19.690665
+      }
+    },
+    {
+      "place_id": "ChIJv6T9LsBgQ0cRIwl-7UpUTWU",
+      "streetName": "Iđoška",
+      "coordinates": {
+        "lat": 46.0652208,
+        "lng": 19.6811054
+      }
+    },
+    {
+      "place_id": "ChIJDZ0IVdVmQ0cRzMM4LWRWL4Q",
+      "streetName": "Idrijska",
+      "coordinates": {
+        "lat": 46.0858391,
+        "lng": 19.6658094
+      }
+    },
+    {
+      "place_id": "ChIJNZ8V_SpnQ0cRyUAm6Azkz2o",
+      "streetName": "Igmanska",
+      "coordinates": {
+        "lat": 46.0840443,
+        "lng": 19.6619761
+      }
+    },
+    {
+      "place_id": "ChIJIUTId-lgQ0cRW9_ANGVYPts",
+      "streetName": "Ilindenska",
+      "coordinates": {
+        "lat": 46.0678253,
+        "lng": 19.6861248
+      }
+    },
+    {
+      "place_id": "ChIJ6Urf_sBmQ0cRNrmelae7iqY",
+      "streetName": "Ilirska",
+      "coordinates": {
+        "lat": 46.1052288,
+        "lng": 19.654649
+      }
+    },
+    {
+      "place_id": "ChIJZawMeB9nQ0cRTbUANQUZeUw",
+      "streetName": "Imotska",
+      "coordinates": {
+        "lat": 46.0883424,
+        "lng": 19.6380864
+      }
+    },
+    {
+      "place_id": "ChIJD3XF7bpmQ0cR6t-Gnm3Laps",
+      "streetName": "Imrea Bera",
+      "coordinates": {
+        "lat": 46.1131939,
+        "lng": 19.6689144
+      }
+    },
+    {
+      "place_id": "ChIJs062FWFmQ0cRGb_QVgbCTNo",
+      "streetName": "Imrea Čepea",
+      "coordinates": {
+        "lat": 46.1160894,
+        "lng": 19.6246612
+      }
+    },
+    {
+      "place_id": "ChIJD3XF7bpmQ0cR6t-Gnm3Laps",
+      "streetName": "Imrea Nađa",
+      "coordinates": {
+        "lat": 46.1131939,
+        "lng": 19.6689144
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Imrea Šafranja",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ58f6kqJmQ0cRRvvihnqPSHs",
+      "streetName": "Indire Gandi",
+      "coordinates": {
+        "lat": 46.1184091,
+        "lng": 19.6612439
+      }
+    },
+    {
+      "place_id": "ChIJS8061MJmQ0cRP46JCsK4CCQ",
+      "streetName": "Iriškog venca",
+      "coordinates": {
+        "lat": 46.0989516,
+        "lng": 19.6493947
+      }
+    },
+    {
+      "place_id": "ChIJyTInF8BmQ0cRHE20vzgZB9s",
+      "streetName": "Isidora Milkoa",
+      "coordinates": {
+        "lat": 46.1071821,
+        "lng": 19.6540942
+      }
+    },
+    {
+      "place_id": "ChIJgXjvnBxkQ0cR823rHC0OBr4",
+      "streetName": "Isidore Sekulić",
+      "coordinates": {
+        "lat": 46.1281889,
+        "lng": 19.6794731
+      }
+    },
+    {
+      "place_id": "ChIJ_zM1SC9hQ0cR5BuLszWaqEk",
+      "streetName": "Istarska",
+      "coordinates": {
+        "lat": 46.0883389,
+        "lng": 19.6807879
+      }
+    },
+    {
+      "place_id": "ChIJbZTU6MRmQ0cRm8CUjjw6N1g",
+      "streetName": "Ištvana Ivanjija",
+      "coordinates": {
+        "lat": 46.09931,
+        "lng": 19.6565132
+      }
+    },
+    {
+      "place_id": "ChIJ2TbSoEphQ0cRzJsERAj-oQA",
+      "streetName": "Ištvana Kizura",
+      "coordinates": {
+        "lat": 46.1036344,
+        "lng": 19.6798933
+      }
+    },
+    {
+      "place_id": "ChIJ1f1i4DBhQ0cR9PZW6ej3hWw",
+      "streetName": "Ištvana Lataka",
+      "coordinates": {
+        "lat": 46.0959124,
+        "lng": 19.683868
+      }
+    },
+    {
+      "place_id": "ChIJ8zKsqMJmQ0cRpSxNfZBFo8M",
+      "streetName": "Ištvana Lukača",
+      "coordinates": {
+        "lat": 46.0996209,
+        "lng": 19.6477818
+      }
+    },
+    {
+      "place_id": "ChIJs_aSK1BhQ0cRvpHgvcIWwd0",
+      "streetName": "Ištvana Rutaia",
+      "coordinates": {
+        "lat": 46.1106135,
+        "lng": 19.6948439
+      }
+    },
+    {
+      "place_id": "ChIJSRqPi8VmQ0cR1xkNYb_gT18",
+      "streetName": "Ištvana Sečenjija",
+      "coordinates": {
+        "lat": 46.1000976,
+        "lng": 19.6611057
+      }
+    },
+    {
+      "place_id": "ChIJs_aSK1BhQ0cRvpHgvcIWwd0",
+      "streetName": "Ištvana Viga",
+      "coordinates": {
+        "lat": 46.1106135,
+        "lng": 19.6948439
+      }
+    },
+    {
+      "place_id": "ChIJo0XjN9VmQ0cRrJPW9jpbR1c",
+      "streetName": "Ivana Antunovića",
+      "coordinates": {
+        "lat": 46.0864135,
+        "lng": 19.6648141
+      }
+    },
+    {
+      "place_id": "ChIJn9DnBtJmQ0cRMjki4BEjBao",
+      "streetName": "Ivana Broza",
+      "coordinates": {
+        "lat": 46.0953468,
+        "lng": 19.6660209
+      }
+    },
+    {
+      "place_id": "ChIJQec2us1mQ0cRr1agdaZKkDE",
+      "streetName": "Ivana Gorana Kovačića",
+      "coordinates": {
+        "lat": 46.0966907,
+        "lng": 19.6694391
+      }
+    },
+    {
+      "place_id": "ChIJBzSPSi9hQ0cRSYGSdOc4kIA",
+      "streetName": "Ivana Ivanića",
+      "coordinates": {
+        "lat": 46.0883389,
+        "lng": 19.6807879
+      }
+    },
+    {
+      "place_id": "ChIJx0ROlddmQ0cR1yZVQR1P3Hc",
+      "streetName": "Ivana Kukuljevića",
+      "coordinates": {
+        "lat": 46.0888866,
+        "lng": 19.6554509
+      }
+    },
+    {
+      "place_id": "ChIJbbLaYR5nQ0cRqDqYiPYspVc",
+      "streetName": "Ivana Kvale",
+      "coordinates": {
+        "lat": 46.0890289,
+        "lng": 19.6335743
+      }
+    },
+    {
+      "place_id": "ChIJoQH5eDNhQ0cRNX3aIHoSnv0",
+      "streetName": "Ivana Meštrovića",
+      "coordinates": {
+        "lat": 46.0979474,
+        "lng": 19.6780152
+      }
+    },
+    {
+      "place_id": "ChIJlzzGmi5hQ0cRUWXs6k0YfIY",
+      "streetName": "Ivana Milankovića",
+      "coordinates": {
+        "lat": 46.0901907,
+        "lng": 19.6768365
+      }
+    },
+    {
+      "place_id": "ChIJC94-ZCZnQ0cRpGGWmVd8BkI",
+      "streetName": "Ivana Sarića",
+      "coordinates": {
+        "lat": 46.0844882,
+        "lng": 19.6473684
+      }
+    },
+    {
+      "place_id": "ChIJ4dsW0MFgQ0cRhqCag4CowK8",
+      "streetName": "Ivana Turgenjeva",
+      "coordinates": {
+        "lat": 46.0664347,
+        "lng": 19.6812239
+      }
+    },
+    {
+      "place_id": "ChIJL1lwAshmQ0cR1TGF3PMAhZg",
+      "streetName": "Ivana Zajca",
+      "coordinates": {
+        "lat": 46.1054255,
+        "lng": 19.6660072
+      }
+    },
+    {
+      "place_id": "ChIJ2ZGElihhQ0cR69xd2RqApHM",
+      "streetName": "Ivana Zetovića",
+      "coordinates": {
+        "lat": 46.0868341,
+        "lng": 19.6798704
+      }
+    },
+    {
+      "place_id": "ChIJ-dxtNtxmQ0cRUSi8PvDQumE",
+      "streetName": "Ivane Brlić Mažuranić",
+      "coordinates": {
+        "lat": 46.0950864,
+        "lng": 19.6479642
+      }
+    },
+    {
+      "place_id": "ChIJ-zRpUNRmQ0cRjbTouxYFp8k",
+      "streetName": "Ivangradska",
+      "coordinates": {
+        "lat": 46.0891173,
+        "lng": 19.6640897
+      }
+    },
+    {
+      "place_id": "ChIJkwEmedRgQ0cR8r3C3l02ObA",
+      "streetName": "Ive Andrića",
+      "coordinates": {
+        "lat": 46.0808702,
+        "lng": 19.6666109
+      }
+    },
+    {
+      "place_id": "ChIJi1XjFM5mQ0cRnLh8k9xClNI",
+      "streetName": "Ive Lole Ribara",
+      "coordinates": {
+        "lat": 46.0969006,
+        "lng": 19.6649924
+      }
+    },
+    {
+      "place_id": "ChIJzx9D0JJmQ0cRXA148_lOuVI",
+      "streetName": "Ive Senjanina",
+      "coordinates": {
+        "lat": 46.1103885,
+        "lng": 19.6427822
+      }
+    },
+    {
+      "place_id": "ChIJZeQBys5mQ0cR2OddFTta_oU",
+      "streetName": "Ive Vojnovića",
+      "coordinates": {
+        "lat": 46.0999111,
+        "lng": 19.6670595
+      }
+    },
+    {
+      "place_id": "ChIJhdM6QtZgQ0cRGZdnhDdg02Y",
+      "streetName": "Izvorska",
+      "coordinates": {
+        "lat": 46.0827768,
+        "lng": 19.6727829
+      }
+    },
+    {
+      "place_id": "ChIJV8EKqNlmQ0cRmeCDWbm-SjY",
+      "streetName": "Jablanička",
+      "coordinates": {
+        "lat": 46.0913482,
+        "lng": 19.6519484
+      }
+    },
+    {
+      "place_id": "ChIJqfaq1FhmQ0cR5cu0iiMxJ30",
+      "streetName": "Jabuka",
+      "coordinates": {
+        "lat": 46.108451,
+        "lng": 19.6211799
+      }
+    },
+    {
+      "place_id": "ChIJ__Ysj9VgQ0cR4N58pr3yZGU",
+      "streetName": "Jadranska",
+      "coordinates": {
+        "lat": 46.0845652,
+        "lng": 19.669497
+      }
+    },
+    {
+      "place_id": "ChIJA_Nd_pBmQ0cRjulvqXT9sOs",
+      "streetName": "Jagoda",
+      "coordinates": {
+        "lat": 46.1161266,
+        "lng": 19.6481037
+      }
+    },
+    {
+      "place_id": "ChIJIyfTNTBhQ0cRRqCjkB6n1vY",
+      "streetName": "Jahorinska",
+      "coordinates": {
+        "lat": 46.0936951,
+        "lng": 19.6828759
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Jakšićeva",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ3zpiIO5mQ0cRSltfqHO2pb8",
+      "streetName": "Janka Čmelika",
+      "coordinates": {
+        "lat": 46.1043039,
+        "lng": 19.6360874
+      }
+    },
+    {
+      "place_id": "ChIJN_EVq91mQ0cR8pUNbmGAnB0",
+      "streetName": "Janka Veselinovića",
+      "coordinates": {
+        "lat": 46.0961504,
+        "lng": 19.6479803
+      }
+    },
+    {
+      "place_id": "ChIJwxyRw6JmQ0cRuI4Z-UgLqI0",
+      "streetName": "Janoša Aranja",
+      "coordinates": {
+        "lat": 46.1174384,
+        "lng": 19.6615413
+      }
+    },
+    {
+      "place_id": "ChIJS-Y3sGZmQ0cRA1DiyjKuf1k",
+      "streetName": "Janoša Hercega",
+      "coordinates": {
+        "lat": 46.11726,
+        "lng": 19.6227627
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Janoša Hunjadija",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ907iBdVgQ0cR_Ifoy9A7_GA",
+      "streetName": "Jaše Ignjatovića",
+      "coordinates": {
+        "lat": 46.0837505,
+        "lng": 19.6669989
+      }
+    },
+    {
+      "place_id": "ChIJC9MmuvFmQ0cRotSd0596Vug",
+      "streetName": "Jasenovačka",
+      "coordinates": {
+        "lat": 46.1049734,
+        "lng": 19.634006
+      }
+    },
+    {
+      "place_id": "ChIJ1yx71VNhQ0cRf9z6KiVAEsI",
+      "streetName": "Jasminova",
+      "coordinates": {
+        "lat": 46.1132799,
+        "lng": 19.6927652
+      }
+    },
+    {
+      "place_id": "ChIJb3tsZAVkQ0cRt0w09LB5YlQ",
+      "streetName": "Jelene Ćetković",
+      "coordinates": {
+        "lat": 46.1291579,
+        "lng": 19.6883889
+      }
+    },
+    {
+      "place_id": "ChIJWzAd_85gQ0cRmW4qj2eUZkU",
+      "streetName": "Jelene Čović",
+      "coordinates": {
+        "lat": 46.0730292,
+        "lng": 19.6674489
+      }
+    },
+    {
+      "place_id": "ChIJsywvN8BmQ0cRuFkTl87xshY",
+      "streetName": "Jenea Kalmara",
+      "coordinates": {
+        "lat": 46.1060966,
+        "lng": 19.6527761
+      }
+    },
+    {
+      "place_id": "ChIJ64umg9lmQ0cRYtqSqo8RAx0",
+      "streetName": "Jerneja Kopitara",
+      "coordinates": {
+        "lat": 46.0926263,
+        "lng": 19.6529433
+      }
+    },
+    {
+      "place_id": "ChIJ8QjthQNkQ0cRPbYxeqKiD8o",
+      "streetName": "Jesenička",
+      "coordinates": {
+        "lat": 46.1266314,
+        "lng": 19.6853651
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Jokaija Mora",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJW87PmlNhQ0cRaDMo5DQunj0",
+      "streetName": "Jorgovanska",
+      "coordinates": {
+        "lat": 46.1152825,
+        "lng": 19.6913543
+      }
+    },
+    {
+      "place_id": "ChIJUcfvuLpmQ0cRuqYBDSRV3XQ",
+      "streetName": "Jose Merkovića",
+      "coordinates": {
+        "lat": 46.1140962,
+        "lng": 19.6700388
+      }
+    },
+    {
+      "place_id": "ChIJj7PyoTFhQ0cRIxKtyrH_eQE",
+      "streetName": "Josipa Eugena Tomića",
+      "coordinates": {
+        "lat": 46.0950084,
+        "lng": 19.6816449
+      }
+    },
+    {
+      "place_id": "ChIJs7rYh-ZmQ0cR8E-OHHJq2Y8",
+      "streetName": "Josipa Kleta",
+      "coordinates": {
+        "lat": 46.0974374,
+        "lng": 19.6395689
+      }
+    },
+    {
+      "place_id": "ChIJh1IFLmZmQ0cRWZJpkyp7Eoc",
+      "streetName": "Josipa Kolumba",
+      "coordinates": {
+        "lat": 46.1153754,
+        "lng": 19.6142596
+      }
+    },
+    {
+      "place_id": "ChIJT1EEa81mQ0cRn2NbCYrwEUo",
+      "streetName": "Josipa Kozarca",
+      "coordinates": {
+        "lat": 46.0959247,
+        "lng": 19.6711357
+      }
+    },
+    {
+      "place_id": "ChIJRQPbCzVhQ0cRFOw5iEZEoO4",
+      "streetName": "Josipa Kraša",
+      "coordinates": {
+        "lat": 46.1013107,
+        "lng": 19.6796955
+      }
+    },
+    {
+      "place_id": "ChIJrSY1bMZgQ0cR_L06IBQ7t1M",
+      "streetName": "Josipa Lihta",
+      "coordinates": {
+        "lat": 46.06922609999999,
+        "lng": 19.6707228
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Josipa Slavenskog",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJkcTlb8ZgQ0cRVA_Ggt7UthQ",
+      "streetName": "Josipa Šokčića",
+      "coordinates": {
+        "lat": 46.0685506,
+        "lng": 19.6698698
+      }
+    },
+    {
+      "place_id": "ChIJ27pU5uRmQ0cRTVwwBBl-eac",
+      "streetName": "Josipa Vukovića Đide",
+      "coordinates": {
+        "lat": 46.0981405,
+        "lng": 19.6332228
+      }
+    },
+    {
+      "place_id": "ChIJMQ_G4MVgQ0cRcFKTE2j2ssY",
+      "streetName": "Josipa Zelića",
+      "coordinates": {
+        "lat": 46.0701913,
+        "lng": 19.670859
+      }
+    },
+    {
+      "place_id": "ChIJN5hQ2LBmQ0cR3sb4ieuzAFs",
+      "streetName": "Jovana Cvijića",
+      "coordinates": {
+        "lat": 46.1100119,
+        "lng": 19.6721269
+      }
+    },
+    {
+      "place_id": "ChIJcUba_wNkQ0cRHDUy_Bv0SH4",
+      "streetName": "Jovana Dučića",
+      "coordinates": {
+        "lat": 46.1262336,
+        "lng": 19.6878422
+      }
+    },
+    {
+      "place_id": "ChIJHYST1yZkQ0cRuyfdW_uqVvw",
+      "streetName": "Jovana Mikića",
+      "coordinates": {
+        "lat": 46.1294904,
+        "lng": 19.6629333
+      }
+    },
+    {
+      "place_id": "ChIJ58gwh8RgQ0cR-Ne1HaP3yq8",
+      "streetName": "Jovana Pačua",
+      "coordinates": {
+        "lat": 46.0716296,
+        "lng": 19.6768536
+      }
+    },
+    {
+      "place_id": "ChIJ52G8K6dRQ0cRYhKbGzp-EUg",
+      "streetName": "Jožefa Žakija",
+      "coordinates": {
+        "lat": 45.8727095,
+        "lng": 19.4525267
+      }
+    },
+    {
+      "place_id": "ChIJB-DZ0UZhQ0cRlkxGcBhP770",
+      "streetName": "Jug Bogdana",
+      "coordinates": {
+        "lat": 46.1028161,
+        "lng": 19.699114
+      }
+    },
+    {
+      "place_id": "ChIJmVOkY89gQ0cRKYdP-XPuJyQ",
+      "streetName": "Jurija Gagarina",
+      "coordinates": {
+        "lat": 46.07212,
+        "lng": 19.6696394
+      }
+    },
+    {
+      "place_id": "ChIJZdDQku9mQ0cRDytCoqZWXSk",
+      "streetName": "Kadinjačka",
+      "coordinates": {
+        "lat": 46.101414,
+        "lng": 19.6365516
+      }
+    },
+    {
+      "place_id": "ChIJh6mOipNmQ0cRXoeYZMQQJw0",
+      "streetName": "Kajmakčalanska",
+      "coordinates": {
+        "lat": 46.1123644,
+        "lng": 19.6484945
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Kajsija",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-W6S9_FmQ0cRqWJy6Zm21T4",
+      "streetName": "Kakanjska",
+      "coordinates": {
+        "lat": 46.1056497,
+        "lng": 19.6362571
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Kalmana Mešterhazija",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJfahneUthQ0cR9jKwRjxhtTI",
+      "streetName": "Kalnička",
+      "coordinates": {
+        "lat": 46.1072167,
+        "lng": 19.683994
+      }
+    },
+    {
+      "place_id": "ChIJc5EAJtdmQ0cRC-o5a5J-krs",
+      "streetName": "Kalora Milodanovića",
+      "coordinates": {
+        "lat": 46.0913124,
+        "lng": 19.6584634
+      }
+    },
+    {
+      "place_id": "ChIJleDRxu1gQ0cRI0n9ncJV6ig",
+      "streetName": "Kamenička",
+      "coordinates": {
+        "lat": 46.0650982,
+        "lng": 19.6925137
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Kamilice",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJX1QYmGFmQ0cRl8zg-jz3FYs",
+      "streetName": "Karađorđev put",
+      "coordinates": {
+        "lat": 46.1157288,
+        "lng": 19.6292393
+      }
+    },
+    {
+      "place_id": "ChIJjWc9P0xhQ0cRgRFso6oG_sU",
+      "streetName": "Karaš",
+      "coordinates": {
+        "lat": 46.1079727,
+        "lng": 19.6870959
+      }
+    },
+    {
+      "place_id": "ChIJY6wp4lRbQ0cRrCPq0HZ4TMQ",
+      "streetName": "Karlovačka",
+      "coordinates": {
+        "lat": 45.9959226,
+        "lng": 19.4887948
+      }
+    },
+    {
+      "place_id": "ChIJA6M7EUVvQ0cR0Dha0U-1eTY",
+      "streetName": "Karolja Bitermana",
+      "coordinates": {
+        "lat": 46.1517603,
+        "lng": 19.5802399
+      }
+    },
+    {
+      "place_id": "ChIJA6M7EUVvQ0cR0Dha0U-1eTY",
+      "streetName": "Karolja Čeha",
+      "coordinates": {
+        "lat": 46.1517603,
+        "lng": 19.5802399
+      }
+    },
+    {
+      "place_id": "ChIJt6Mc0rhmQ0cRj3LCKdDCSK0",
+      "streetName": "Karolja Čilaga",
+      "coordinates": {
+        "lat": 46.1087518,
+        "lng": 19.660471
+      }
+    },
+    {
+      "place_id": "ChIJdTYYVDphQ0cRkyew_uGQtrM",
+      "streetName": "Karolja Hendriha",
+      "coordinates": {
+        "lat": 46.0942287,
+        "lng": 19.6898119
+      }
+    },
+    {
+      "place_id": "ChIJEbWUVkRvQ0cROPypbptD1rk",
+      "streetName": "Kelebija",
+      "coordinates": {
+        "lat": 46.1519801,
+        "lng": 19.5784341
+      }
+    },
+    {
+      "place_id": "ChIJxVfFd9RgQ0cRFqQYkvoiEaI",
+      "streetName": "Kerska",
+      "coordinates": {
+        "lat": 46.0806136,
+        "lng": 19.6669865
+      }
+    },
+    {
+      "place_id": "ChIJ76NaxcRjQ0cRCoLQeQ_3U2s",
+      "streetName": "Kestenova",
+      "coordinates": {
+        "lat": 46.1242245,
+        "lng": 19.7326216
+      }
+    },
+    {
+      "place_id": "ChIJ75Zec0FkQ0cRwjPaJU_vBDY",
+      "streetName": "Kikindska",
+      "coordinates": {
+        "lat": 46.1462374,
+        "lng": 19.6776426
+      }
+    },
+    {
+      "place_id": "ChIJXc3Ll7NmQ0cRK6gr-NZnR2g",
+      "streetName": "Kireška",
+      "coordinates": {
+        "lat": 46.1091059,
+        "lng": 19.6782788
+      }
+    },
+    {
+      "place_id": "ChIJl7hrLONmQ0cRXlhAk3r4my0",
+      "streetName": "Kisačka",
+      "coordinates": {
+        "lat": 46.0954844,
+        "lng": 19.6301758
+      }
+    },
+    {
+      "place_id": "ChIJF3gY4NdmQ0cRpaUpBLEsYHI",
+      "streetName": "Kladovska",
+      "coordinates": {
+        "lat": 46.0873272,
+        "lng": 19.6539354
+      }
+    },
+    {
+      "place_id": "ChIJO7Ckz2pkQ0cR155fdv6xzws",
+      "streetName": "Klare Feješ",
+      "coordinates": {
+        "lat": 46.1425038,
+        "lng": 19.6793675
+      }
+    },
+    {
+      "place_id": "ChIJVefixtRmQ0cRP96wtDCZOCc",
+      "streetName": "Kninska",
+      "coordinates": {
+        "lat": 46.0889654,
+        "lng": 19.6668445
+      }
+    },
+    {
+      "place_id": "ChIJmQ40srlmQ0cRgbs9shNI1RQ",
+      "streetName": "Kočićeva",
+      "coordinates": {
+        "lat": 46.108581,
+        "lng": 19.6654576
+      }
+    },
+    {
+      "place_id": "ChIJ43BaqSFnQ0cReiiSLe4Wgu0",
+      "streetName": "Kolašinska",
+      "coordinates": {
+        "lat": 46.0875276,
+        "lng": 19.6410395
+      }
+    },
+    {
+      "place_id": "ChIJEazxB9ZmQ0cRDG5f-DZq910",
+      "streetName": "Kolubarska",
+      "coordinates": {
+        "lat": 46.0874462,
+        "lng": 19.6599045
+      }
+    },
+    {
+      "place_id": "ChIJw16bVcdmQ0cRIsG9JWAV_jo",
+      "streetName": "Konstantina Petrovića",
+      "coordinates": {
+        "lat": 46.1066024,
+        "lng": 19.6602219
+      }
+    },
+    {
+      "place_id": "ChIJ8y62WbJmQ0cRrXs4M5OFI_o",
+      "streetName": "Kopaonička",
+      "coordinates": {
+        "lat": 46.1108552,
+        "lng": 19.6795642
+      }
+    },
+    {
+      "place_id": "ChIJZytZ9F5mQ0cRUKyJF2_BXPg",
+      "streetName": "Koparska",
+      "coordinates": {
+        "lat": 46.1111583,
+        "lng": 19.6217322
+      }
+    },
+    {
+      "place_id": "ChIJw-BZyOxmQ0cRAKU2AiF10kI",
+      "streetName": "Kordunska",
+      "coordinates": {
+        "lat": 46.1087153,
+        "lng": 19.6444963
+      }
+    },
+    {
+      "place_id": "ChIJC4ghXZhmQ0cR87RX_Xngh6U",
+      "streetName": "Kornela Sentelekija",
+      "coordinates": {
+        "lat": 46.1190685,
+        "lng": 19.6582761
+      }
+    },
+    {
+      "place_id": "ChIJk_onBC1hQ0cRDiwPcoOGTBw",
+      "streetName": "Koruška",
+      "coordinates": {
+        "lat": 46.0923744,
+        "lng": 19.6736115
+      }
+    },
+    {
+      "place_id": "ChIJYRhtSslmQ0cRvEukQqqGF9Y",
+      "streetName": "Korzo",
+      "coordinates": {
+        "lat": 46.1005677,
+        "lng": 19.6677916
+      }
+    },
+    {
+      "place_id": "ChIJZUBiouBmQ0cRE_mTncg8fqk",
+      "streetName": "Kosmajska",
+      "coordinates": {
+        "lat": 46.0941341,
+        "lng": 19.6426642
+      }
+    },
+    {
+      "place_id": "ChIJy_V8k7tmQ0cRhg2M-N7zxNY",
+      "streetName": "Kosovska",
+      "coordinates": {
+        "lat": 46.1118537,
+        "lng": 19.6646154
+      }
+    },
+    {
+      "place_id": "ChIJjfBLoTZhQ0cRF3hlYlWIR9A",
+      "streetName": "Koste Abraševića",
+      "coordinates": {
+        "lat": 46.0985635,
+        "lng": 19.6828832
+      }
+    },
+    {
+      "place_id": "ChIJpYaCMbhmQ0cR_thwOTuBa0s",
+      "streetName": "Koste Racina",
+      "coordinates": {
+        "lat": 46.1082535,
+        "lng": 19.6657508
+      }
+    },
+    {
+      "place_id": "ChIJ1Q9Vqa9mQ0cR0jhmSvL156w",
+      "streetName": "Koste Trifkovića",
+      "coordinates": {
+        "lat": 46.1160216,
+        "lng": 19.6761776
+      }
+    },
+    {
+      "place_id": "ChIJl7nJA9hmQ0cRjP85qhZDh7U",
+      "streetName": "Kostolačka",
+      "coordinates": {
+        "lat": 46.0881035,
+        "lng": 19.6526045
+      }
+    },
+    {
+      "place_id": "ChIJ2TFcf5NmQ0cRH9bGHwTOU28",
+      "streetName": "Kozaračka",
+      "coordinates": {
+        "lat": 46.1114949,
+        "lng": 19.647181
+      }
+    },
+    {
+      "place_id": "ChIJBdwZlq5mQ0cRxqnJm0Ei0pA",
+      "streetName": "Kozjačka",
+      "coordinates": {
+        "lat": 46.1167844,
+        "lng": 19.6796971
+      }
+    },
+    {
+      "place_id": "ChIJ328zib9mQ0cRNx6ZQafrL94",
+      "streetName": "Kragujevačkih žrtava",
+      "coordinates": {
+        "lat": 46.1078781,
+        "lng": 19.6557856
+      }
+    },
+    {
+      "place_id": "ChIJJX6-Je5mQ0cRkZUNTlnrmQw",
+      "streetName": "Krajiška",
+      "coordinates": {
+        "lat": 46.1040344,
+        "lng": 19.6365358
+      }
+    },
+    {
+      "place_id": "ChIJLVZy4dVmQ0cRtloZQ2wIBbQ",
+      "streetName": "Kralja Zvonimira",
+      "coordinates": {
+        "lat": 46.0880587,
+        "lng": 19.6606059
+      }
+    },
+    {
+      "place_id": "ChIJn4krocJmQ0cRZopjBED4Q_w",
+      "streetName": "Kranjčevićeva",
+      "coordinates": {
+        "lat": 46.0997957,
+        "lng": 19.6469589
+      }
+    },
+    {
+      "place_id": "ChIJh46864pmQ0cRONcmnYEkRlU",
+      "streetName": "Krapinska",
+      "coordinates": {
+        "lat": 46.1128504,
+        "lng": 19.6290386
+      }
+    },
+    {
+      "place_id": "ChIJ8YbSyxhkQ0cR-9irbMIJw3c",
+      "streetName": "Krfska",
+      "coordinates": {
+        "lat": 46.1301551,
+        "lng": 19.6707523
+      }
+    },
+    {
+      "place_id": "ChIJz141HZlmQ0cRhD9FRl9eVPI",
+      "streetName": "Kristofera Kolumba",
+      "coordinates": {
+        "lat": 46.1200866,
+        "lng": 19.6576546
+      }
+    },
+    {
+      "place_id": "ChIJT28U14pmQ0cRjkkuaQbPPvQ",
+      "streetName": "Krivajska",
+      "coordinates": {
+        "lat": 46.1126049,
+        "lng": 19.6301539
+      }
+    },
+    {
+      "place_id": "ChIJZa_WDMVmQ0cRIOuxj3Nr3hg",
+      "streetName": "Krojačka",
+      "coordinates": {
+        "lat": 46.1000064,
+        "lng": 19.6579474
+      }
+    },
+    {
+      "place_id": "ChIJ_VU8Om9mQ0cRjkhNhbXVZRk",
+      "streetName": "Krušaka",
+      "coordinates": {
+        "lat": 46.1208409,
+        "lng": 19.6153825
+      }
+    },
+    {
+      "place_id": "ChIJdX6tZCFnQ0cRIeTdW4S7x3s",
+      "streetName": "Krušedolska",
+      "coordinates": {
+        "lat": 46.0855821,
+        "lng": 19.6414972
+      }
+    },
+    {
+      "place_id": "ChIJP1e_f6NmQ0cRwbpOYvov9EE",
+      "streetName": "Kruševačka",
+      "coordinates": {
+        "lat": 46.1178371,
+        "lng": 19.6665895
+      }
+    },
+    {
+      "place_id": "ChIJb139525mQ0cR6huVdmrVRXw",
+      "streetName": "Krznarska",
+      "coordinates": {
+        "lat": 46.1210033,
+        "lng": 19.6140048
+      }
+    },
+    {
+      "place_id": "ChIJvajvguhmQ0cR2BaPETadwa4",
+      "streetName": "Ksavera Šandora Đalskog",
+      "coordinates": {
+        "lat": 46.0992452,
+        "lng": 19.6417308
+      }
+    },
+    {
+      "place_id": "ChIJLw76AZhmQ0cR2eBhiibfziU",
+      "streetName": "Kulska",
+      "coordinates": {
+        "lat": 46.1170042,
+        "lng": 19.6585912
+      }
+    },
+    {
+      "place_id": "ChIJr2SbcshmQ0cRn1SAGa-zi5U",
+      "streetName": "Kumanovska",
+      "coordinates": {
+        "lat": 46.1043135,
+        "lng": 19.6659498
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Kumrovečka",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Kupina",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ3XDwg5JmQ0cRfV9kaA7CsME",
+      "streetName": "Kupusinska",
+      "coordinates": {
+        "lat": 46.1123319,
+        "lng": 19.641166
+      }
+    },
+    {
+      "place_id": "ChIJ_W7MuixhQ0cR8AWo8YumVnw",
+      "streetName": "Kvarnerska",
+      "coordinates": {
+        "lat": 46.0904383,
+        "lng": 19.6704326
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Lajoš Joa",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Lajoša Hušveta",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJm7lGmU1hQ0cRiyoOf21P930",
+      "streetName": "Lajoša Turzoa",
+      "coordinates": {
+        "lat": 46.1107845,
+        "lng": 19.6879587
+      }
+    },
+    {
+      "place_id": "ChIJo-SGCPNmQ0cRswP1_UaH2kQ",
+      "streetName": "Lasla Gala",
+      "coordinates": {
+        "lat": 46.1081598,
+        "lng": 19.6334714
+      }
+    },
+    {
+      "place_id": "ChIJeyArOutmQ0cRHNZ-Nb-rVek",
+      "streetName": "Lasla Sekereša",
+      "coordinates": {
+        "lat": 46.1081229,
+        "lng": 19.6480841
+      }
+    },
+    {
+      "place_id": "ChIJoU90lVNhQ0cR8iumKD2ypuU",
+      "streetName": "Lastina",
+      "coordinates": {
+        "lat": 46.1146652,
+        "lng": 19.6918237
+      }
+    },
+    {
+      "place_id": "ChIJFRZq4ypnQ0cRHTcWdWASSnw",
+      "streetName": "Lazara Bačića",
+      "coordinates": {
+        "lat": 46.084182,
+        "lng": 19.6621537
+      }
+    },
+    {
+      "place_id": "ChIJuYai0SlnQ0cRL3I8sC1VIXo",
+      "streetName": "Lazara Horvatskog",
+      "coordinates": {
+        "lat": 46.0870432,
+        "lng": 19.6564938
+      }
+    },
+    {
+      "place_id": "ChIJzWfEEsRgQ0cR0-mTIRCID3M",
+      "streetName": "Lazarevačka",
+      "coordinates": {
+        "lat": 46.0706666,
+        "lng": 19.6754325
+      }
+    },
+    {
+      "place_id": "ChIJnef3e7lmQ0cRQPZlY03T6Ng",
+      "streetName": "Laze Lazarevića",
+      "coordinates": {
+        "lat": 46.1106339,
+        "lng": 19.6649587
+      }
+    },
+    {
+      "place_id": "ChIJkfwML9tmQ0cRAUIn2NKLxTA",
+      "streetName": "Laze Mamužića",
+      "coordinates": {
+        "lat": 46.0971505,
+        "lng": 19.6552501
+      }
+    },
+    {
+      "place_id": "ChIJAQigU8FmQ0cRMX51bjtf614",
+      "streetName": "Laze Stipića",
+      "coordinates": {
+        "lat": 46.1027454,
+        "lng": 19.6561772
+      }
+    },
+    {
+      "place_id": "ChIJEcI-zqJmQ0cRiYK4lJrjZSU",
+      "streetName": "Leonarda Da Vinčija",
+      "coordinates": {
+        "lat": 46.1165612,
+        "lng": 19.6616324
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Lepa",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJtci0OCpnQ0cRCpejF9iDDAQ",
+      "streetName": "Lepenička",
+      "coordinates": {
+        "lat": 46.0852594,
+        "lng": 19.6599196
+      }
+    },
+    {
+      "place_id": "ChIJUUxERSpnQ0cRbrQ8IOw1Ckc",
+      "streetName": "Leskovačka",
+      "coordinates": {
+        "lat": 46.0848612,
+        "lng": 19.6606006
+      }
+    },
+    {
+      "place_id": "ChIJo8D7ubRmQ0cRPbUiNMhAlps",
+      "streetName": "Lička",
+      "coordinates": {
+        "lat": 46.1072424,
+        "lng": 19.6808846
+      }
+    },
+    {
+      "place_id": "ChIJ5--SVSBnQ0cRukYb7tNNd2o",
+      "streetName": "Limska",
+      "coordinates": {
+        "lat": 46.0877051,
+        "lng": 19.6419855
+      }
+    },
+    {
+      "place_id": "ChIJGf_dc7xmQ0cRKEpqd95GLfk",
+      "streetName": "Liparska",
+      "coordinates": {
+        "lat": 46.1126235,
+        "lng": 19.6627915
+      }
+    },
+    {
+      "place_id": "EhpMaXZhZHNrYSwgU3Vib3RpY2EsIFNlcmJpYSIuKiwKFAoSCdUbXhjVY0NHEdQG8u8TiS90EhQKEgn5OK9owWZDRxGOgz0qkr0Z3w",
+      "streetName": "Livadska",
+      "coordinates": {
+        "lat": 46.1182383,
+        "lng": 19.7399718
+      }
+    },
+    {
+      "place_id": "ChIJsQOuEDlkQ0cR9P-jM9oZZj8",
+      "streetName": "Ljermontovljeva",
+      "coordinates": {
+        "lat": 46.1417978,
+        "lng": 19.667397
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Ljiljana",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJL7gHi5JhQ0cRGon-a1gG4Ig",
+      "streetName": "Ljube Nenadovića",
+      "coordinates": {
+        "lat": 46.0845144,
+        "lng": 19.6879049
+      }
+    },
+    {
+      "place_id": "ChIJp9DC50VhQ0cRzGVYks9QJu8",
+      "streetName": "Ljube Šercera",
+      "coordinates": {
+        "lat": 46.1054237,
+        "lng": 19.6957316
+      }
+    },
+    {
+      "place_id": "ChIJOZSwSR1kQ0cRPFd3brynt-g",
+      "streetName": "Ljubice Ivošević",
+      "coordinates": {
+        "lat": 46.1237678,
+        "lng": 19.6765888
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Lole Vohl",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJadrtyjphQ0cRG9zwAcJBrh0",
+      "streetName": "Lošinjska",
+      "coordinates": {
+        "lat": 46.091939,
+        "lng": 19.6858014
+      }
+    },
+    {
+      "place_id": "ChIJ_fetHOpgQ0cRON7SFkthEi4",
+      "streetName": "Lovćenska",
+      "coordinates": {
+        "lat": 46.0675012,
+        "lng": 19.6825378
+      }
+    },
+    {
+      "place_id": "ChIJO-ujHyphQ0cR9t3KQUr2TXU",
+      "streetName": "Lovre Bračuljevića",
+      "coordinates": {
+        "lat": 46.0857662,
+        "lng": 19.6727644
+      }
+    },
+    {
+      "place_id": "ChIJAX79_i9hQ0cRAOUteaB0Km8",
+      "streetName": "Loznička",
+      "coordinates": {
+        "lat": 46.0921698,
+        "lng": 19.6846569
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Luja Armstronga",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ6WUR2xRkQ0cRm9m9LDoZbOE",
+      "streetName": "Luja Pastera",
+      "coordinates": {
+        "lat": 46.1418043,
+        "lng": 19.681157
+      }
+    },
+    {
+      "place_id": "ChIJ-ScF4sBmQ0cRlikdsnGmYE8",
+      "streetName": "Luke Botića",
+      "coordinates": {
+        "lat": 46.1054716,
+        "lng": 19.6553649
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Luke Karagića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJnc-1vOlmQ0cR0PyHaT6mLC8",
+      "streetName": "Luke Perkovića",
+      "coordinates": {
+        "lat": 46.1021248,
+        "lng": 19.6457821
+      }
+    },
+    {
+      "place_id": "ChIJ008f-9FmQ0cRcbVi_5WISoA",
+      "streetName": "Luke Sučića",
+      "coordinates": {
+        "lat": 46.0956686,
+        "lng": 19.664736
+      }
+    },
+    {
+      "place_id": "ChIJm4r0Q2BmQ0cRYXpW8SF1CtM",
+      "streetName": "Maćaša Bruka",
+      "coordinates": {
+        "lat": 46.1145163,
+        "lng": 19.626736
+      }
+    },
+    {
+      "place_id": "ChIJqxrXAyZnQ0cRLegjTkHMJiw",
+      "streetName": "Mačvanska",
+      "coordinates": {
+        "lat": 46.0837731,
+        "lng": 19.649621
+      }
+    },
+    {
+      "place_id": "ChIJHbzNnuZmQ0cRrAb_Yl5b2mE",
+      "streetName": "Maglajska",
+      "coordinates": {
+        "lat": 46.096407,
+        "lng": 19.6379703
+      }
+    },
+    {
+      "place_id": "ChIJ7-jWYEdhQ0cRraogJ0gRERU",
+      "streetName": "Magnetna polja",
+      "coordinates": {
+        "lat": 46.0978285,
+        "lng": 19.6968892
+      }
+    },
+    {
+      "place_id": "ChIJ80PohO1mQ0cRRABg3phT-Eg",
+      "streetName": "Majevička",
+      "coordinates": {
+        "lat": 46.1074088,
+        "lng": 19.6386905
+      }
+    },
+    {
+      "place_id": "ChIJxfENf6dmQ0cRHh9cCcWpn_M",
+      "streetName": "Majšanski put",
+      "coordinates": {
+        "lat": 46.1141674,
+        "lng": 19.6722685
+      }
+    },
+    {
+      "place_id": "ChIJL58-9KRmQ0cR65m-br0FKE0",
+      "streetName": "Makarska",
+      "coordinates": {
+        "lat": 46.1172905,
+        "lng": 19.6687567
+      }
+    },
+    {
+      "place_id": "ChIJFf8quPRmQ0cR8F6Gs_2nO9U",
+      "streetName": "Makedonska",
+      "coordinates": {
+        "lat": 46.1110128,
+        "lng": 19.6318447
+      }
+    },
+    {
+      "place_id": "ChIJvVj32M1mQ0cRuc20WiIC2eU",
+      "streetName": "Maksima Gorkog",
+      "coordinates": {
+        "lat": 46.0979387,
+        "lng": 19.6661679
+      }
+    },
+    {
+      "place_id": "ChIJH9HvVoFmQ0cRJa0IpB37KCI",
+      "streetName": "Malina",
+      "coordinates": {
+        "lat": 46.1250805,
+        "lng": 19.6430306
+      }
+    },
+    {
+      "place_id": "ChIJ6b_-psBgQ0cRvq9ihWmjkzY",
+      "streetName": "Mare Đorđević Malagurski",
+      "coordinates": {
+        "lat": 46.0652163,
+        "lng": 19.6743942
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Mariborska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJIxUSdtxmQ0cRwdaZaRnGUqs",
+      "streetName": "Marije Bursać",
+      "coordinates": {
+        "lat": 46.0949525,
+        "lng": 19.6506035
+      }
+    },
+    {
+      "place_id": "ChIJ4_JDPTdhQ0cRfrXAkONsqbE",
+      "streetName": "Marije Kiri",
+      "coordinates": {
+        "lat": 46.0978801,
+        "lng": 19.6864432
+      }
+    },
+    {
+      "place_id": "ChIJqf5vkMpmQ0cRMeOexIFlta4",
+      "streetName": "Marije Vojnić Tošinice",
+      "coordinates": {
+        "lat": 46.1031062,
+        "lng": 19.6758807
+      }
+    },
+    {
+      "place_id": "ChIJl8uj0edmQ0cRp_4AOLWXzbk",
+      "streetName": "Marka Kraljevića",
+      "coordinates": {
+        "lat": 46.0990811,
+        "lng": 19.6436485
+      }
+    },
+    {
+      "place_id": "ChIJIVsFMelmQ0cRr0L3BiwvvqE",
+      "streetName": "Marka Marulića",
+      "coordinates": {
+        "lat": 46.1031576,
+        "lng": 19.643108
+      }
+    },
+    {
+      "place_id": "ChIJlcSZ0tZmQ0cRdj7BHKg61Qg",
+      "streetName": "Marka Oreškovića",
+      "coordinates": {
+        "lat": 46.0917765,
+        "lng": 19.6599834
+      }
+    },
+    {
+      "place_id": "ChIJ6SLUSxhkQ0cR-OGE_uhesrI",
+      "streetName": "Marka Peričina Kamenjara",
+      "coordinates": {
+        "lat": 46.132408,
+        "lng": 19.6738636
+      }
+    },
+    {
+      "place_id": "ChIJK_VpEUxhQ0cRhr1sMu0w-Lg",
+      "streetName": "Maroš",
+      "coordinates": {
+        "lat": 46.1078765,
+        "lng": 19.6884931
+      }
+    },
+    {
+      "place_id": "ChIJ62ogEX1hQ0cRCPTMsUYe8dE",
+      "streetName": "Martonoška",
+      "coordinates": {
+        "lat": 46.1116667,
+        "lng": 19.7307866
+      }
+    },
+    {
+      "place_id": "ChIJEbUuLSxhQ0cRosWJ5gl1hiY",
+      "streetName": "Masarikova",
+      "coordinates": {
+        "lat": 46.0901907,
+        "lng": 19.6768365
+      }
+    },
+    {
+      "place_id": "ChIJHzFCLtJmQ0cROhLEuOxV2Qs",
+      "streetName": "Matije Gupca",
+      "coordinates": {
+        "lat": 46.0939406,
+        "lng": 19.6649641
+      }
+    },
+    {
+      "place_id": "ChIJ5a9rUMhmQ0cRKkmCnY6OvIk",
+      "streetName": "Matije Korvina",
+      "coordinates": {
+        "lat": 46.1020984,
+        "lng": 19.6679353
+      }
+    },
+    {
+      "place_id": "ChIJHzFCLtJmQ0cROhLEuOxV2Qs",
+      "streetName": "Matije Poljakovića",
+      "coordinates": {
+        "lat": 46.0939406,
+        "lng": 19.6649641
+      }
+    },
+    {
+      "place_id": "ChIJr1Ghfs9mQ0cRho2Rghpy_BY",
+      "streetName": "Matka Vukovića",
+      "coordinates": {
+        "lat": 46.0993271,
+        "lng": 19.6617803
+      }
+    },
+    {
+      "place_id": "ChIJLdG5pSpnQ0cRZIMUwxlOdGI",
+      "streetName": "Matoševa",
+      "coordinates": {
+        "lat": 46.0855918,
+        "lng": 19.664488
+      }
+    },
+    {
+      "place_id": "ChIJD0dHiSBnQ0cRLCmiwROp114",
+      "streetName": "Mavrovska",
+      "coordinates": {
+        "lat": 46.0894837,
+        "lng": 19.6424445
+      }
+    },
+    {
+      "place_id": "ChIJye8lUNtmQ0cR5JTTp3rXrjo",
+      "streetName": "Mažuranićeva",
+      "coordinates": {
+        "lat": 46.0974188,
+        "lng": 19.653216
+      }
+    },
+    {
+      "place_id": "ChIJYfVFpu5mQ0cR4e-9oa1olMI",
+      "streetName": "Metohijska",
+      "coordinates": {
+        "lat": 46.1046556,
+        "lng": 19.6418413
+      }
+    },
+    {
+      "place_id": "ChIJcV6ehOdmQ0cR8m7yBMRo_gY",
+      "streetName": "Mičurinova",
+      "coordinates": {
+        "lat": 46.0965223,
+        "lng": 19.6435332
+      }
+    },
+    {
+      "place_id": "ChIJUaBbVLVmQ0cRNmsIYkeJA0s",
+      "streetName": "Mihajla Pupina",
+      "coordinates": {
+        "lat": 46.1038663,
+        "lng": 19.6780954
+      }
+    },
+    {
+      "place_id": "ChIJuVz1ftpmQ0cRB_gDymmavBI",
+      "streetName": "Mihajla Radnića",
+      "coordinates": {
+        "lat": 46.0940678,
+        "lng": 19.6575822
+      }
+    },
+    {
+      "place_id": "ChIJlaVaQYtmQ0cRyi3rP1LHKnM",
+      "streetName": "Mihalja Majtenjija",
+      "coordinates": {
+        "lat": 46.1122548,
+        "lng": 19.6327908
+      }
+    },
+    {
+      "place_id": "ChIJ2-7K3LFmQ0cRz27AWEePifQ",
+      "streetName": "Mihalja Servoa",
+      "coordinates": {
+        "lat": 46.1130326,
+        "lng": 19.6758485
+      }
+    },
+    {
+      "place_id": "ChIJxc-O6S5hQ0cReKo9-s9M-OI",
+      "streetName": "Mihovila Pavleka Miškina",
+      "coordinates": {
+        "lat": 46.0900517,
+        "lng": 19.6785326
+      }
+    },
+    {
+      "place_id": "ChIJjxB0jtBmQ0cRUjOLO4_T7F4",
+      "streetName": "Mije Mandića",
+      "coordinates": {
+        "lat": 46.0936319,
+        "lng": 19.6579689
+      }
+    },
+    {
+      "place_id": "ChIJqb_FHGBmQ0cRIrbjjl5DdEA",
+      "streetName": "Mikloša Geršona",
+      "coordinates": {
+        "lat": 46.1133004,
+        "lng": 19.6275634
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Mikloša Radnotija",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ9wIba65mQ0cR7m_3W_j29mM",
+      "streetName": "Mikloša Saboa",
+      "coordinates": {
+        "lat": 46.1146614,
+        "lng": 19.6777153
+      }
+    },
+    {
+      "place_id": "ChIJA_hJmrpmQ0cR4FF-JX3Q1Jw",
+      "streetName": "Mikloša Švalba",
+      "coordinates": {
+        "lat": 46.1133076,
+        "lng": 19.6700236
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Milana Konjovića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJJavCz1lnQ0cR3C_3EO2qLzE",
+      "streetName": "Miloša Crnjanskog",
+      "coordinates": {
+        "lat": 46.1089524,
+        "lng": 19.6761541
+      }
+    },
+    {
+      "place_id": "ChIJvfOcdLhmQ0cRZsPXPMWPrNg",
+      "streetName": "Miloša Obilića",
+      "coordinates": {
+        "lat": 46.1055499,
+        "lng": 19.6638376
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Milovana Glišića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJCzD2R5hmQ0cRsY8-QAwMOX0",
+      "streetName": "Miltona Manakija",
+      "coordinates": {
+        "lat": 46.1186517,
+        "lng": 19.6573486
+      }
+    },
+    {
+      "place_id": "ChIJzwxuj8FgQ0cRFfxpR8JLOi4",
+      "streetName": "Milutina Bojića",
+      "coordinates": {
+        "lat": 46.0680947,
+        "lng": 19.6801829
+      }
+    },
+    {
+      "place_id": "ChIJJyHjp6ZmQ0cR5I4eJThaM5w",
+      "streetName": "Milutina Uskokovića",
+      "coordinates": {
+        "lat": 46.1198515,
+        "lng": 19.6700755
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Mira",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJbbcocs1mQ0cR9mthV1-d8TA",
+      "streetName": "Mirka Bogovića",
+      "coordinates": {
+        "lat": 46.0957591,
+        "lng": 19.6701541
+      }
+    },
+    {
+      "place_id": "ChIJa6mWa9JmQ0cRHjyeBJNPaIE",
+      "streetName": "Mirka Pavića",
+      "coordinates": {
+        "lat": 46.094454,
+        "lng": 19.6672708
+      }
+    },
+    {
+      "place_id": "ChIJixjp46NmQ0cRvpNoDBl_cDE",
+      "streetName": "Miroslava Antića",
+      "coordinates": {
+        "lat": 46.1199975,
+        "lng": 19.667421
+      }
+    },
+    {
+      "place_id": "ChIJ55Ey0-tgQ0cR_48zF5y8mVE",
+      "streetName": "Mitra Bakića",
+      "coordinates": {
+        "lat": 46.0672589,
+        "lng": 19.6850149
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Mladenovačka",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Mlinarska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJNTDe2PRmQ0cRt8JrfpWwSak",
+      "streetName": "Mohačka",
+      "coordinates": {
+        "lat": 46.1113274,
+        "lng": 19.6305909
+      }
+    },
+    {
+      "place_id": "ChIJNfZzB-lgQ0cRFw6nrEKN9Ac",
+      "streetName": "Moravička",
+      "coordinates": {
+        "lat": 46.0694652,
+        "lng": 19.6865414
+      }
+    },
+    {
+      "place_id": "ChIJK5ZRm9VmQ0cRQpGYOYrV2yU",
+      "streetName": "Moravska",
+      "coordinates": {
+        "lat": 46.0869982,
+        "lng": 19.6627607
+      }
+    },
+    {
+      "place_id": "ChIJ5_m249NmQ0cRrXctCjyJv-E",
+      "streetName": "Mornarska",
+      "coordinates": {
+        "lat": 46.0919913,
+        "lng": 19.6632314
+      }
+    },
+    {
+      "place_id": "ChIJodnm7ipnQ0cR-9GYZluRU-o",
+      "streetName": "Moslovačka",
+      "coordinates": {
+        "lat": 46.0846294,
+        "lng": 19.6627309
+      }
+    },
+    {
+      "place_id": "ChIJpVFRMepgQ0cR3or2ArPuAPc",
+      "streetName": "Mosorska",
+      "coordinates": {
+        "lat": 46.0669455,
+        "lng": 19.6841796
+      }
+    },
+    {
+      "place_id": "ChIJJy6cGN1mQ0cRQYikh6dPejs",
+      "streetName": "Mostarska",
+      "coordinates": {
+        "lat": 46.097802,
+        "lng": 19.649241
+      }
+    },
+    {
+      "place_id": "ChIJTY__EMFgQ0cRzP_IF06qwUo",
+      "streetName": "Murska",
+      "coordinates": {
+        "lat": 46.0673901,
+        "lng": 19.6766836
+      }
+    },
+    {
+      "place_id": "ChIJF4k3cONjQ0cRLxAYQKzewek",
+      "streetName": "Muškatla",
+      "coordinates": {
+        "lat": 46.1215741,
+        "lng": 19.7082388
+      }
+    },
+    {
+      "place_id": "ChIJ7xJ3UyphQ0cRrLrwqkMCC_I",
+      "streetName": "Nade Dimić",
+      "coordinates": {
+        "lat": 46.0871206,
+        "lng": 19.6710879
+      }
+    },
+    {
+      "place_id": "ChIJgyK25admQ0cR4HvPFcGkCV4",
+      "streetName": "Nadežde Petrović",
+      "coordinates": {
+        "lat": 46.1226228,
+        "lng": 19.6773793
+      }
+    },
+    {
+      "place_id": "ChIJke47HMdgQ0cRGDGAFg2q6SU",
+      "streetName": "Napravnik Karela",
+      "coordinates": {
+        "lat": 46.0671088,
+        "lng": 19.6719295
+      }
+    },
+    {
+      "place_id": "ChIJdXwu7vJmQ0cRXBgaNytzmRY",
+      "streetName": "Narodnog fronta",
+      "coordinates": {
+        "lat": 46.108793,
+        "lng": 19.6365327
+      }
+    },
+    {
+      "place_id": "ChIJq5ulqBNkQ0cRjH6_rLwTH_Y",
+      "streetName": "Negotinska",
+      "coordinates": {
+        "lat": 46.1391559,
+        "lng": 19.6854597
+      }
+    },
+    {
+      "place_id": "ChIJ120uYfVmQ0cRFDkq42JYCDo",
+      "streetName": "Nemirne ravnice",
+      "coordinates": {
+        "lat": 46.1115042,
+        "lng": 19.6273541
+      }
+    },
+    {
+      "place_id": "ChIJcwr8FExhQ0cR8bdTtzR1P4I",
+      "streetName": "Nera",
+      "coordinates": {
+        "lat": 46.1077487,
+        "lng": 19.6872648
+      }
+    },
+    {
+      "place_id": "ChIJF_TW7ahmQ0cRK_17fd9D7_A",
+      "streetName": "Nevesinjska",
+      "coordinates": {
+        "lat": 46.1194472,
+        "lng": 19.6773076
+      }
+    },
+    {
+      "place_id": "ChIJI_Ni949mQ0cRZSWNNXweZ2U",
+      "streetName": "Nikole Demonje",
+      "coordinates": {
+        "lat": 46.1187728,
+        "lng": 19.644911
+      }
+    },
+    {
+      "place_id": "ChIJp_a3hDphQ0cRLAAzpd4iLFs",
+      "streetName": "Nikole Kopernika",
+      "coordinates": {
+        "lat": 46.0937407,
+        "lng": 19.6867993
+      }
+    },
+    {
+      "place_id": "ChIJARSqIsVmQ0cRGepBj6lghKs",
+      "streetName": "Nikole Kujundžića",
+      "coordinates": {
+        "lat": 46.0984465,
+        "lng": 19.6577835
+      }
+    },
+    {
+      "place_id": "ChIJvUjb1yhhQ0cRt7jsD4dNLCg",
+      "streetName": "Nikole Matkovića",
+      "coordinates": {
+        "lat": 46.0885239,
+        "lng": 19.6778655
+      }
+    },
+    {
+      "place_id": "ChIJu-p2grZmQ0cRfTbsvaWfYjc",
+      "streetName": "Nikšićka",
+      "coordinates": {
+        "lat": 46.1071714,
+        "lng": 19.6736331
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Nila Armstronga",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJSbkaLl5mQ0cRbczq7WNlHZA",
+      "streetName": "Nišavska",
+      "coordinates": {
+        "lat": 46.112538,
+        "lng": 19.6232879
+      }
+    },
+    {
+      "place_id": "ChIJMeNBQ8JmQ0cRuUVeoAwd0k0",
+      "streetName": "Niška",
+      "coordinates": {
+        "lat": 46.1018668,
+        "lng": 19.6509318
+      }
+    },
+    {
+      "place_id": "ChIJse2W1zZhQ0cRfGjFewH6kMs",
+      "streetName": "Njegoševa",
+      "coordinates": {
+        "lat": 46.0978689,
+        "lng": 19.6851021
+      }
+    },
+    {
+      "place_id": "ChIJOSPD9S1hQ0cRF38g4d-mE9o",
+      "streetName": "Novaka Radonića",
+      "coordinates": {
+        "lat": 46.0937334,
+        "lng": 19.6776223
+      }
+    },
+    {
+      "place_id": "ChIJNwkOm8dmQ0cR9Mey4rBKAyo",
+      "streetName": "Novosadska",
+      "coordinates": {
+        "lat": 46.1054902,
+        "lng": 19.6624944
+      }
+    },
+    {
+      "place_id": "ChIJQf05heVmQ0cRZDrOVoNfCTE",
+      "streetName": "Novoselska",
+      "coordinates": {
+        "lat": 46.1000395,
+        "lng": 19.6374131
+      }
+    },
+    {
+      "place_id": "ChIJf80AnopmQ0cRAsrxEP1sv-8",
+      "streetName": "Obrenovačka",
+      "coordinates": {
+        "lat": 46.1136648,
+        "lng": 19.6280086
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Obućarska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJf91lK7lmQ0cR8I5PFf01Xos",
+      "streetName": "Ognjena Price",
+      "coordinates": {
+        "lat": 46.1089938,
+        "lng": 19.660871
+      }
+    },
+    {
+      "place_id": "ChIJHXjb_NdmQ0cRpBnzz2kmn3k",
+      "streetName": "Ogulinska",
+      "coordinates": {
+        "lat": 46.087746,
+        "lng": 19.6534596
+      }
+    },
+    {
+      "place_id": "ChIJrXtNt0lhQ0cR1S9L_iwQrzY",
+      "streetName": "Ohridska",
+      "coordinates": {
+        "lat": 46.102976,
+        "lng": 19.688369
+      }
+    },
+    {
+      "place_id": "ChIJO9gA1qhmQ0cRtAPbsTszOsw",
+      "streetName": "Olimpijska",
+      "coordinates": {
+        "lat": 46.118414,
+        "lng": 19.6783356
+      }
+    },
+    {
+      "place_id": "ChIJRaUObO9mQ0cRTawnivUAZDk",
+      "streetName": "Omiška",
+      "coordinates": {
+        "lat": 46.1013856,
+        "lng": 19.6385051
+      }
+    },
+    {
+      "place_id": "ChIJifY0bRVkQ0cRANl3Fecmu_I",
+      "streetName": "Omladinska",
+      "coordinates": {
+        "lat": 46.1406305,
+        "lng": 19.6792066
+      }
+    },
+    {
+      "place_id": "ChIJv08ogLxmQ0cRjYsiJlw1N64",
+      "streetName": "Orahova",
+      "coordinates": {
+        "lat": 46.1133933,
+        "lng": 19.6641004
+      }
+    },
+    {
+      "place_id": "ChIJG9CDFU9hQ0cR5KIj76Ysrko",
+      "streetName": "Oromska",
+      "coordinates": {
+        "lat": 46.1072159,
+        "lng": 19.694473
+      }
+    },
+    {
+      "place_id": "ChIJy8cgrBdkQ0cR8T8ET2FOZGE",
+      "streetName": "Osječka",
+      "coordinates": {
+        "lat": 46.1355508,
+        "lng": 19.676109
+      }
+    },
+    {
+      "place_id": "ChIJJ5XydStnQ0cRhGENH8eF66Y",
+      "streetName": "Otmara Majera",
+      "coordinates": {
+        "lat": 46.0828212,
+        "lng": 19.6602074
+      }
+    },
+    {
+      "place_id": "ChIJWQ69Jr9mQ0cRE6_yDQyKpJc",
+      "streetName": "Otona Kučere",
+      "coordinates": {
+        "lat": 46.1090199,
+        "lng": 19.659884
+      }
+    },
+    {
+      "place_id": "ChIJ3YbswtNmQ0cR47K5u72cCng",
+      "streetName": "Otona Župančiča",
+      "coordinates": {
+        "lat": 46.0921971,
+        "lng": 19.6643014
+      }
+    },
+    {
+      "place_id": "ChIJS2oNS1JhQ0cRlhlh8xJDZp0",
+      "streetName": "Otvorena",
+      "coordinates": {
+        "lat": 46.1131721,
+        "lng": 19.6900374
+      }
+    },
+    {
+      "place_id": "ChIJI1ZdMJdmQ0cRtJS2tW8OI6Q",
+      "streetName": "Ozrenska",
+      "coordinates": {
+        "lat": 46.1159555,
+        "lng": 19.6493697
+      }
+    },
+    {
+      "place_id": "ChIJM_I9XdJgQ0cRLrml3kijiUU",
+      "streetName": "Pačirski put",
+      "coordinates": {
+        "lat": 46.0774525,
+        "lng": 19.6642437
+      }
+    },
+    {
+      "place_id": "ChIJM26HSZtmQ0cRHVxRrJVZZfM",
+      "streetName": "Padejska",
+      "coordinates": {
+        "lat": 46.1223385,
+        "lng": 19.6488147
+      }
+    },
+    {
+      "place_id": "ChIJl6FtnblmQ0cRKILi8dXqLdY",
+      "streetName": "Paje Marganovića",
+      "coordinates": {
+        "lat": 46.1101145,
+        "lng": 19.6654984
+      }
+    },
+    {
+      "place_id": "ChIJm9PUWjNhQ0cRvHHFIxwd1DY",
+      "streetName": "Pala Papa",
+      "coordinates": {
+        "lat": 46.0981438,
+        "lng": 19.6755634
+      }
+    },
+    {
+      "place_id": "ChIJa2sfD0VhQ0cRxpcHC3U8Auc",
+      "streetName": "Palićka",
+      "coordinates": {
+        "lat": 46.1074901,
+        "lng": 19.6982577
+      }
+    },
+    {
+      "place_id": "EhlQYWxtaW5hLCBTdWJvdGljYSwgU2VyYmlhIi4qLAoUChIJbf9P42RhQ0cRHyg0S2xGbrUSFAoSCfk4r2jBZkNHEY6DPSqSvRnf",
+      "streetName": "Palmina",
+      "coordinates": {
+        "lat": 46.1069586,
+        "lng": 19.7231228
+      }
+    },
+    {
+      "place_id": "ChIJLS1c8NlmQ0cRONbLQuDn9Ps",
+      "streetName": "Palmotićeva",
+      "coordinates": {
+        "lat": 46.0914324,
+        "lng": 19.6561509
+      }
+    },
+    {
+      "place_id": "ChIJ29LPXshmQ0cRJO_oULFddmo",
+      "streetName": "Pančevačka",
+      "coordinates": {
+        "lat": 46.1031711,
+        "lng": 19.66589
+      }
+    },
+    {
+      "place_id": "ChIJdbl-PdFgQ0cRf-Z025cOTRE",
+      "streetName": "Panonska",
+      "coordinates": {
+        "lat": 46.078784,
+        "lng": 19.6707361
+      }
+    },
+    {
+      "place_id": "ChIJJYJY6GhkQ0cR4syZjh1rPuU",
+      "streetName": "Paraćinska",
+      "coordinates": {
+        "lat": 46.1539542,
+        "lng": 19.6837717
+      }
+    },
+    {
+      "place_id": "ChIJC9tlYslmQ0cRqU0XxZW74k8",
+      "streetName": "Park Ferenca Rajhla",
+      "coordinates": {
+        "lat": 46.1016066,
+        "lng": 19.6698299
+      }
+    },
+    {
+      "place_id": "ChIJK6BXi8hmQ0cRrf9CaWTGm7Q",
+      "streetName": "Partizanska",
+      "coordinates": {
+        "lat": 46.1027999,
+        "lng": 19.6654834
+      }
+    },
+    {
+      "place_id": "ChIJq1a2PElhQ0cRCwTZRUMGuYk",
+      "streetName": "Partizanskih baza",
+      "coordinates": {
+        "lat": 46.1074876,
+        "lng": 19.6887231
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Pastirska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJB_ZNecVgQ0cREzI5wo9x-B0",
+      "streetName": "Patrisa Lumumbe",
+      "coordinates": {
+        "lat": 46.072358,
+        "lng": 19.6721242
+      }
+    },
+    {
+      "place_id": "ChIJMTJBOChkQ0cRf-wiry3ZXto",
+      "streetName": "Pauna",
+      "coordinates": {
+        "lat": 46.1291645,
+        "lng": 19.6510069
+      }
+    },
+    {
+      "place_id": "ChIJzclYMsxmQ0cRaH3wD4ENc1c",
+      "streetName": "Pavla Štosa",
+      "coordinates": {
+        "lat": 46.0977499,
+        "lng": 19.6681398
+      }
+    },
+    {
+      "place_id": "ChIJOYu027VmQ0cRlp4E8krRKbI",
+      "streetName": "Pavlovačka",
+      "coordinates": {
+        "lat": 46.1059032,
+        "lng": 19.6737671
+      }
+    },
+    {
+      "place_id": "ChIJH7XLmilhQ0cRs0w_R6aAebc",
+      "streetName": "Pazinska",
+      "coordinates": {
+        "lat": 46.0862536,
+        "lng": 19.6743235
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Pčelarska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJVXBo-hZkQ0cRoB7XL5G_MT4",
+      "streetName": "Pećarska",
+      "coordinates": {
+        "lat": 46.1364227,
+        "lng": 19.6772218
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Pekarska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJGcAoGCtnQ0cRoYhaedegFMw",
+      "streetName": "Pere Tumbasa Haje",
+      "coordinates": {
+        "lat": 46.083317,
+        "lng": 19.6621991
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Perl Gelerta",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "Eh1QZcWhxI1hcmluYSwgU3Vib3RpY2EsIFNlcmJpYSIuKiwKFAoSCXkcJjPuY0NHEenv4OID_Hw_EhQKEgn5OK9owWZDRxGOgz0qkr0Z3w",
+      "streetName": "Peščarina",
+      "coordinates": {
+        "lat": 46.1336539,
+        "lng": 19.7162691
+      }
+    },
+    {
+      "place_id": "ChIJgfse7EthQ0cRCvnJWbRl9FY",
+      "streetName": "Pesnička",
+      "coordinates": {
+        "lat": 46.1062826,
+        "lng": 19.6871781
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Petlova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJp_-T6khhQ0cRkzXrNeEyviY",
+      "streetName": "Petra Čajkovskog",
+      "coordinates": {
+        "lat": 46.1041551,
+        "lng": 19.6921992
+      }
+    },
+    {
+      "place_id": "ChIJMzx0ps9mQ0cRV5XH_Ysu7L4",
+      "streetName": "Petra Drapšina",
+      "coordinates": {
+        "lat": 46.0983352,
+        "lng": 19.6628647
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Petra Horvackog",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJj8hF39NmQ0cRu8GNnl4zebs",
+      "streetName": "Petra Josića",
+      "coordinates": {
+        "lat": 46.0930384,
+        "lng": 19.6629739
+      }
+    },
+    {
+      "place_id": "ChIJJyl7aMdmQ0cRd1HdFRKF98E",
+      "streetName": "Petra Lekovića",
+      "coordinates": {
+        "lat": 46.1052694,
+        "lng": 19.6593295
+      }
+    },
+    {
+      "place_id": "ChIJFTDN8B5nQ0cR-Qu_YNj0Gl0",
+      "streetName": "Petra Petrekanovića",
+      "coordinates": {
+        "lat": 46.0885163,
+        "lng": 19.6342067
+      }
+    },
+    {
+      "place_id": "ChIJre0hhJxmQ0cRYH5dPabO_PY",
+      "streetName": "Petra Popovića Age",
+      "coordinates": {
+        "lat": 46.1234421,
+        "lng": 19.6518698
+      }
+    },
+    {
+      "place_id": "ChIJXyrV2-lmQ0cRhoDISjJtw_w",
+      "streetName": "Petra Svačića",
+      "coordinates": {
+        "lat": 46.1020385,
+        "lng": 19.6482335
+      }
+    },
+    {
+      "place_id": "ChIJs0EAJkhhQ0cRNu0cMvP2OA8",
+      "streetName": "Petrinjska",
+      "coordinates": {
+        "lat": 46.1017679,
+        "lng": 19.689251
+      }
+    },
+    {
+      "place_id": "ChIJu1AgxE5hQ0cRyjPh0fxhu9U",
+      "streetName": "Pionirska",
+      "coordinates": {
+        "lat": 46.1069055,
+        "lng": 19.6904803
+      }
+    },
+    {
+      "place_id": "ChIJtYeHSsNmQ0cRtWnvqWRBBVo",
+      "streetName": "Pirotska",
+      "coordinates": {
+        "lat": 46.0988653,
+        "lng": 19.6510336
+      }
+    },
+    {
+      "place_id": "ChIJF58KIkZhQ0cRkC1sV_0yajw",
+      "streetName": "Pište Dankoa",
+      "coordinates": {
+        "lat": 46.1037571,
+        "lng": 19.6940178
+      }
+    },
+    {
+      "place_id": "ChIJu5lRJMJgQ0cRv33_a-lcz7U",
+      "streetName": "Plate Dobrojevića",
+      "coordinates": {
+        "lat": 46.0689146,
+        "lng": 19.6811533
+      }
+    },
+    {
+      "place_id": "ChIJf-kj3HFmQ0cR_nSfRk979lo",
+      "streetName": "Platonova",
+      "coordinates": {
+        "lat": 46.124677,
+        "lng": 19.6163021
+      }
+    },
+    {
+      "place_id": "ChIJpWW7_LhmQ0cRGuhNlEf8yjs",
+      "streetName": "Plitvička",
+      "coordinates": {
+        "lat": 46.1080306,
+        "lng": 19.6633172
+      }
+    },
+    {
+      "place_id": "ChIJ62Q0BklkQ0cRFoG69LPHLeA",
+      "streetName": "Podgorska",
+      "coordinates": {
+        "lat": 46.1485272,
+        "lng": 19.6632066
+      }
+    },
+    {
+      "place_id": "ChIJodmA-sNgQ0cRWTWzx8hEOzQ",
+      "streetName": "Podravska",
+      "coordinates": {
+        "lat": 46.0688093,
+        "lng": 19.6769965
+      }
+    },
+    {
+      "place_id": "ChIJI9SamipkQ0cRK861cu_tjMU",
+      "streetName": "Pokret Nesvrstanih",
+      "coordinates": {
+        "lat": 46.1302364,
+        "lng": 19.6424251
+      }
+    },
+    {
+      "place_id": "ChIJDQ7GhtpjQ0cRdQxqp3dhQ-Y",
+      "streetName": "Poljska",
+      "coordinates": {
+        "lat": 46.1208371,
+        "lng": 19.7339914
+      }
+    },
+    {
+      "place_id": "ChIJd0pysNZgQ0cRi4cVxGbNOVk",
+      "streetName": "Porečka",
+      "coordinates": {
+        "lat": 46.0804798,
+        "lng": 19.6706305
+      }
+    },
+    {
+      "place_id": "ChIJR8FxKihnQ0cRZmkLx3LwZqU",
+      "streetName": "Potiska",
+      "coordinates": {
+        "lat": 46.0873802,
+        "lng": 19.6552542
+      }
+    },
+    {
+      "place_id": "ChIJHxiKNupmQ0cRYx8NOXuT1BM",
+      "streetName": "Požarevačka",
+      "coordinates": {
+        "lat": 46.1052792,
+        "lng": 19.6478236
+      }
+    },
+    {
+      "place_id": "ChIJQ54OsGBmQ0cRPIP2onMDo-E",
+      "streetName": "Prahovska",
+      "coordinates": {
+        "lat": 46.1143971,
+        "lng": 19.6225988
+      }
+    },
+    {
+      "place_id": "ChIJWUyl7epmQ0cRiCE1Ta3Ns8Q",
+      "streetName": "Praška",
+      "coordinates": {
+        "lat": 46.1074137,
+        "lng": 19.6488873
+      }
+    },
+    {
+      "place_id": "ChIJY3Ob2sRmQ0cR_ctaC6SY1aM",
+      "streetName": "Preradovićeva",
+      "coordinates": {
+        "lat": 46.0980586,
+        "lng": 19.6561074
+      }
+    },
+    {
+      "place_id": "ChIJg2diKSxhQ0cR77ySXiL8pFU",
+      "streetName": "Prešernova",
+      "coordinates": {
+        "lat": 46.0906966,
+        "lng": 19.6763313
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Pribojska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJw9WYculgQ0cRBc0sG7HG_OY",
+      "streetName": "Prijedorska",
+      "coordinates": {
+        "lat": 46.0683307,
+        "lng": 19.6862238
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Prilepska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJmQy3W-ZmQ0cRNkFDacgxb2M",
+      "streetName": "Primorska",
+      "coordinates": {
+        "lat": 46.0985645,
+        "lng": 19.6420687
+      }
+    },
+    {
+      "place_id": "ChIJu8KjZbZmQ0cRTNe6NoVkMaM",
+      "streetName": "Prizrenska",
+      "coordinates": {
+        "lat": 46.1067289,
+        "lng": 19.6728551
+      }
+    },
+    {
+      "place_id": "ChIJs18Ed4RmQ0cRtgSTEm3IPas",
+      "streetName": "Proleterskih brigada",
+      "coordinates": {
+        "lat": 46.1332052,
+        "lng": 19.6371537
+      }
+    },
+    {
+      "place_id": "ChIJqRUVxCpnQ0cR9sP4FKNP5Zs",
+      "streetName": "Prve Petoljetke",
+      "coordinates": {
+        "lat": 46.0847878,
+        "lng": 19.6641165
+      }
+    },
+    {
+      "place_id": "ChIJTV_a8tJmQ0cRcJihbrwwoIM",
+      "streetName": "Prvomajska",
+      "coordinates": {
+        "lat": 46.0935363,
+        "lng": 19.6683866
+      }
+    },
+    {
+      "place_id": "ChIJ6cNNBdBmQ0cR_hhE4qt6EZw",
+      "streetName": "Ptujska",
+      "coordinates": {
+        "lat": 46.0958825,
+        "lng": 19.6600449
+      }
+    },
+    {
+      "place_id": "ChIJbyst6yBiQ0cRMvlQoME_IsE",
+      "streetName": "Pulska",
+      "coordinates": {
+        "lat": 46.1091216,
+        "lng": 19.7638051
+      }
+    },
+    {
+      "place_id": "ChIJQSwiZktnQ0cRuopQrcayWWk",
+      "streetName": "Puškinov trg",
+      "coordinates": {
+        "lat": 46.0960523,
+        "lng": 19.6706947
+      }
+    },
+    {
+      "place_id": "ChIJUfVfrG9mQ0cRqQj8vm9PfEU",
+      "streetName": "Put Edvarda Kardelja",
+      "coordinates": {
+        "lat": 46.1217287,
+        "lng": 19.6159172
+      }
+    },
+    {
+      "place_id": "ChIJTdAl-GFhQ0cRWAZ_N9sTUeo",
+      "streetName": "Radanovac",
+      "coordinates": {
+        "lat": 46.1195554,
+        "lng": 19.7263039
+      }
+    },
+    {
+      "place_id": "Eh5SYWRhbm92YcSNa2EsIFN1Ym90aWNhLCBTZXJiaWEiLiosChQKEgmFcxwjeWFDRxEarN2TNaUsThIUChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Radanovačka",
+      "coordinates": {
+        "lat": 46.107477,
+        "lng": 19.7347138
+      }
+    },
+    {
+      "place_id": "ChIJQ0L0UzFhQ0cRZXPsa5Gkbk8",
+      "streetName": "Rade Končara",
+      "coordinates": {
+        "lat": 46.0974784,
+        "lng": 19.6821079
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Radenska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJKfIMdyZnQ0cRSxbPUq9w7eo",
+      "streetName": "Radnička",
+      "coordinates": {
+        "lat": 46.0841085,
+        "lng": 19.6479436
+      }
+    },
+    {
+      "place_id": "ChIJ6fitdONmQ0cR_3q1zkEKHUw",
+      "streetName": "Radoja Vujoševića",
+      "coordinates": {
+        "lat": 46.0954361,
+        "lng": 19.6337003
+      }
+    },
+    {
+      "place_id": "ChIJx6uq1gRkQ0cRj2Io1pnQVm8",
+      "streetName": "Radojke Lakić",
+      "coordinates": {
+        "lat": 46.1291709,
+        "lng": 19.6831842
+      }
+    },
+    {
+      "place_id": "ChIJ4zAQxSZnQ0cRwenydL6vZXk",
+      "streetName": "Raška",
+      "coordinates": {
+        "lat": 46.0860274,
+        "lng": 19.6454537
+      }
+    },
+    {
+      "place_id": "ChIJB2F52LlmQ0cRibe3cEvD6c8",
+      "streetName": "Ratka Mitrovića",
+      "coordinates": {
+        "lat": 46.1083095,
+        "lng": 19.6676007
+      }
+    },
+    {
+      "place_id": "ChIJlStQQUxhQ0cRHeyMxgAaL9E",
+      "streetName": "Rečna",
+      "coordinates": {
+        "lat": 46.1082068,
+        "lng": 19.6869259
+      }
+    },
+    {
+      "place_id": "ChIJS2UQKt1mQ0cRww6E3CF_K5g",
+      "streetName": "Reljkovićeva",
+      "coordinates": {
+        "lat": 46.0985765,
+        "lng": 19.6500056
+      }
+    },
+    {
+      "place_id": "ChIJeTbPeIpmQ0cR2pVa_33PH28",
+      "streetName": "Riječka",
+      "coordinates": {
+        "lat": 46.1152013,
+        "lng": 19.6293909
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Roberta Koha",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Roke Šimokovića",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJjXKl319mQ0cRXDE4Dv04T3A",
+      "streetName": "Rolana Romena",
+      "coordinates": {
+        "lat": 46.1125269,
+        "lng": 19.6251494
+      }
+    },
+    {
+      "place_id": "ChIJWQ7bhdRgQ0cR7Wf7uiDwieo",
+      "streetName": "Rovinjska",
+      "coordinates": {
+        "lat": 46.0813425,
+        "lng": 19.6659195
+      }
+    },
+    {
+      "place_id": "ChIJZ0bWC8FgQ0cRV4xsBF2S9Cw",
+      "streetName": "Rudarska",
+      "coordinates": {
+        "lat": 46.0670039,
+        "lng": 19.677711
+      }
+    },
+    {
+      "place_id": "ChIJV5CM99lmQ0cR_XLuxc7TC_E",
+      "streetName": "Ruđera Boškovića",
+      "coordinates": {
+        "lat": 46.0923114,
+        "lng": 19.6552596
+      }
+    },
+    {
+      "place_id": "ChIJaQHNOLdnQ0cRZjsk19Jl6g4",
+      "streetName": "Rudić",
+      "coordinates": {
+        "lat": 46.0998696,
+        "lng": 19.6621352
+      }
+    },
+    {
+      "place_id": "ChIJvYcqielmQ0cRfX9j63KjFls",
+      "streetName": "Rudnička",
+      "coordinates": {
+        "lat": 46.1038737,
+        "lng": 19.6467668
+      }
+    },
+    {
+      "place_id": "ChIJgfXULtdjQ0cR4ClALAFm6rk",
+      "streetName": "Rumenačka",
+      "coordinates": {
+        "lat": 46.1175346,
+        "lng": 19.7353267
+      }
+    },
+    {
+      "place_id": "ChIJe1AXZqFmQ0cRaheDZ9ixS4w",
+      "streetName": "Rumska",
+      "coordinates": {
+        "lat": 46.1208379,
+        "lng": 19.6670401
+      }
+    },
+    {
+      "place_id": "ChIJKZ_CmlFhQ0cRt3qKFlyXpHw",
+      "streetName": "Ružina",
+      "coordinates": {
+        "lat": 46.1125696,
+        "lng": 19.6932748
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Ruzmarina",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ5VUx5PRmQ0cRILDIxjG2KUM",
+      "streetName": "Šabačka",
+      "coordinates": {
+        "lat": 46.1112605,
+        "lng": 19.6291348
+      }
+    },
+    {
+      "place_id": "ChIJi1WLMypnQ0cR2py3nMhVR6E",
+      "streetName": "Šajkaška",
+      "coordinates": {
+        "lat": 46.0846247,
+        "lng": 19.6589825
+      }
+    },
+    {
+      "place_id": "ChIJT2UiJLRmQ0cR35sw-EJpv5Q",
+      "streetName": "Šamačka",
+      "coordinates": {
+        "lat": 46.1073571,
+        "lng": 19.6746087
+      }
+    },
+    {
+      "place_id": "ChIJsxM53E9hQ0cRIjhBGH2q2gw",
+      "streetName": "Samoborska",
+      "coordinates": {
+        "lat": 46.1099682,
+        "lng": 19.6952945
+      }
+    },
+    {
+      "place_id": "ChIJHZ96GE9hQ0cRfbXA4ZtGv3w",
+      "streetName": "Šandora Lifke",
+      "coordinates": {
+        "lat": 46.1068419,
+        "lng": 19.6922779
+      }
+    },
+    {
+      "place_id": "ChIJKRWkEjFhQ0cRMcshnlQ-qBo",
+      "streetName": "Šandora Olaha",
+      "coordinates": {
+        "lat": 46.0961184,
+        "lng": 19.6830027
+      }
+    },
+    {
+      "place_id": "ChIJnWhGUsRmQ0cRmcmD-_TTUK4",
+      "streetName": "Šandora Petefija",
+      "coordinates": {
+        "lat": 46.1001267,
+        "lng": 19.6582386
+      }
+    },
+    {
+      "place_id": "ChIJaYFl0rRmQ0cR_6Vl6CV_8-4",
+      "streetName": "Šantićeva",
+      "coordinates": {
+        "lat": 46.1056773,
+        "lng": 19.6801535
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Saračka",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJI9NOSrxmQ0cRnaFRkgePOuQ",
+      "streetName": "Sarajevska",
+      "coordinates": {
+        "lat": 46.1130291,
+        "lng": 19.6601239
+      }
+    },
+    {
+      "place_id": "ChIJ356H9SBnQ0cRX1IyZpTxJRM",
+      "streetName": "Šarplaninska",
+      "coordinates": {
+        "lat": 46.0890187,
+        "lng": 19.6417898
+      }
+    },
+    {
+      "place_id": "ChIJ06wu3LRmQ0cRP-snTALBblw",
+      "streetName": "Save Kovačevića",
+      "coordinates": {
+        "lat": 46.1062967,
+        "lng": 19.6798068
+      }
+    },
+    {
+      "place_id": "ChIJA1ApX8NmQ0cRIMKfRDaYoak",
+      "streetName": "Save Šumanovića",
+      "coordinates": {
+        "lat": 46.0987828,
+        "lng": 19.6533131
+      }
+    },
+    {
+      "place_id": "ChIJ4RdlrytnQ0cR4E8zx2EMCv4",
+      "streetName": "Savska",
+      "coordinates": {
+        "lat": 46.0836835,
+        "lng": 19.660227
+      }
+    },
+    {
+      "place_id": "ChIJO9wta-9mQ0cRhVsSIRmGe0Q",
+      "streetName": "Šebešićka",
+      "coordinates": {
+        "lat": 46.1013856,
+        "lng": 19.6385051
+      }
+    },
+    {
+      "place_id": "ChIJqaeM3h5kQ0cR50cZ5bB8Dmg",
+      "streetName": "Segedinska",
+      "coordinates": {
+        "lat": 46.1283442,
+        "lng": 19.6710908
+      }
+    },
+    {
+      "place_id": "ChIJd0M9F0FhQ0cR2Hw-YE4oAD4",
+      "streetName": "Segedinski put",
+      "coordinates": {
+        "lat": 46.1022377,
+        "lng": 19.7029828
+      }
+    },
+    {
+      "place_id": "ChIJs171ibtmQ0cREu66oxqXIgk",
+      "streetName": "Šekspirova",
+      "coordinates": {
+        "lat": 46.1132557,
+        "lng": 19.6625072
+      }
+    },
+    {
+      "place_id": "ChIJsQ8WAiFhQ0cRSFnAO5EwBtA",
+      "streetName": "Senćanski put",
+      "coordinates": {
+        "lat": 46.084552,
+        "lng": 19.6900051
+      }
+    },
+    {
+      "place_id": "ChIJd8ekfyphQ0cRwjF0tos8FqI",
+      "streetName": "Senjska",
+      "coordinates": {
+        "lat": 46.0854041,
+        "lng": 19.6697241
+      }
+    },
+    {
+      "place_id": "ChIJ2Z98TsxmQ0cReuSfUOlsO6Y",
+      "streetName": "Šenoina",
+      "coordinates": {
+        "lat": 46.0981975,
+        "lng": 19.6693381
+      }
+    },
+    {
+      "place_id": "ChIJGXOj_dRgQ0cRbWam8npO6Zs",
+      "streetName": "Sergeja Jesenjina",
+      "coordinates": {
+        "lat": 46.0836599,
+        "lng": 19.6658142
+      }
+    },
+    {
+      "place_id": "ChIJCV8La1NhQ0cRX1oAb1ZOk4I",
+      "streetName": "Severna",
+      "coordinates": {
+        "lat": 46.1150891,
+        "lng": 19.6886238
+      }
+    },
+    {
+      "place_id": "ChIJf_d72txmQ0cRuTRdJDoxHuE",
+      "streetName": "Šibenska",
+      "coordinates": {
+        "lat": 46.0976197,
+        "lng": 19.6494395
+      }
+    },
+    {
+      "place_id": "ChIJXQaLAJVmQ0cR8S95jz3jNRc",
+      "streetName": "Šidska",
+      "coordinates": {
+        "lat": 46.110707,
+        "lng": 19.6515929
+      }
+    },
+    {
+      "place_id": "ChIJwa7jRa5mQ0cRoQffGHg-GmQ",
+      "streetName": "Šime Ivića",
+      "coordinates": {
+        "lat": 46.1160216,
+        "lng": 19.6761776
+      }
+    },
+    {
+      "place_id": "ChIJKZ_Pe8FmQ0cRnrQfE1YjV3c",
+      "streetName": "Sime Matavulja",
+      "coordinates": {
+        "lat": 46.1033628,
+        "lng": 19.6539241
+      }
+    },
+    {
+      "place_id": "ChIJeyyWWa9mQ0cRF5FAZsS0c0Q",
+      "streetName": "Sime Šolaje",
+      "coordinates": {
+        "lat": 46.1183724,
+        "lng": 19.6751442
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Šimeta Tikvickog",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJq-c3l-1gQ0cRTL3RhtidTKw",
+      "streetName": "Siriška",
+      "coordinates": {
+        "lat": 46.064477,
+        "lng": 19.6900642
+      }
+    },
+    {
+      "place_id": "ChIJ2dVi1dZmQ0cR_aJecvQqptk",
+      "streetName": "Sitnička",
+      "coordinates": {
+        "lat": 46.0919168,
+        "lng": 19.6590471
+      }
+    },
+    {
+      "place_id": "ChIJmUcrGyRnQ0cRp8s5PD6cYgE",
+      "streetName": "Sivački put",
+      "coordinates": {
+        "lat": 46.0841709,
+        "lng": 19.6441121
+      }
+    },
+    {
+      "place_id": "ChIJS0qXomhmQ0cRVvoXeStUWgg",
+      "streetName": "Skadarlijska",
+      "coordinates": {
+        "lat": 46.1187444,
+        "lng": 19.6160513
+      }
+    },
+    {
+      "place_id": "ChIJ49SJ0ZlmQ0cRT7wMqqsxGiQ",
+      "streetName": "Skendera Kulenovića",
+      "coordinates": {
+        "lat": 46.1182654,
+        "lng": 19.6555437
+      }
+    },
+    {
+      "place_id": "ChIJezah8dZmQ0cRD3zLGVSEDhs",
+      "streetName": "Skenderbegova",
+      "coordinates": {
+        "lat": 46.0898341,
+        "lng": 19.6592037
+      }
+    },
+    {
+      "place_id": "ChIJkUfKvSphQ0cRE6Bamid504k",
+      "streetName": "Skerlićeva",
+      "coordinates": {
+        "lat": 46.0863325,
+        "lng": 19.6676758
+      }
+    },
+    {
+      "place_id": "ChIJZRyctfVmQ0cR_L3oxIvUjOA",
+      "streetName": "Skojevska",
+      "coordinates": {
+        "lat": 46.1085187,
+        "lng": 19.6274215
+      }
+    },
+    {
+      "place_id": "ChIJgfubMDdhQ0cRA7bcNpzbjCc",
+      "streetName": "Slavonska",
+      "coordinates": {
+        "lat": 46.0976746,
+        "lng": 19.6865565
+      }
+    },
+    {
+      "place_id": "ChIJA3kd4WpkQ0cRJOGzSg3SQ5c",
+      "streetName": "Slobodana Penezića Krcuna",
+      "coordinates": {
+        "lat": 46.1436709,
+        "lng": 19.6822321
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Smederevska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJcT6WOy1hQ0cR1od2E3UHe3g",
+      "streetName": "Šolohova",
+      "coordinates": {
+        "lat": 46.0927665,
+        "lng": 19.6723153
+      }
+    },
+    {
+      "place_id": "ChIJlzwycXJmQ0cR7YB9MAWxkSw",
+      "streetName": "Solunska",
+      "coordinates": {
+        "lat": 46.1254849,
+        "lng": 19.6126774
+      }
+    },
+    {
+      "place_id": "ChIJeT5yBr1mQ0cRAdcmvoZ8c9Q",
+      "streetName": "Somborska",
+      "coordinates": {
+        "lat": 46.1162535,
+        "lng": 19.6550387
+      }
+    },
+    {
+      "place_id": "ChIJ_RSp29tmQ0cRhUg3xYshqe0",
+      "streetName": "Somborski put",
+      "coordinates": {
+        "lat": 46.0935381,
+        "lng": 19.6518888
+      }
+    },
+    {
+      "place_id": "ChIJ_er_-tJmQ0cRvCuUiGgEWKc",
+      "streetName": "Sonje Marinković",
+      "coordinates": {
+        "lat": 46.0932828,
+        "lng": 19.6679501
+      }
+    },
+    {
+      "place_id": "ChIJRVVNmvdmQ0cRRSXQ8yOBJTw",
+      "streetName": "Španskih boraca",
+      "coordinates": {
+        "lat": 46.1035159,
+        "lng": 19.6225288
+      }
+    },
+    {
+      "place_id": "ChIJh3FuihpkQ0cRK4fBjEvZL30",
+      "streetName": "Splitska",
+      "coordinates": {
+        "lat": 46.1320045,
+        "lng": 19.6813204
+      }
+    },
+    {
+      "place_id": "ChIJlcvaHdFgQ0cRKcGgCu_UpNw",
+      "streetName": "Srebrenička",
+      "coordinates": {
+        "lat": 46.0782165,
+        "lng": 19.6710236
+      }
+    },
+    {
+      "place_id": "ChIJYS4cy09hQ0cRb0VxqC6cweE",
+      "streetName": "Srednja",
+      "coordinates": {
+        "lat": 46.109386,
+        "lng": 19.6936733
+      }
+    },
+    {
+      "place_id": "ChIJGWA8hNNmQ0cRtjqqCwqFSF8",
+      "streetName": "Sremska",
+      "coordinates": {
+        "lat": 46.0911783,
+        "lng": 19.6656613
+      }
+    },
+    {
+      "place_id": "ChIJMXkg9rdmQ0cRolA5uMRs1E4",
+      "streetName": "Stalaćka",
+      "coordinates": {
+        "lat": 46.1065782,
+        "lng": 19.6665031
+      }
+    },
+    {
+      "place_id": "ChIJES5XCttmQ0cRKCJw0omE7rY",
+      "streetName": "Staniše Neorčića",
+      "coordinates": {
+        "lat": 46.0953145,
+        "lng": 19.6529841
+      }
+    },
+    {
+      "place_id": "ChIJc4VP6sFgQ0cRYuHUOpKLMjA",
+      "streetName": "Stanoja Glavaša",
+      "coordinates": {
+        "lat": 46.0672685,
+        "lng": 19.6812451
+      }
+    },
+    {
+      "place_id": "ChIJa7-p1-FmQ0cRfgUFakZxxno",
+      "streetName": "Staparska",
+      "coordinates": {
+        "lat": 46.0911705,
+        "lng": 19.6366172
+      }
+    },
+    {
+      "place_id": "ChIJ-fCxf89gQ0cR4kBlgGYU9fA",
+      "streetName": "Starine Novaka",
+      "coordinates": {
+        "lat": 46.0667789,
+        "lng": 19.6749997
+      }
+    },
+    {
+      "place_id": "ChIJv5bDHLlmQ0cRGyEq2JuC64s",
+      "streetName": "Sterijina",
+      "coordinates": {
+        "lat": 46.1087149,
+        "lng": 19.6630704
+      }
+    },
+    {
+      "place_id": "ChIJybaKKJhmQ0cR3YfFCgcdU8g",
+      "streetName": "Stevana Doronjskog",
+      "coordinates": {
+        "lat": 46.1174169,
+        "lng": 19.6566814
+      }
+    },
+    {
+      "place_id": "ChIJH9zi7-tmQ0cR9V9LPt7FsNk",
+      "streetName": "Stevana Filipovića",
+      "coordinates": {
+        "lat": 46.1045324,
+        "lng": 19.6453503
+      }
+    },
+    {
+      "place_id": "ChIJdx8QUelmQ0cRpRy1SN_j1ww",
+      "streetName": "Stevana Mokranjca",
+      "coordinates": {
+        "lat": 46.1040188,
+        "lng": 19.6437126
+      }
+    },
+    {
+      "place_id": "ChIJ1Qk7krdmQ0cRzi_2zqEBIZg",
+      "streetName": "Stevana Sremca",
+      "coordinates": {
+        "lat": 46.106926,
+        "lng": 19.6675467
+      }
+    },
+    {
+      "place_id": "ChIJN0BieR5nQ0cR8Z7GNFYHMn0",
+      "streetName": "Stevana Tikvickog",
+      "coordinates": {
+        "lat": 46.0895135,
+        "lng": 19.633019
+      }
+    },
+    {
+      "place_id": "ChIJc46RHy9hQ0cRonn4drFGEk4",
+      "streetName": "Stipana Kopilovića",
+      "coordinates": {
+        "lat": 46.0894346,
+        "lng": 19.6791298
+      }
+    },
+    {
+      "place_id": "ChIJEyIMpSdnQ0cRFFUkOZKxnK0",
+      "streetName": "Stipana Mukića",
+      "coordinates": {
+        "lat": 46.0869843,
+        "lng": 19.6495326
+      }
+    },
+    {
+      "place_id": "ChIJEfJQPNxmQ0cR2FIvrk85SD0",
+      "streetName": "Stipana Vilova",
+      "coordinates": {
+        "lat": 46.0950566,
+        "lng": 19.6479857
+      }
+    },
+    {
+      "place_id": "ChIJq1Rm6sFmQ0cRdUOIPP4i3jM",
+      "streetName": "Stipe Grgića",
+      "coordinates": {
+        "lat": 46.1037593,
+        "lng": 19.6523867
+      }
+    },
+    {
+      "place_id": "ChIJnTEiNEFhQ0cRbXFpS1ut4ow",
+      "streetName": "Štipska",
+      "coordinates": {
+        "lat": 46.1025597,
+        "lng": 19.7002161
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Stolarska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJLwjYK-xgQ0cROyqHyAxHQFo",
+      "streetName": "Stražilovska",
+      "coordinates": {
+        "lat": 46.0663757,
+        "lng": 19.691113
+      }
+    },
+    {
+      "place_id": "ChIJbzQ3As9mQ0cRn0-r7mV2AhI",
+      "streetName": "Štrosmajerova",
+      "coordinates": {
+        "lat": 46.0988318,
+        "lng": 19.664142
+      }
+    },
+    {
+      "place_id": "ChIJOwOZv9NmQ0cRxzMNMyIsf_0",
+      "streetName": "Strumička",
+      "coordinates": {
+        "lat": 46.092513,
+        "lng": 19.6647979
+      }
+    },
+    {
+      "place_id": "ChIJjWqGBZhmQ0cR4Ryx8Y8IvaM",
+      "streetName": "Stubička",
+      "coordinates": {
+        "lat": 46.1174244,
+        "lng": 19.6589023
+      }
+    },
+    {
+      "place_id": "ChIJN9GxVk9hQ0cRUatiW2bFEOg",
+      "streetName": "Studenička",
+      "coordinates": {
+        "lat": 46.105762,
+        "lng": 19.6942463
+      }
+    },
+    {
+      "place_id": "ChIJX5YmnshmQ0cRMbWXB9VZiEQ",
+      "streetName": "Subote Vrlića",
+      "coordinates": {
+        "lat": 46.1025139,
+        "lng": 19.6631561
+      }
+    },
+    {
+      "place_id": "ChIJQ8MxEuhmQ0cR2cscObMNGbU",
+      "streetName": "Šumadijska",
+      "coordinates": {
+        "lat": 46.1000623,
+        "lng": 19.6460876
+      }
+    },
+    {
+      "place_id": "ChIJXzX9XL9mQ0cRasB6e49A_W8",
+      "streetName": "Šumska",
+      "coordinates": {
+        "lat": 46.1074543,
+        "lng": 19.6582361
+      }
+    },
+    {
+      "place_id": "ChIJ9-f7zlFhQ0cRhBD9vyfYfmY",
+      "streetName": "Sunčana",
+      "coordinates": {
+        "lat": 46.1112606,
+        "lng": 19.6943799
+      }
+    },
+    {
+      "place_id": "ChIJZf6pjoFmQ0cRTmxnYCA1w5A",
+      "streetName": "Sutjeska",
+      "coordinates": {
+        "lat": 46.1276014,
+        "lng": 19.6446592
+      }
+    },
+    {
+      "place_id": "ChIJm1p8oNxmQ0cRn3xAvK57jDg",
+      "streetName": "Svete Katarine",
+      "coordinates": {
+        "lat": 46.0972849,
+        "lng": 19.6524382
+      }
+    },
+    {
+      "place_id": "ChIJy8ReczRhQ0cRe21nfh1WCTE",
+      "streetName": "Svetozara Markovića",
+      "coordinates": {
+        "lat": 46.0983265,
+        "lng": 19.6803868
+      }
+    },
+    {
+      "place_id": "ChIJ1xpt8MFmQ0cRrHPnTs-hScs",
+      "streetName": "Svetozara Miletića",
+      "coordinates": {
+        "lat": 46.1049325,
+        "lng": 19.6499902
+      }
+    },
+    {
+      "place_id": "ChIJL_F5XulgQ0cR40stAAu8sP4",
+      "streetName": "Takovska",
+      "coordinates": {
+        "lat": 46.0673801,
+        "lng": 19.6867275
+      }
+    },
+    {
+      "place_id": "ChIJBUHalLhmQ0cR5j_K5GrihuY",
+      "streetName": "Tamiška",
+      "coordinates": {
+        "lat": 46.1073839,
+        "lng": 19.6618544
+      }
+    },
+    {
+      "place_id": "ChIJYyXb-dpmQ0cRzE4oI5zjyQM",
+      "streetName": "Tavankutska",
+      "coordinates": {
+        "lat": 46.0955459,
+        "lng": 19.6552313
+      }
+    },
+    {
+      "place_id": "ChIJeXSf4HxhQ0cRD320hOjinEg",
+      "streetName": "Temerinska",
+      "coordinates": {
+        "lat": 46.111321,
+        "lng": 19.7294513
+      }
+    },
+    {
+      "place_id": "ChIJ1QEKaGBmQ0cRNRe1yNNrcA8",
+      "streetName": "Temišvarska",
+      "coordinates": {
+        "lat": 46.1138839,
+        "lng": 19.6256084
+      }
+    },
+    {
+      "place_id": "ChIJ3y4Y20phQ0cRsprXDr1EuNo",
+      "streetName": "Teslina",
+      "coordinates": {
+        "lat": 46.1046237,
+        "lng": 19.6808803
+      }
+    },
+    {
+      "place_id": "ChIJp-m6XRhkQ0cRWWxyZ5DsPew",
+      "streetName": "Tetovska",
+      "coordinates": {
+        "lat": 46.1322147,
+        "lng": 19.6719539
+      }
+    },
+    {
+      "place_id": "ChIJrSWU8aJmQ0cRqUf6JmEHR2Y",
+      "streetName": "Tibora Sekelja",
+      "coordinates": {
+        "lat": 46.1186566,
+        "lng": 19.6615556
+      }
+    },
+    {
+      "place_id": "ChIJ7bAZ5CdnQ0cRRIkapEnbCRg",
+      "streetName": "Tiha",
+      "coordinates": {
+        "lat": 46.087227,
+        "lng": 19.6521355
+      }
+    },
+    {
+      "place_id": "ChIJCwSWgqhmQ0cRWUmPy8hWFq4",
+      "streetName": "Tikveška",
+      "coordinates": {
+        "lat": 46.1206247,
+        "lng": 19.6761721
+      }
+    },
+    {
+      "place_id": "ChIJM4Fm76RmQ0cRJqbkSYCtjkM",
+      "streetName": "Timočka",
+      "coordinates": {
+        "lat": 46.1166621,
+        "lng": 19.6693254
+      }
+    },
+    {
+      "place_id": "ChIJ_a5ubCdnQ0cRxMF_U2eQDnY",
+      "streetName": "Titelska",
+      "coordinates": {
+        "lat": 46.0884569,
+        "lng": 19.649418
+      }
+    },
+    {
+      "place_id": "ChIJO0z5VRNkQ0cRYxeFKTF0c-k",
+      "streetName": "Titogradska",
+      "coordinates": {
+        "lat": 46.1352406,
+        "lng": 19.6896458
+      }
+    },
+    {
+      "place_id": "ChIJR-9oMKVmQ0cRLZyViCB0gyk",
+      "streetName": "Titusa Dugovića",
+      "coordinates": {
+        "lat": 46.1153356,
+        "lng": 19.6702499
+      }
+    },
+    {
+      "place_id": "ChIJXWuZYjFhQ0cR0pKWpNLPlcc",
+      "streetName": "Titusa Mačkovića",
+      "coordinates": {
+        "lat": 46.0963698,
+        "lng": 19.6806496
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Tivadara Puškaša",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJV0tkqfNmQ0cRxdp24Co3f9Y",
+      "streetName": "Tivatska",
+      "coordinates": {
+        "lat": 46.1087682,
+        "lng": 19.6343784
+      }
+    },
+    {
+      "place_id": "ChIJIYcilepgQ0cR9fNOf0fXZis",
+      "streetName": "Tolminska",
+      "coordinates": {
+        "lat": 46.0645961,
+        "lng": 19.6812451
+      }
+    },
+    {
+      "place_id": "ChIJNzMTpMZmQ0cR0LZ1eDGCsvY",
+      "streetName": "Tolstojeva",
+      "coordinates": {
+        "lat": 46.102703,
+        "lng": 19.6575788
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Tome Rudića Brace",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJrylkeEJkQ0cRPRvNBANIHpA",
+      "streetName": "Topčiderska",
+      "coordinates": {
+        "lat": 46.1530158,
+        "lng": 19.6880952
+      }
+    },
+    {
+      "place_id": "ChIJB0Wui9NgQ0cRCirjtPFbdZk",
+      "streetName": "Topolska",
+      "coordinates": {
+        "lat": 46.0804097,
+        "lng": 19.667282
+      }
+    },
+    {
+      "place_id": "ChIJk2dZ4xtkQ0cRcadoRE7pNbo",
+      "streetName": "Tordanska",
+      "coordinates": {
+        "lat": 46.129761,
+        "lng": 19.6765137
+      }
+    },
+    {
+      "place_id": "ChIJfbKb1cFmQ0cRla_a9xNRhsw",
+      "streetName": "Travnička",
+      "coordinates": {
+        "lat": 46.1055424,
+        "lng": 19.6514618
+      }
+    },
+    {
+      "place_id": "ChIJt0fsODFhQ0cRequAhlxQYZE",
+      "streetName": "Trebinjska",
+      "coordinates": {
+        "lat": 46.0966897,
+        "lng": 19.6826237
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Trešanja",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJW1dHY89mQ0cRd1OLaoeVp8A",
+      "streetName": "Trg cara Jovana Nenada",
+      "coordinates": {
+        "lat": 46.1011372,
+        "lng": 19.6643462
+      }
+    },
+    {
+      "place_id": "ChIJz8suq95mQ0cRUH9aNdsqz3Q",
+      "streetName": "Trg Ćirila i Metodija",
+      "coordinates": {
+        "lat": 46.0932085,
+        "lng": 19.6500549
+      }
+    },
+    {
+      "place_id": "ChIJEXMlfcZmQ0cRB8dcp7JDGh0",
+      "streetName": "Trg Jakaba i Komora",
+      "coordinates": {
+        "lat": 46.1023177,
+        "lng": 19.6600074
+      }
+    },
+    {
+      "place_id": "ChIJc6kMsTNhQ0cR1-6mZ1LUaII",
+      "streetName": "Trg jevrejskih žrtava",
+      "coordinates": {
+        "lat": 46.0962694,
+        "lng": 19.6783108
+      }
+    },
+    {
+      "place_id": "ChIJaQHo6xhFQ0cRCeUi-PEs9B0",
+      "streetName": "Trg kralja Tomislava",
+      "coordinates": {
+        "lat": 45.9620711,
+        "lng": 19.4345087
+      }
+    },
+    {
+      "place_id": "ChIJ9f9NSsRmQ0cR4KcNCbgnZ2w",
+      "streetName": "Trg Lajoša Košuta",
+      "coordinates": {
+        "lat": 46.1003649,
+        "lng": 19.6583846
+      }
+    },
+    {
+      "place_id": "ChIJbyxaXMxmQ0cRUFaumSIR2-8",
+      "streetName": "Trg Lazara Nešića",
+      "coordinates": {
+        "lat": 46.098007,
+        "lng": 19.6707781
+      }
+    },
+    {
+      "place_id": "ChIJzU44AMRgQ0cR7MM6wlJv14Y",
+      "streetName": "Trg Paje Jovanovića",
+      "coordinates": {
+        "lat": 46.0692354,
+        "lng": 19.6757814
+      }
+    },
+    {
+      "place_id": "ChIJf4NvSCxhQ0cRjUijI7viR6E",
+      "streetName": "Trg Paje Kujundžića",
+      "coordinates": {
+        "lat": 46.091053,
+        "lng": 19.6747878
+      }
+    },
+    {
+      "place_id": "ChIJKePdMc9mQ0cRWIUiQ-t_fGA",
+      "streetName": "Trg republike",
+      "coordinates": {
+        "lat": 46.1003231,
+        "lng": 19.6653509
+      }
+    },
+    {
+      "place_id": "ChIJpVS4DMZmQ0cRMK3j6mu61TQ",
+      "streetName": "Trg Sinagoge",
+      "coordinates": {
+        "lat": 46.1016054,
+        "lng": 19.6606913
+      }
+    },
+    {
+      "place_id": "ChIJfcjE4c5mQ0cR5ZP_jST_h1s",
+      "streetName": "Trg slobode",
+      "coordinates": {
+        "lat": 46.0993514,
+        "lng": 19.6650293
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Trg Svete Terezije",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Trg Veselina Masleše",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ3369C8VmQ0cRy5XcJ_retVA",
+      "streetName": "Trg žrtava fašizma",
+      "coordinates": {
+        "lat": 46.0988993,
+        "lng": 19.6590584
+      }
+    },
+    {
+      "place_id": "ChIJqYWGaehmQ0cRcK-VcuRzsWI",
+      "streetName": "Triglavska",
+      "coordinates": {
+        "lat": 46.1002905,
+        "lng": 19.6455181
+      }
+    },
+    {
+      "place_id": "ChIJb1VCBOZmQ0cRsZMvvO2DdQI",
+      "streetName": "Trogirska",
+      "coordinates": {
+        "lat": 46.0994982,
+        "lng": 19.6400571
+      }
+    },
+    {
+      "place_id": "ChIJkYLuTGxhQ0cREiCJNNOxPLA",
+      "streetName": "Tuk Ugarnice",
+      "coordinates": {
+        "lat": 46.1000316,
+        "lng": 19.7159939
+      }
+    },
+    {
+      "place_id": "ChIJGyQe-dBgQ0cRjY8Oo1AWnp4",
+      "streetName": "Tuzlanska",
+      "coordinates": {
+        "lat": 46.0779051,
+        "lng": 19.6718402
+      }
+    },
+    {
+      "place_id": "ChIJpV4VWKZmQ0cRjP1pU-yEV-g",
+      "streetName": "Učiteljska",
+      "coordinates": {
+        "lat": 46.1207523,
+        "lng": 19.6733701
+      }
+    },
+    {
+      "place_id": "ChIJXa0cBy5hQ0cRGjQNFNukQ8s",
+      "streetName": "Učka",
+      "coordinates": {
+        "lat": 46.0932226,
+        "lng": 19.6792066
+      }
+    },
+    {
+      "place_id": "ChIJj5_zjxdkQ0cRO1znK7-OkQ8",
+      "streetName": "Ulcinjska",
+      "coordinates": {
+        "lat": 46.1343262,
+        "lng": 19.6748829
+      }
+    },
+    {
+      "place_id": "ChIJQUCsq9BmQ0cRaUSA6QLPkRM",
+      "streetName": "Unska",
+      "coordinates": {
+        "lat": 46.0929221,
+        "lng": 19.6560672
+      }
+    },
+    {
+      "place_id": "ChIJE7TRr_RmQ0cRtHXVWPkaL1k",
+      "streetName": "Uralska",
+      "coordinates": {
+        "lat": 46.1108181,
+        "lng": 19.6330569
+      }
+    },
+    {
+      "place_id": "ChIJRWmnfPRmQ0cRR0sdGns5iFY",
+      "streetName": "Uskočka",
+      "coordinates": {
+        "lat": 46.1090168,
+        "lng": 19.6310543
+      }
+    },
+    {
+      "place_id": "ChIJRUCXcdFmQ0cRAZiihnfnMq8",
+      "streetName": "Ustanička",
+      "coordinates": {
+        "lat": 46.0930384,
+        "lng": 19.6629739
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Užarska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJDaFGEytnQ0cRgj-Zn_Hc5iw",
+      "streetName": "Užička",
+      "coordinates": {
+        "lat": 46.0828958,
+        "lng": 19.6615846
+      }
+    },
+    {
+      "place_id": "ChIJEz0kPvNmQ0cRrcS49NlgKbE",
+      "streetName": "Valjevska",
+      "coordinates": {
+        "lat": 46.1097618,
+        "lng": 19.634609
+      }
+    },
+    {
+      "place_id": "ChIJW4cziqNmQ0cRvH86Q9RNE6s",
+      "streetName": "Vardarska",
+      "coordinates": {
+        "lat": 46.1186031,
+        "lng": 19.6677107
+      }
+    },
+    {
+      "place_id": "ChIJp0S-YMJmQ0cRdDzLjG0guvU",
+      "streetName": "Vareška",
+      "coordinates": {
+        "lat": 46.1012353,
+        "lng": 19.6500349
+      }
+    },
+    {
+      "place_id": "ChIJK6DpRtFgQ0cRE1cfkGrNEqc",
+      "streetName": "Vase Pelagića",
+      "coordinates": {
+        "lat": 46.0792643,
+        "lng": 19.6700647
+      }
+    },
+    {
+      "place_id": "ChIJfwR4qclmQ0cRVlYDR6NZ2DA",
+      "streetName": "Vase Stajića",
+      "coordinates": {
+        "lat": 46.1027804,
+        "lng": 19.6676048
+      }
+    },
+    {
+      "place_id": "ChIJzSx76ppmQ0cRs9tpGO5nRns",
+      "streetName": "Vaska Pope",
+      "coordinates": {
+        "lat": 46.1200074,
+        "lng": 19.6489568
+      }
+    },
+    {
+      "place_id": "ChIJOZ55vuhmQ0cRtSAwGYmpGUA",
+      "streetName": "Vatroslava Jagića",
+      "coordinates": {
+        "lat": 46.1016363,
+        "lng": 19.6432244
+      }
+    },
+    {
+      "place_id": "ChIJZ46zNbhmQ0cR42w9wF0RX98",
+      "streetName": "Vatroslava Lisinskog",
+      "coordinates": {
+        "lat": 46.1076507,
+        "lng": 19.6647936
+      }
+    },
+    {
+      "place_id": "ChIJ2zQPcNhmQ0cRNWfD2lVh10M",
+      "streetName": "Velebitska",
+      "coordinates": {
+        "lat": 46.0893424,
+        "lng": 19.6517086
+      }
+    },
+    {
+      "place_id": "ChIJ_ZqGB2BmQ0cRbmZj0jPWPoA",
+      "streetName": "Velikokapelska",
+      "coordinates": {
+        "lat": 46.1123809,
+        "lng": 19.6268652
+      }
+    },
+    {
+      "place_id": "ChIJ6ehCzmJhQ0cR-I8nZ2EaeiY",
+      "streetName": "Veljka Petrovića",
+      "coordinates": {
+        "lat": 46.1125452,
+        "lng": 19.7285593
+      }
+    },
+    {
+      "place_id": "ChIJ5TS-RmJhQ0cRR7XG8e-k3kc",
+      "streetName": "Venac bratstva i jedinstva",
+      "coordinates": {
+        "lat": 46.1134079,
+        "lng": 19.7241953
+      }
+    },
+    {
+      "place_id": "ChIJd434U-lnQ0cRkKkPMl7rA5M",
+      "streetName": "Verice Barać",
+      "coordinates": {
+        "lat": 46.1094894,
+        "lng": 19.6778404
+      }
+    },
+    {
+      "place_id": "ChIJSZOwc9tgQ0cRsjyE10tiqI0",
+      "streetName": "Verušićka",
+      "coordinates": {
+        "lat": 46.0753918,
+        "lng": 19.6780691
+      }
+    },
+    {
+      "place_id": "ChIJOyhLBLxmQ0cR66oK37md6dM",
+      "streetName": "Viktora Igoa",
+      "coordinates": {
+        "lat": 46.1113889,
+        "lng": 19.662416
+      }
+    },
+    {
+      "place_id": "ChIJy-5kne5mQ0cRjvgWq1s-868",
+      "streetName": "Vilmoša Harangozoa",
+      "coordinates": {
+        "lat": 46.1051727,
+        "lng": 19.6412038
+      }
+    },
+    {
+      "place_id": "ChIJdyTXksBmQ0cRzFT8uBZ6zvI",
+      "streetName": "Vinkovačka",
+      "coordinates": {
+        "lat": 46.1063086,
+        "lng": 19.6568102
+      }
+    },
+    {
+      "place_id": "ChIJTeS2KCpnQ0cRxiXa-PQN7BI",
+      "streetName": "Vinodolska",
+      "coordinates": {
+        "lat": 46.0857276,
+        "lng": 19.6592905
+      }
+    },
+    {
+      "place_id": "ChIJORGaLa5mQ0cRCi881pXYv24",
+      "streetName": "Vinogradarska",
+      "coordinates": {
+        "lat": 46.1142561,
+        "lng": 19.6751538
+      }
+    },
+    {
+      "place_id": "ChIJj9zxU5NmQ0cRJt-YT2ehAHs",
+      "streetName": "Virovitička",
+      "coordinates": {
+        "lat": 46.1090013,
+        "lng": 19.6460009
+      }
+    },
+    {
+      "place_id": "ChIJsRnn1PlmQ0cR56-Z_gOB8xI",
+      "streetName": "Višanja",
+      "coordinates": {
+        "lat": 46.1031595,
+        "lng": 19.6252757
+      }
+    },
+    {
+      "place_id": "ChIJywkj2zdhQ0cRUkAO1k-sS6s",
+      "streetName": "Višegradska",
+      "coordinates": {
+        "lat": 46.1033814,
+        "lng": 19.6870601
+      }
+    },
+    {
+      "place_id": "ChIJCdRPhdRmQ0cRgYuABW8RZQM",
+      "streetName": "Viška",
+      "coordinates": {
+        "lat": 46.0902018,
+        "lng": 19.6665788
+      }
+    },
+    {
+      "place_id": "ChIJP_405KBmQ0cRh5AT5vY7gSw",
+      "streetName": "Višnjička",
+      "coordinates": {
+        "lat": 46.1226933,
+        "lng": 19.6686494
+      }
+    },
+    {
+      "place_id": "ChIJ8We_PTBhQ0cR8Tx7KPfBhx0",
+      "streetName": "Vjekoslava Karasa",
+      "coordinates": {
+        "lat": 46.0929697,
+        "lng": 19.6837449
+      }
+    },
+    {
+      "place_id": "ChIJfRj0MNRmQ0cRX-92DVxD7C8",
+      "streetName": "Vladimira Gortana",
+      "coordinates": {
+        "lat": 46.0893312,
+        "lng": 19.6621799
+      }
+    },
+    {
+      "place_id": "ChIJZ5KU5cpmQ0cRcLXzn05xc9I",
+      "streetName": "Vladimira Majakovskog",
+      "coordinates": {
+        "lat": 46.1017833,
+        "lng": 19.6756173
+      }
+    },
+    {
+      "place_id": "ChIJI5PCrs5mQ0cRTCNcHhLJhq0",
+      "streetName": "Vladimira Nazora",
+      "coordinates": {
+        "lat": 46.0994385,
+        "lng": 19.6681106
+      }
+    },
+    {
+      "place_id": "ChIJiZMK3uVmQ0cRbU2b3ZzzeGs",
+      "streetName": "Vladimira Perića Valtera",
+      "coordinates": {
+        "lat": 46.0984585,
+        "lng": 19.6393973
+      }
+    },
+    {
+      "place_id": "ChIJHRlHZ8VgQ0cRwk2jsPlUMR4",
+      "streetName": "Vladimira Rolovića",
+      "coordinates": {
+        "lat": 46.0728654,
+        "lng": 19.6728576
+      }
+    },
+    {
+      "place_id": "ChIJhZjJJ6VmQ0cRbwej3dq4D80",
+      "streetName": "Vlaha Bukovca",
+      "coordinates": {
+        "lat": 46.1152732,
+        "lng": 19.6696922
+      }
+    },
+    {
+      "place_id": "ChIJldyohs9gQ0cRmVTWwtP2BnI",
+      "streetName": "Vlasenička",
+      "coordinates": {
+        "lat": 46.0726222,
+        "lng": 19.6703959
+      }
+    },
+    {
+      "place_id": "ChIJ9QdJ63xhQ0cRrgImvK2XZKY",
+      "streetName": "Voćarska",
+      "coordinates": {
+        "lat": 46.1108794,
+        "lng": 19.7311449
+      }
+    },
+    {
+      "place_id": "ChIJp11c08JgQ0cRGg6BjbDX_ak",
+      "streetName": "Vojislava Ilića",
+      "coordinates": {
+        "lat": 46.0728391,
+        "lng": 19.6823569
+      }
+    },
+    {
+      "place_id": "ChIJK51UovRmQ0cRlBVwe5kTRvs",
+      "streetName": "Vojvođanska",
+      "coordinates": {
+        "lat": 46.1101802,
+        "lng": 19.6326402
+      }
+    },
+    {
+      "place_id": "ChIJrUMqcN1mQ0cRx5sBQWwDtTo",
+      "streetName": "Vrazova",
+      "coordinates": {
+        "lat": 46.0976829,
+        "lng": 19.6458507
+      }
+    },
+    {
+      "place_id": "ChIJaXGvfeZmQ0cRLYS7rqt92f4",
+      "streetName": "Vrbaska",
+      "coordinates": {
+        "lat": 46.0983079,
+        "lng": 19.6389788
+      }
+    },
+    {
+      "place_id": "ChIJdWsdn9pmQ0cRCbRdMcEqUNc",
+      "streetName": "Vrdnička",
+      "coordinates": {
+        "lat": 46.0960201,
+        "lng": 19.6588326
+      }
+    },
+    {
+      "place_id": "ChIJX3_HbthjQ0cRvr8FzK9nLjw",
+      "streetName": "Vrtna",
+      "coordinates": {
+        "lat": 46.1157428,
+        "lng": 19.7307335
+      }
+    },
+    {
+      "place_id": "ChIJIXNj4MhmQ0cRXQ8FLGRtXXk",
+      "streetName": "Vuka Karadžića",
+      "coordinates": {
+        "lat": 46.1018953,
+        "lng": 19.666477
+      }
+    },
+    {
+      "place_id": "ChIJQRdF8UZhQ0cRHTRlUA7OKhU",
+      "streetName": "Vuka Mandušića",
+      "coordinates": {
+        "lat": 46.103374,
+        "lng": 19.697223
+      }
+    },
+    {
+      "place_id": "ChIJ9e1vQpJmQ0cRd9ewwJd_Dqk",
+      "streetName": "Vukovarska",
+      "coordinates": {
+        "lat": 46.1125179,
+        "lng": 19.6437448
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Žabaljska",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJUzTLPNVmQ0cRtHBT0OQKveo",
+      "streetName": "Zadarska",
+      "coordinates": {
+        "lat": 46.0878374,
+        "lng": 19.6662797
+      }
+    },
+    {
+      "place_id": "ChIJEY-VQBtkQ0cRgkrlH4jcumE",
+      "streetName": "Zagorska",
+      "coordinates": {
+        "lat": 46.1284585,
+        "lng": 19.6815516
+      }
+    },
+    {
+      "place_id": "ChIJ78r15SFFQ0cRbjTeLdW8k7E",
+      "streetName": "Zagrebačka",
+      "coordinates": {
+        "lat": 45.9638573,
+        "lng": 19.4364184
+      }
+    },
+    {
+      "place_id": "ChIJ_UOp7s1mQ0cRiggmAj1PWMQ",
+      "streetName": "Zaharija Orfelina",
+      "coordinates": {
+        "lat": 46.0963363,
+        "lng": 19.6672386
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Zapadne ugarnice",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJMVujJS1kQ0cRQ7Lc-cg1_Vw",
+      "streetName": "Zapadni vinogradi",
+      "coordinates": {
+        "lat": 46.1377934,
+        "lng": 19.6446819
+      }
+    },
+    {
+      "place_id": "ChIJlTeuntxmQ0cRq2IlcKfAyuA",
+      "streetName": "Žarka Vasiljevića",
+      "coordinates": {
+        "lat": 46.0969753,
+        "lng": 19.6514003
+      }
+    },
+    {
+      "place_id": "ChIJc8zAasRmQ0cR68waKDasakU",
+      "streetName": "Žarka Zrenjanina",
+      "coordinates": {
+        "lat": 46.100869,
+        "lng": 19.6573569
+      }
+    },
+    {
+      "place_id": "ChIJo47KosFgQ0cRc2Q0hgKFCr8",
+      "streetName": "Žednička",
+      "coordinates": {
+        "lat": 46.0671714,
+        "lng": 19.6788552
+      }
+    },
+    {
+      "place_id": "ChIJtfjPJX1hQ0cR9uw9vJDFOD4",
+      "streetName": "Zelena",
+      "coordinates": {
+        "lat": 46.1120542,
+        "lng": 19.7291116
+      }
+    },
+    {
+      "place_id": "ChIJe88lX85gQ0cRUKI6XIH2llE",
+      "streetName": "Željka Milivojevića",
+      "coordinates": {
+        "lat": 46.073522,
+        "lng": 19.6667156
+      }
+    },
+    {
+      "place_id": "ChIJbe-lqdpgQ0cRrQ0BfUEnHYY",
+      "streetName": "Zenička",
+      "coordinates": {
+        "lat": 46.0749606,
+        "lng": 19.6728251
+      }
+    },
+    {
+      "place_id": "ChIJUXHQ1ClnQ0cRb8HvDbl4amA",
+      "streetName": "Žetelačka",
+      "coordinates": {
+        "lat": 46.0877161,
+        "lng": 19.6565979
+      }
+    },
+    {
+      "place_id": "ChIJtU__ZElhQ0cRaJxq7plvdKo",
+      "streetName": "Zetska",
+      "coordinates": {
+        "lat": 46.1051289,
+        "lng": 19.6880687
+      }
+    },
+    {
+      "place_id": "ChIJVQvi8aNmQ0cRHT0vjSht4Vs",
+      "streetName": "Zidarska",
+      "coordinates": {
+        "lat": 46.1193059,
+        "lng": 19.6673888
+      }
+    },
+    {
+      "place_id": "ChIJmU7gQi1hQ0cROu2VnnT4aE8",
+      "streetName": "Žikice Jovanovića Španca",
+      "coordinates": {
+        "lat": 46.093656,
+        "lng": 19.6733033
+      }
+    },
+    {
+      "place_id": "ChIJ0w5Ab-tmQ0cRwNCHjJPUlzI",
+      "streetName": "Žitna",
+      "coordinates": {
+        "lat": 46.1074541,
+        "lng": 19.6463335
+      }
+    },
+    {
+      "place_id": "ChIJSe6jBPNmQ0cRqzyxoGGEgT0",
+      "streetName": "Zlatiborska",
+      "coordinates": {
+        "lat": 46.1091206,
+        "lng": 19.635221
+      }
+    },
+    {
+      "place_id": "ChIJEaIfe8hmQ0cRbErgc4y1gGU",
+      "streetName": "Zmaj Jovina",
+      "coordinates": {
+        "lat": 46.1035153,
+        "lng": 19.6650919
+      }
+    },
+    {
+      "place_id": "ChIJBbgeRNpjQ0cRXVxu0L2Y3JM",
+      "streetName": "Zmajevačka",
+      "coordinates": {
+        "lat": 46.1194918,
+        "lng": 19.7292352
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "Zoltana Kodalja",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ8f27nYhmQ0cR5nyxhqMec68",
+      "streetName": "Zorkina",
+      "coordinates": {
+        "lat": 46.1200666,
+        "lng": 19.638773
+      }
+    },
+    {
+      "place_id": "ChIJqZHF9MBmQ0cRO-qN3CEvE4w",
+      "streetName": "Zrinjskog i Frankopana",
+      "coordinates": {
+        "lat": 46.1058336,
+        "lng": 19.6557799
+      }
+    },
+    {
+      "place_id": "ChIJCcxAAq5mQ0cRlcjwyrtJTY0",
+      "streetName": "Zvornička",
+      "coordinates": {
+        "lat": 46.1132874,
+        "lng": 19.6780747
+      }
+    },
+    {
+      "place_id": "ChIJNw986iykREcRpM8QNXNWty0",
+      "streetName": "1. nova",
+      "coordinates": {
+        "lat": 45.9080422,
+        "lng": 19.7796983
+      }
+    },
+    {
+      "place_id": "ChIJMUE8fzphQ0cR-gxWzM0KKug",
+      "streetName": "1. ustanka",
+      "coordinates": {
+        "lat": 46.0946848,
+        "lng": 19.6871829
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "2. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJnyyNhgVFQ0cR3wTI9nv8Nj8",
+      "streetName": "3. nova",
+      "coordinates": {
+        "lat": 45.9618903,
+        "lng": 19.4156635
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "4. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "5. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "Eh5Dcm5vZ29yc2thIDQsIFN1Ym90aWNhLCBTZXJiaWEiMBIuChQKEgnHju14ZWZDRxF6M8kRK-QkjRAEKhQKEglb7A5MZWZDRxESXakMqRiY_A",
+      "streetName": "4. crnogorske brigade",
+      "coordinates": {
+        "lat": 46.1209015,
+        "lng": 19.619677
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "6. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJn-wrPw9FQ0cR7wxKAxSymzM",
+      "streetName": "7. nova",
+      "coordinates": {
+        "lat": 45.9608805,
+        "lng": 19.4138593
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "8. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJT-qo3ZamREcRj2hItaQnhEw",
+      "streetName": "8. marta",
+      "coordinates": {
+        "lat": 45.9269422,
+        "lng": 19.7625268
+      }
+    },
+    {
+      "place_id": "ChIJEY2auQdFQ0cR4dLHOWK217o",
+      "streetName": "9. nova",
+      "coordinates": {
+        "lat": 45.9644829,
+        "lng": 19.4096682
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "10. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "10. novembra",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "EhoxMS4gbm92YSwgU3Vib3RpY2EsIFNlcmJpYSIuKiwKFAoSCQM5go_YZUNHEfDbdRDnjWJ3EhQKEgn5OK9owWZDRxGOgz0qkr0Z3w",
+      "streetName": "11. nova",
+      "coordinates": {
+        "lat": 46.1335521,
+        "lng": 19.6235108
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "12. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "13. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "14. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "15. aprila",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJXz51eRJmQ0cRfk-3ErK2Ijo",
+      "streetName": "15. avgusta",
+      "coordinates": {
+        "lat": 46.1261748,
+        "lng": 19.6061716
+      }
+    },
+    {
+      "place_id": "ChIJQaDOLShnQ0cRl8fGf4KzCGM",
+      "streetName": "18. novembra 1941.",
+      "coordinates": {
+        "lat": 46.0870973,
+        "lng": 19.655646
+      }
+    },
+    {
+      "place_id": "ChIJJd1nfr5mQ0cRwxzg-3QORy0",
+      "streetName": "27. marta",
+      "coordinates": {
+        "lat": 46.1117451,
+        "lng": 19.6595029
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "51. divizije",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJI1Us4bNmQ0cRpql_n5SijcE",
+      "streetName": "359. nova",
+      "coordinates": {
+        "lat": 46.1095146,
+        "lng": 19.6753555
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "360. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "367. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJqbPRsB9kQ0cRnFle95Lq3Ek",
+      "streetName": "381. nova",
+      "coordinates": {
+        "lat": 46.1265228,
+        "lng": 19.6690786
+      }
+    },
+    {
+      "place_id": "ChIJgWnSsx1kQ0cR56eRG8P6kSY",
+      "streetName": "382. nova",
+      "coordinates": {
+        "lat": 46.1258462,
+        "lng": 19.6755749
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "383. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "384. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJdT1h-ZpmQ0cRq9onxvdOG1Y",
+      "streetName": "471. nova",
+      "coordinates": {
+        "lat": 46.1205728,
+        "lng": 19.6508648
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "473. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    },
+    {
+      "place_id": "ChIJ-TivaMFmQ0cRjoM9KpK9Gd8",
+      "streetName": "475. nova",
+      "coordinates": {
+        "lat": 46.09695809999999,
+        "lng": 19.65763
+      }
+    }
+  ]
+}

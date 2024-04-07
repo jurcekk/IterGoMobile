@@ -7,7 +7,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import * as Location from 'expo-location';
 import { GOOGLE_MAPS_API_KEY } from '../../firebaseConfig';
 import { LocationContext } from '../context/LocationContext';
 
@@ -19,7 +18,8 @@ const SuggestedLocations = ({
 }) => {
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
-  var rad = function (x) {
+
+  const rad = function (x) {
     return (x * Math.PI) / 180;
   };
 
@@ -53,74 +53,83 @@ const SuggestedLocations = ({
   return (
     <FlatList
       data={suggestedList}
-      keyExtractor={(item) => item?.properties['@id']}
+      //item?.properties['@id']
+      keyExtractor={(item) => item?.place_id}
       initialNumToRender={10}
       maxToRenderPerBatch={10}
       windowSize={10}
       renderItem={({ item }) => {
+        const distance = getDistance(location, {
+          latitude: item?.coordinates?.lat,
+          longitude: item?.coordinates?.lng,
+          latitudeDelta: 0.0922 / 4,
+          longitudeDelta: 0.0421 / 4,
+        });
         return (
-          <View style={styles.container} key={item?.properties['@id']}>
-            <FontAwesome5 name='search-location' size={30} color='#ff6e2a' />
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => {
-                setEndLocation({
-                  latitude:
-                    item?.geometry?.coordinates[
-                      (item?.geometry?.coordinates.length / 2).toFixed(0)
-                    ][1],
-                  longitude:
-                    item?.geometry?.coordinates[
-                      (item?.geometry?.coordinates.length / 2).toFixed(0)
-                    ][0],
-                  latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
-                  longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
-                  locationString: item?.properties['name:sr-Latn'],
-                  distance: getDistance(location, {
-                    latitude:
-                      item?.geometry?.coordinates[
-                        (item?.geometry?.coordinates.length / 2).toFixed(0)
-                      ][1],
-                    longitude:
-                      item?.geometry?.coordinates[
-                        (item?.geometry?.coordinates.length / 2).toFixed(0)
-                      ][0],
-                    latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
-                    longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
-                  }),
-                });
-                setIsEndLocationVisible(true);
-                setSuggestedList([]);
-                bottomSheetRef.current.snapToPosition('30%');
-              }}
-            >
-              <Text style={styles.text}>
-                {item?.properties['name:sr-Latn']}
-                {/* {item?.description} */}
-              </Text>
-            </TouchableOpacity>
-            <Text
+          //item?.properties['@id']
+          <TouchableOpacity
+            style={styles.container}
+            onPress={() => {
+              setEndLocation({
+                latitude: item?.coordinates?.lat,
+                longitude: item?.coordinates?.lng,
+                latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
+                longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
+                locatonString: item?.streetName,
+              });
+              setIsEndLocationVisible(true);
+              setSuggestedList([]);
+              bottomSheetRef.current.snapToPosition('30%');
+            }}
+            key={item?.place_id}
+          >
+            <View
               style={{
-                fontSize: 16,
-                color: 'black',
-                fontWeight: 'bold',
-                marginRight: 20,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 10,
               }}
             >
-              {getDistance(location, {
-                latitude:
-                  item?.geometry?.coordinates[
-                    (item?.geometry?.coordinates.length / 2).toFixed(0)
-                  ][1],
-                longitude:
-                  item?.geometry?.coordinates[
-                    (item?.geometry?.coordinates.length / 2).toFixed(0)
-                  ][0],
-                latitudeDelta: 0.0922 / 4,
-                longitudeDelta: 0.0421 / 4,
-              }) + ' km'}
-            </Text>
-          </View>
+              <FontAwesome5 name='search-location' size={30} color='#ff6e2a' />
+
+              <View
+                style={{
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                }}
+              >
+                <Text style={styles.text}>{item?.streetName}</Text>
+                <Text
+                  style={[
+                    styles.text,
+                    {
+                      fontSize: 14,
+                      color: 'gray',
+                      fontWeight: 'bold',
+                    },
+                  ]}
+                >
+                  {(distance * 150 + 150).toFixed(0) + ' din'}
+                </Text>
+              </View>
+            </View>
+
+            <View>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: 'black',
+                  fontWeight: 'bold',
+                  marginRight: 20,
+                }}
+              >
+                {distance + ' km'}
+              </Text>
+              <Text style={{ fontSize: 14, color: 'gray', fontWeight: 'bold' }}>
+                {((distance / 50) * 60).toFixed(0) + ' min'}
+              </Text>
+            </View>
+          </TouchableOpacity>
         );
       }}
     />
@@ -137,6 +146,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#E5E5E5',
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     gap: 15,
   },
 

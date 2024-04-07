@@ -44,6 +44,7 @@ import ActiveOrderSheet from '../components/ActiveOrderSheet';
 import NewOrderSheet from '../components/NewOrderSheet';
 import { LocationContext } from '../context/LocationContext';
 import { AuthContext } from '../provider/AuthProvider';
+import { OrderContext } from '../provider/OrderProvider';
 
 const Home = () => {
   const [isEndLocationVisible, setIsEndLocationVisible] = useState(false);
@@ -57,6 +58,8 @@ const Home = () => {
   const db = FIREBASE_DB;
 
   const { userData } = useContext(AuthContext);
+  const { order } = useContext(OrderContext);
+  console.log('ORDER', order);
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
 
@@ -125,7 +128,15 @@ const Home = () => {
     } else {
       console.log('CENTRIRANO BEZ KRAJNJE LOKACIJE');
 
-      mapRef.current.animateToRegion(location, 100);
+      mapRef.current.animateToRegion(
+        {
+          latitude: location?.latitude,
+          longitude: location?.longitude,
+          latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
+          longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
+        },
+        500
+      );
     }
   };
 
@@ -135,7 +146,8 @@ const Home = () => {
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${desc}&key=${GOOGLE_MAPS_API_KEY}`
       );
       const data = await response.json();
-      console.log('ADRESA', data?.results[0]?.formatted_address.split(',')[0]);
+
+      console.log('USAO', data?.results[0]?.formatted_address.split(',')[0]);
 
       return data?.results[0]?.formatted_address.split(',')[0];
     } catch (error) {
@@ -152,7 +164,12 @@ const Home = () => {
       <MapView
         style={styles.map}
         provider={PROVIDER_GOOGLE}
-        region={location}
+        region={{
+          latitude: location?.latitude,
+          longitude: location?.longitude,
+          latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
+          longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
+        }}
         onPress={handleClose}
         ref={mapRef}
         showsUserLocation
@@ -174,11 +191,10 @@ const Home = () => {
                 latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
                 longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
               });
-              console.log('ADRESS', address);
 
               update(ref(db, 'users/' + auth.currentUser.uid + '/location'), {
-                latitude,
-                longitude,
+                latitude: latitude.toFixed(6),
+                longitude: longitude.toFixed(6),
                 locationString: address,
               });
             })
@@ -193,14 +209,22 @@ const Home = () => {
           iconColor='#ff6e2a'
         />
 
-        <MapViewDirections
-          origin={location}
-          destination={endLocation}
-          apikey={GOOGLE_MAPS_API_KEY}
-          strokeColor='#ff6e2a'
-          strokeWidth={3}
-          mode='DRIVING'
-        />
+        {endLocation && (
+          <MapViewDirections
+            origin={{
+              latitude: location?.latitude,
+              longitude: location?.longitude,
+            }}
+            destination={{
+              latitude: endLocation?.latitude,
+              longitude: endLocation?.longitude,
+            }}
+            apikey={GOOGLE_MAPS_API_KEY}
+            strokeColor='#ff6e2a'
+            strokeWidth={3}
+            mode='DRIVING'
+          />
+        )}
       </MapView>
       <Animated.View style={styles.animatedView}>
         <TouchableOpacity
@@ -254,14 +278,14 @@ const styles = StyleSheet.create({
   },
 
   bottomSheet: {
-    shadowColor: '#000',
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 3,
     },
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
-
+    backgroundColor: '#f2f2f2',
     elevation: 7,
   },
 
