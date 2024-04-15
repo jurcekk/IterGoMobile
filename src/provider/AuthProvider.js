@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
-import { get, onValue, ref } from 'firebase/database';
+import { get, ref } from 'firebase/database';
 
 const AuthContext = createContext();
 const AuthProvider = (props) => {
@@ -10,35 +10,46 @@ const AuthProvider = (props) => {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);
 
-  useEffect(() => {
-    checkLogin();
-  }, []);
-
-  function checkLogin() {
+  const checkLogin = () => {
     onAuthStateChanged(auth, (u) => {
+      console.log('AUTH STATE CHANGED', u);
       if (u) {
         console.log('LOGIN');
-        const dbRef = ref(db, 'users/' + u?.uid);
+        const dbRef = ref(db, 'users/' + auth?.currentUser?.uid);
+
         get(dbRef).then((snapshot) => {
           if (!snapshot.exists()) {
+            console.log('No data available');
             return;
           }
           const userValue = snapshot.val();
           console.log('USER VALUE', JSON.stringify(userValue, null, 2));
-          setUser(true);
+          if (userValue?.phone === '') {
+            setUser('onBoarding');
+          } else {
+            setUser('true');
+          }
+
           setUserData(userValue);
         });
       } else {
-        setUser(false);
+        setUser('false');
+        setUserData(null);
+
         signOut(auth);
       }
     });
-  }
+  };
+
+  useEffect(() => {
+    checkLogin();
+  }, []);
 
   return (
     <AuthContext.Provider
       value={{
         user,
+        setUser,
         userData,
         setUserData,
       }}

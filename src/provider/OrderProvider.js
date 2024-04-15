@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { AuthContext } from './AuthProvider';
 import { get, onValue, push, ref, set } from 'firebase/database';
+import { LocationContext } from '../context/LocationContext';
 
 // ORDER STATUS LIST
 // pending - waiting for a driver to accept the order
@@ -12,8 +13,8 @@ import { get, onValue, push, ref, set } from 'firebase/database';
 const OrderContext = createContext();
 const OrderProvider = (props) => {
   const { userData } = useContext(AuthContext);
+  const { location, endLocation } = useContext(LocationContext);
   const [order, setOrder] = useState(null);
-  let orderKey = null;
 
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
@@ -69,9 +70,11 @@ const OrderProvider = (props) => {
     const orderRef = push(ref(db, 'orders'));
     order.orderId = orderRef.key;
     orderKey = orderRef.key;
+
     set(orderRef, order)
       .then(() => {
         console.log('Order stored in database');
+        setOrder(order);
       })
       .catch(() => {
         console.log('Error storing order in database:');
@@ -128,22 +131,22 @@ const OrderProvider = (props) => {
   function checkOrder() {
     try {
       if (userData) {
-        const dbRef = ref(db, 'orders/' + orderKey);
+        const dbRef = ref(db, 'orders');
         onValue(dbRef, (snapshot) => {
           if (!snapshot.exists()) {
             return;
           }
-          const order = snapshot.val();
-          // const order = Object.values(orders).find((order) => {
-          //   console.log(order);
-          //   console.log(auth.currentUser.uid);
-          //   return (
-          //     (order.userId === auth.currentUser.uid &&
-          //       order.status === 'accepted') ||
-          //     (order.driverId === auth.currentUser.uid &&
-          //       order.status === 'accepted')
-          //   );
-          // });
+          const orders = snapshot.val();
+          const order = Object.values(orders).find((order) => {
+            console.log(order);
+            console.log(auth.currentUser.uid);
+            return (
+              (order.userId === auth.currentUser.uid &&
+                order.status === 'accepted') ||
+              (order.driverId === auth.currentUser.uid &&
+                order.status === 'accepted')
+            );
+          });
           setOrder(order);
         });
       }
@@ -156,10 +159,40 @@ const OrderProvider = (props) => {
     checkOrder();
   }, [userData]);
 
+  useEffect(() => {
+    if (!order) return;
+    try {
+      const timer = setTimeout(() => {
+        cancelOrder();
+      }, 10000);
+
+      onValue(ref(db, 'orders/' + order.orderId + '/status'), (snapshot) => {
+        if (!snapshot.exists()) {
+          return;
+        }
+        const order = snapshot.val();
+        if (order === 'canceled') {
+          setOrder(null);
+        } else if (order === 'accepted') {
+          console.log('Order accepted');
+          clearTimeout(timer);
+        }
+      });
+      return () => clearTimeout(timer);
+    } catch (e) {
+      console.log(e);
+    }
+  }, [order]);
+
   return (
     <OrderContext.Provider
       value={{
         order,
+        getOrderStatus,
+        cancelOrder,
+        createOrder,
+        checkIfUserHasActiveOrder,
+        getAllUserOrders,
       }}
     >
       {props.children}

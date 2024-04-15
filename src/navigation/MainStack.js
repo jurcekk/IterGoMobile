@@ -6,18 +6,14 @@ import EditProfile from '../screens/EditProfile';
 import BecomeDriver from '../screens/BecomeDriver';
 import Driver from '../screens/Driver';
 import DrawerContent from '../components/DrawerContent';
-import First from '../screens/onboarding/First';
 import { AuthContext } from '../provider/AuthProvider';
+import OnBoarding from './OnBoardingStack';
 
 const Drawer = createDrawerNavigator();
 const Main = () => {
-  const { userData } = useContext(AuthContext);
-
-  console.log('USER DATA123123123', userData?.phone === '');
-
   return (
     <Drawer.Navigator
-      initialRouteName={userData?.phone === '' ? 'First' : 'Home'}
+      initialRouteName='Home'
       drawerContent={(props) => <DrawerContent {...props} />}
       screenOptions={{
         swipeEdgeWidth: 0,
@@ -47,11 +43,11 @@ const Main = () => {
         options={{ headerShown: false }}
       />
 
-      <Drawer.Screen
-        name='First'
-        component={First}
+      {/* <Drawer.Screen
+        name='onBoarding'
+        component={OnBoarding}
         options={{ headerShown: false }}
-      />
+      /> */}
     </Drawer.Navigator>
   );
 };

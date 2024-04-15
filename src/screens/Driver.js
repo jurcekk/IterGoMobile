@@ -17,7 +17,7 @@ import MapMarker from '../components/MapMarker';
 import Toast from 'react-native-toast-message';
 
 const Driver = (props) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
 
@@ -132,7 +132,7 @@ const Driver = (props) => {
           </Text>
         </View>
 
-        {data && (
+        {!data.length && (
           <View
             style={{
               flex: 1,

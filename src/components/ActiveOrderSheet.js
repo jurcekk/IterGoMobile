@@ -19,6 +19,7 @@ import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { ref, get, onValue } from 'firebase/database';
 import useOrder from '../hooks/useOrder';
 import useDistance from '../hooks/useDistance';
+import { Image } from 'expo-image';
 
 const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
   const [activeOrder, setActiveOrder] = useState(null);
@@ -150,9 +151,16 @@ const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
       <View style={styles.contentContainer}>
         <View style={styles.profileContainer}>
           <View style={styles.profileIconContainer}>
-            <Text style={styles.profileIconText}>
-              {driverData?.firstName[0]}
-            </Text>
+            <Image
+              source={driverData?.profileImage}
+              style={{
+                width: 50,
+                height: 50,
+                borderRadius: 25,
+                borderWidth: 1,
+                borderColor: '#ff6e2a',
+              }}
+            />
           </View>
 
           <View style={styles.profileInfoContainer}>
@@ -239,10 +247,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   profileIconContainer: {
-    height: 60,
-    width: 60,
-    borderRadius: 30,
-    backgroundColor: '#ff6e2a',
+    height: 50,
+    width: 50,
+    borderRadius: '50%',
     justifyContent: 'center',
     alignItems: 'center',
   },

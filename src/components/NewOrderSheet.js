@@ -3,49 +3,26 @@ import React, {
   useCallback,
   useMemo,
   useRef,
-  useEffect,
   useContext,
 } from 'react';
 import {
-  Text,
   View,
   StyleSheet,
   Keyboard,
   TouchableOpacity,
   TextInput,
-  Dimensions,
+  Text,
 } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import BottomSheet from '@gorhom/bottom-sheet';
-import MenuButton from '../components/MenuButton';
-import { useNavigation } from '@react-navigation/native';
+
 import { FontAwesome5 } from '@expo/vector-icons';
-import * as file from '../data/export.json';
-import MapMarker from '../components/MapMarker';
+
 import SuggestedLocations from './SuggestedLocations';
-import NoDriverModal from '../components/NoDriverModal';
-import WaitingModal from '../components/WaitingModal';
-import DriverAccepted from '../components/DriverAccepted';
-import useOrder from '../hooks/useOrder';
-import useDistance from '../hooks/useDistance';
-import MapViewDirections from 'react-native-maps-directions';
+
 import * as Haptics from 'expo-haptics';
 
-import Animated, {
-  useSharedValue,
-  withTiming,
-  Easing,
-} from 'react-native-reanimated';
-import { get, onValue, ref } from 'firebase/database';
-
-import {
-  FIREBASE_DB,
-  FIREBASE_AUTH,
-  GOOGLE_MAPS_API_KEY,
-} from '../../firebaseConfig';
 import Toast from 'react-native-toast-message';
 import { LocationContext } from '../context/LocationContext';
-import { AuthContext } from '../provider/AuthProvider';
 import { OrderContext } from '../provider/OrderProvider';
 import * as streets from '../data/streets.json';
 
@@ -56,15 +33,13 @@ const NewOrderSheet = ({
 }) => {
   const [suggestedList, setSuggestedList] = useState([]);
   const timeoutRef = useRef(null);
-  const [intervalId, setIntervalId] = useState(null);
-  // const {
-  //   getOrderStatus,
-  //   cancelOrder,
-  //   checkIfUserHasActiveOrder,
-  //   createOrder,
-  // } = useOrder();
+  // const [intervalId, setIntervalId] = useState(null);
+  const endLocationRef = useRef(null);
 
   const snapPoints = useMemo(() => ['50%', '90%'], []);
+
+  const { checkOrderStatus, createOrder, checkIfUserHasActiveOrder } =
+    useContext(OrderContext);
 
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
@@ -73,68 +48,53 @@ const NewOrderSheet = ({
     bottomSheetRef.current.snapToPosition('90%');
   }, []);
 
-  const checkOrderStatus = async () => {
-    try {
-      const MAX_CHECKS = 20;
-      let checks = 0;
+  // const checkOrderStatus = async () => {
+  //   try {
+  //     const MAX_CHECKS = 20;
+  //     let checks = 0;
 
-      const interval = setInterval(async () => {
-        checks++;
+  //     const interval = setInterval(async () => {
+  //       checks++;
 
-        const order = await getOrderStatus();
-        console.log('order:', order);
-        if (order.status === 'accepted') {
-          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-          Toast.show({
-            type: 'success',
-            position: 'top',
-            text1: 'Uspešno',
-            text2: 'Vozač je prihvatio vaš zahtev',
-            topOffset: 60,
-          });
-          setWaitingModalVisible(false);
+  //       const order = await getOrderStatus();
+  //       console.log('order:', order);
+  //       if (order.status === 'accepted') {
+  //         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+  //         Toast.show({
+  //           type: 'success',
+  //           position: 'top',
+  //           text1: 'Uspešno',
+  //           text2: 'Vozač je prihvatio vaš zahtev',
+  //           topOffset: 60,
+  //         });
+  //         setWaitingModalVisible(false);
 
-          clearInterval(interval);
-        } else if (checks === MAX_CHECKS) {
-          Toast.show({
-            type: 'error',
-            position: 'top',
-            text1: 'Greška',
-            text2: 'Nema slobodnih vozača',
-            topOffset: 60,
-          });
+  //         clearInterval(interval);
+  //       } else if (checks === MAX_CHECKS) {
+  //         Toast.show({
+  //           type: 'error',
+  //           position: 'top',
+  //           text1: 'Greška',
+  //           text2: 'Nema slobodnih vozača',
+  //           topOffset: 60,
+  //         });
 
-          setWaitingModalVisible(false);
-          setNoDriverModalVisible(true);
-          clearInterval(interval);
-          cancelOrder();
-        }
-      }, 1000);
-      setIntervalId(interval);
-    } catch (error) {
-      console.error('Greška:', error);
-      setWaitingModalVisible(false);
-    }
-  };
+  //         setWaitingModalVisible(false);
+  //         setNoDriverModalVisible(true);
+  //         clearInterval(interval);
+  //         cancelOrder();
+  //       }
+  //     }, 1000);
+  //     setIntervalId(interval);
+  //   } catch (error) {
+  //     console.error('Greška:', error);
+  //     setWaitingModalVisible(false);
+  //   }
+  // };
 
   const handleInputChanges = (text) => {
-    // const radius = 500;
-    // if (text.length < 4) return;
-    // fetch(
-    //   `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${text}&location=${location?.latitude}%2C${location?.longitude}&radius=${radius}&types=geocode&key=${GOOGLE_MAPS_API_KEY}`
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     // Process the response data here
-    //     console.log(JSON.stringify(data, null, 2));
-    //     if (data?.predictions.length === 0) return;
-    //     setSuggestedList(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //   });
-
     bottomSheetRef.current.snapToPosition('90%');
+
     setEndLocation((prevState) => {
       return {
         ...prevState,
@@ -144,7 +104,6 @@ const NewOrderSheet = ({
     if (text.length < 3) return;
     clearTimeout(timeoutRef.current);
     let timer;
-    // console.log(JSON.stringify(streets.default.newArr, null, 2));
     if (streets.default.newArr) {
       timer = setTimeout(() => {
         const result = streets?.default?.newArr.filter((item) =>
@@ -153,17 +112,6 @@ const NewOrderSheet = ({
         setSuggestedList(result);
       }, 1000);
     }
-
-    // if (file?.features) {
-    //   timer = setTimeout(() => {
-    //     const result = file?.features?.filter((item) =>
-    //       item?.properties['name:sr-Latn']
-    //         ?.toLowerCase()
-    //         .includes(text.toLowerCase())
-    //     );
-    //     setSuggestedList(result);
-    //   }, 1000);
-    // }
   };
 
   return (
@@ -224,14 +172,33 @@ const NewOrderSheet = ({
               placeholder='Trenutna lokacija'
               editable={false}
             />
-
-            <TextInput
-              style={styles.textInput}
-              placeholder='Željena destinacija?'
-              onChangeText={handleInputChanges}
-              onFocus={handleOnFocusKeyboard}
-              value={endLocation?.locationString}
-            />
+            <View>
+              <TextInput
+                ref={endLocationRef}
+                style={styles.textInput}
+                placeholder='Željena destinacija?'
+                onChangeText={handleInputChanges}
+                onFocus={handleOnFocusKeyboard}
+                value={endLocation?.locationString}
+              />
+              {endLocation?.locationString && (
+                <View style={styles.clearIconContainer}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      setEndLocation(null);
+                      setSuggestedList([]);
+                      bottomSheetRef.current.snapToPosition('30%');
+                      Keyboard.dismiss();
+                    }}
+                    style={{
+                      marginRight: 10,
+                    }}
+                  >
+                    <FontAwesome5 name='times' size={20} color='gray' />
+                  </TouchableOpacity>
+                </View>
+              )}
+            </View>
             <TouchableOpacity
               style={styles.submitButton}
               onPress={async () => {
@@ -245,6 +212,21 @@ const NewOrderSheet = ({
                   });
                   return;
                 }
+                if (
+                  !endLocation?.locationString ||
+                  !endLocation.latitude ||
+                  !endLocation.longitude
+                ) {
+                  Toast.show({
+                    type: 'error',
+                    position: 'top',
+                    text1: 'Greška',
+                    text2: 'Morate uneti ispravnu destinaciju',
+                    topOffset: 60,
+                  });
+                  return;
+                }
+
                 handleClose();
                 setIsEndLocationVisible(true);
                 createOrder(location, endLocation).then(() => {
@@ -262,11 +244,8 @@ const NewOrderSheet = ({
 
       <SuggestedLocations
         bottomSheetRef={bottomSheetRef}
-        locatio={location}
         suggestedList={suggestedList}
         setSuggestedList={setSuggestedList}
-        setEndLocation={setEndLocation}
-        endLocation={endLocation}
         setIsEndLocationVisible={setIsEndLocationVisible}
       />
     </BottomSheet>
@@ -351,6 +330,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ff6e2a',
+  },
+
+  clearIconContainer: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
   },
 });
 

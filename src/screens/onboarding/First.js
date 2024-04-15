@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {
   View,
   TextInput,
@@ -48,7 +48,7 @@ const First = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [permission, requestPermission] = ImagePicker.useCameraPermissions();
 
-  const { userData } = useContext(AuthContext);
+  const { userData, setUserData, setUser } = useContext(AuthContext);
 
   const navigation = useNavigation();
   const storage = FIREBASE_STORAGE;
@@ -115,7 +115,6 @@ const First = () => {
           const url = await getDownloadURL(uploadTask.snapshot.ref);
           console.log('File available at', url);
           setUploading(false);
-          // navigation.navigate('Home');
           resolve(url);
         }
       );
@@ -139,7 +138,7 @@ const First = () => {
 
       return;
     }
-    console.log(user);
+    console.log('USER', user);
     const obj = {
       firstName: data?.firstName,
       lastName: data?.lastName,
@@ -159,7 +158,7 @@ const First = () => {
       },
     };
 
-    update(refDB(db, 'users/' + user?.uid), obj)
+    set(refDB(db, 'users/' + user?.uid), obj)
       .then(() => {
         console.log('User stored in database');
         setLoading(false);
@@ -170,6 +169,9 @@ const First = () => {
           text1: 'Uspešna registracija',
           text2: 'Uspešno ste se registrovali.',
         });
+        setUserData(obj);
+        setUser('true');
+        // navigation.navigate('Home');
       })
       .catch((error) => {
         console.log('Error storing user in database:', error);
@@ -182,25 +184,6 @@ const First = () => {
           text2: 'Greška prilikom registracije.',
         });
       });
-
-    // updateProfile(auth.currentUser, {
-    //   displayName: `${data.firstName} ${data.lastName}`,
-    // })
-    //   .then(() => {
-    //     console.log('User profile updated');
-    //     console.log(auth.currentUser.displayName);
-
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     Toast.show({
-    //       type: 'error',
-    //       position: 'top',
-    //       topOffset: 60,
-    //       text1: 'Greška',
-    //       text2: 'Greška prilikom registracije.',
-    //     });
-    //   });
   };
 
   const pickImage = async () => {
@@ -213,7 +196,6 @@ const First = () => {
     if (!result.canceled) {
       setValue('profileImage', result.assets[0].uri);
       setProfileImage(result.assets[0].uri);
-      console.log(result.assets[0].uri);
     }
   };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Text,
   View,
@@ -15,10 +15,13 @@ import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH } from '../../../firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import Toast from 'react-native-toast-message';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const { setUser } = useContext(AuthContext);
   const navigation = useNavigation();
 
   const auth = FIREBASE_AUTH;
@@ -49,6 +52,7 @@ const Login = () => {
           text1: 'Uspešna prijava',
           text2: 'Uspešno ste se prijavili na svoj nalog.',
         });
+        setUser('true');
       })
       .catch((error) => {
         // Login failed
@@ -66,6 +70,7 @@ const Login = () => {
           text1: 'Greška',
           text2: message,
         });
+        setUser('false');
       });
   };
 

@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  View,
-  Modal,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Modal, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Image } from 'expo-image';
+import Toast from 'react-native-toast-message';
 
 const WaitingModal = ({ visible, onCancel }) => (
   <Modal visible={visible} onRequestClose={onCancel} transparent>
@@ -29,6 +24,7 @@ const WaitingModal = ({ visible, onCancel }) => (
         <Text>Otkaži</Text>
       </TouchableOpacity>
     </View>
+    <Toast />
   </Modal>
 );
 

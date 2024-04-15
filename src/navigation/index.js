@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -6,22 +6,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import Main from './MainStack';
 import Auth from './AuthStack';
 import Loading from '../screens/utils/Loading';
-import OnBoardingStack from './OnBoardingStack';
+import OnBoarding from './OnBoardingStack';
 
 export default () => {
-  const { user, userData } = useContext(AuthContext);
-  console.log('USERDATADATA', userData);
-
-  useEffect(() => {
-    console.log('PHONE', userData?.phone);
-  }, [userData]);
+  const { user } = useContext(AuthContext);
 
   return (
     <NavigationContainer>
-      {userData?.phone === '' && <OnBoardingStack />}
-      {user == null && userData?.phone !== '' && <Loading />}
-      {user == false && userData?.phone !== '' && <Auth />}
-      {user == true && userData?.phone !== '' && <Main />}
+      {user === null && <Loading />}
+      {user === 'false' && <Auth />}
+      {user === 'true' && <Main />}
+      {user === 'onBoarding' && <OnBoarding />}
     </NavigationContainer>
   );
 };

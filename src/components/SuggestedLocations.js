@@ -9,6 +9,8 @@ import {
 import { FontAwesome5 } from '@expo/vector-icons';
 import { GOOGLE_MAPS_API_KEY } from '../../firebaseConfig';
 import { LocationContext } from '../context/LocationContext';
+import { AntDesign } from '@expo/vector-icons';
+import Toast from 'react-native-toast-message';
 
 const SuggestedLocations = ({
   bottomSheetRef,
@@ -38,22 +40,9 @@ const SuggestedLocations = ({
     return (d / 1000).toFixed(2);
   };
 
-  const getLocationString = async (desc) => {
-    // get location string from this link https://maps.googleapis.com/maps/api/geocode/json?latlng=44.4647452,7.3553838&key=YOUR_API_KEY
-    try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${desc}&key=${GOOGLE_MAPS_API_KEY}`
-      );
-      const data = await response.json();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <FlatList
       data={suggestedList}
-      //item?.properties['@id']
       keyExtractor={(item) => item?.place_id}
       initialNumToRender={10}
       maxToRenderPerBatch={10}
@@ -66,16 +55,30 @@ const SuggestedLocations = ({
           longitudeDelta: 0.0421 / 4,
         });
         return (
-          //item?.properties['@id']
           <TouchableOpacity
-            style={styles.container}
+            style={[
+              styles.container,
+              distance < 1 && {
+                backgroundColor: '#00000030',
+              },
+            ]}
             onPress={() => {
+              if (distance < 1) {
+                Toast.show({
+                  type: 'error',
+                  text1: 'Greška',
+                  text2: 'Nije moguće izabrati lokaciju koja je bliža od 1 km',
+                });
+
+                return;
+              }
               setEndLocation({
                 latitude: item?.coordinates?.lat,
                 longitude: item?.coordinates?.lng,
                 latitudeDelta: process.env.EXPO_PUBLIC_LATITUDE_DELTA,
                 longitudeDelta: process.env.EXPO_PUBLIC_LONGITUDE_DELTA,
-                locatonString: item?.streetName,
+                locationString: item?.streetName,
+                distance: distance,
               });
               setIsEndLocationVisible(true);
               setSuggestedList([]);
@@ -113,21 +116,43 @@ const SuggestedLocations = ({
                 </Text>
               </View>
             </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 10,
+              }}
+            >
+              {distance < 1 && (
+                <AntDesign name='exclamationcircle' size={24} color='#FF0000' />
+              )}
 
-            <View>
-              <Text
+              <View
                 style={{
-                  fontSize: 16,
-                  color: 'black',
-                  fontWeight: 'bold',
-                  marginRight: 20,
+                  paddingRight: 10,
                 }}
               >
-                {distance + ' km'}
-              </Text>
-              <Text style={{ fontSize: 14, color: 'gray', fontWeight: 'bold' }}>
-                {((distance / 50) * 60).toFixed(0) + ' min'}
-              </Text>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    color: 'black',
+                    fontWeight: 'bold',
+                    marginRight: 20,
+                  }}
+                >
+                  {distance + ' km'}
+                </Text>
+
+                <Text
+                  style={{
+                    fontSize: 14,
+                    color: 'gray',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {((distance / 50) * 60).toFixed(0) + ' min'}
+                </Text>
+              </View>
             </View>
           </TouchableOpacity>
         );

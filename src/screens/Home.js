@@ -58,8 +58,7 @@ const Home = () => {
   const db = FIREBASE_DB;
 
   const { userData } = useContext(AuthContext);
-  const { order } = useContext(OrderContext);
-  console.log('ORDER', order);
+  const { order, cancelOrder } = useContext(OrderContext);
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
 
@@ -96,7 +95,7 @@ const Home = () => {
 
   const handleCancelOrder = () => {
     if (!driverAccepted) setEndLocation(null);
-    // if (waitingModalVisible) cancelOrder();
+    if (waitingModalVisible) cancelOrder();
     setWaitingModalVisible(false);
     setNoDriverModalVisible(false);
     setDriverAccepted(false);
@@ -159,6 +158,20 @@ const Home = () => {
     centerMap();
   }, [location, endLocation]);
 
+  useEffect(() => {
+    if (!order) return;
+    setEndLocation(order.endLocation);
+  }, []);
+
+  useEffect(() => {
+    if (order?.status === 'pending') {
+      setWaitingModalVisible(true);
+    }
+    if (waitingModalVisible && order?.status === 'accepted') {
+      setWaitingModalVisible(false);
+    }
+  }, [order]);
+
   return (
     <View style={styles.container}>
       <MapView
@@ -175,6 +188,7 @@ const Home = () => {
         showsUserLocation
         onUserLocationChange={({ nativeEvent: { coordinate } }) => {
           const { latitude, longitude } = coordinate;
+          // console.log('USER LOCATION CHANGE', coordinate);
 
           if (
             coordinate.latitude.toFixed(3) === location?.latitude.toFixed(3) &&
@@ -209,7 +223,7 @@ const Home = () => {
           iconColor='#ff6e2a'
         />
 
-        {endLocation && (
+        {endLocation?.latitude && endLocation?.longitude && (
           <MapViewDirections
             origin={{
               latitude: location?.latitude,

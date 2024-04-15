@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   Text,
   View,
@@ -8,13 +8,14 @@ import {
   ActivityIndicator,
   ScrollView,
 } from 'react-native';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import InputField from '../../components/InputField';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../../firebaseConfig';
-import { ref, set } from 'firebase/database';
+import { push, ref, set } from 'firebase/database';
 import Toast from 'react-native-toast-message';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -30,6 +31,8 @@ const Register = () => {
   });
   const [showPassword, setShowPassword] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const { setUser } = useContext(AuthContext);
 
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
@@ -71,6 +74,7 @@ const Register = () => {
               text2: 'Uspešno ste se registrovali na svoj nalog.',
             });
             setLoading(false);
+            setUser('onBoarding');
           })
           .catch((error) => {
             console.log('Error:', error.message);
@@ -82,6 +86,7 @@ const Register = () => {
               text1: 'Greška',
               text2: 'Greška prilikom registracije.',
             });
+            setUser('false');
           });
       })
       .catch((error) => {

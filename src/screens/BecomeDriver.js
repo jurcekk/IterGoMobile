@@ -50,6 +50,40 @@ const BecomeDriver = () => {
   const auth = FIREBASE_AUTH;
   const navigation = useNavigation();
 
+  const setCarBrandsFirebase = () => {
+    const carBrands = [
+      { id: 1, label: 'Audi', value: 'Audi' },
+      { id: 2, label: 'BMW', value: 'BMW' },
+      { id: 3, label: 'Chevrolet', value: 'Chevrolet' },
+      { id: 4, label: 'Ferrari', value: 'Ferrari' },
+      { id: 5, label: 'Ford', value: 'Ford' },
+      { id: 6, label: 'Honda', value: 'Honda' },
+      { id: 7, label: 'Hyundai', value: 'Hyundai' },
+      { id: 8, label: 'Jaguar', value: 'Jaguar' },
+      { id: 9, label: 'Kia', value: 'Kia' },
+      { id: 10, label: 'Land Rover', value: 'Land Rover' },
+      { id: 11, label: 'Lexus', value: 'Lexus' },
+      { id: 12, label: 'Mazda', value: 'Mazda' },
+      { id: 13, label: 'Mercedes-Benz', value: 'Mercedes-Benz' },
+      { id: 14, label: 'Nissan', value: 'Nissan' },
+      { id: 15, label: 'Porsche', value: 'Porsche' },
+      { id: 16, label: 'Subaru', value: 'Subaru' },
+      { id: 17, label: 'Tesla', value: 'Tesla' },
+      { id: 18, label: 'Toyota', value: 'Toyota' },
+      { id: 19, label: 'Volkswagen', value: 'Volkswagen' },
+      { id: 20, label: 'Volvo', value: 'Volvo' },
+    ];
+
+    const dbRef = ref(db, 'carBrands');
+    set(dbRef, carBrands)
+      .then(() => {
+        console.log('Car brands stored in database');
+      })
+      .catch(() => {
+        console.log('Error storing car brands in database:');
+      });
+  };
+
   const getCarBrands = () => {
     const dbRef = ref(db, 'carBrands');
     get(dbRef).then((snapshot) => {
@@ -57,6 +91,7 @@ const BecomeDriver = () => {
         return;
       }
       const data = snapshot.val();
+
       setCarBrands(data);
     });
   };
@@ -97,6 +132,7 @@ const BecomeDriver = () => {
           console.log('Key:', value);
           if (value.code === inviteCode && value.isActive) {
             // Set invite code to inactive
+            console.log('Key is valid');
             set(ref(db, 'inviteCodes/' + key + '/isActive'), false)
               .then(() => {
                 console.log('Invite code set to inactive');
@@ -156,7 +192,6 @@ const BecomeDriver = () => {
           model: data.carBrand,
           year: data.yearOfProduction,
         },
-        phone: data.telNumber,
       })
         .then(() => {
           console.log('User stored in database');
@@ -186,6 +221,7 @@ const BecomeDriver = () => {
   };
 
   useEffect(() => {
+    // setCarBrandsFirebase();
     getCarBrands();
   }, []);
 
@@ -295,31 +331,6 @@ const BecomeDriver = () => {
         </View>
       ) : (
         <View style={styles.modalContainer}>
-          <Text style={styles.label}>Broj telefona:</Text>
-          <Controller
-            control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Broj telefona'
-                type='phone-pad'
-                name='telNumber'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
-            name='telNumber'
-            rules={{
-              required: 'Broj telefona je obavezan.',
-              pattern: {
-                value: /^06\d{8}$/,
-                message: 'Ne ispravan broj telefona.',
-              },
-            }}
-            defaultValue=''
-          />
-
           <Text style={styles.label}>Podaci o autu:</Text>
           <Text
             style={{
@@ -330,25 +341,16 @@ const BecomeDriver = () => {
           >
             Boja vozila
           </Text>
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Boja vozila'
-                type='default'
-                name='vehicleColor'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
+            errors={errors}
+            label='Boja vozila'
             name='vehicleColor'
             rules={{
               required: 'Boja kola je obavezna.',
             }}
-            defaultValue=''
           />
+
           <Text
             style={{
               fontSize: 12,
@@ -358,19 +360,10 @@ const BecomeDriver = () => {
           >
             Registarska oznaka
           </Text>
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Registarska oznaka'
-                type='default'
-                name='regPlate'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
+            errors={errors}
+            label='Registarska oznaka'
             name='regPlate'
             rules={{
               required: 'Registarska oznaka je obavezna.',
@@ -379,7 +372,6 @@ const BecomeDriver = () => {
                 message: 'Neispravna registarska oznaka.',
               },
             }}
-            defaultValue=''
           />
           <Text
             style={{
@@ -458,9 +450,13 @@ const BecomeDriver = () => {
               >
                 <Picker.Item label='Izaberite model auta' value='' />
                 {carBrands &&
-                  carBrands.map((item, index) => {
+                  carBrands.map((item) => {
                     return (
-                      <Picker.Item label={item} value={item} key={index} />
+                      <Picker.Item
+                        label={item.label}
+                        value={item.value}
+                        key={item.id}
+                      />
                     );
                   })}
               </Picker>
@@ -544,19 +540,10 @@ const BecomeDriver = () => {
           >
             Godina proizvodnje
           </Text>
-          <Controller
+          <InputField
             control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputField
-                label='Godina proizvodnje'
-                type='default'
-                name='yearOfProduction'
-                value={value}
-                onChange={onChange}
-                onBlur={onBlur}
-                errors={errors}
-              />
-            )}
+            errors={errors}
+            label='Godina proizvodnje'
             name='yearOfProduction'
             rules={{
               required: 'Godina proizvodnje je obavezna.',
@@ -565,7 +552,6 @@ const BecomeDriver = () => {
                 message: 'Neispravna godina proizvodnje.',
               },
             }}
-            defaultValue=''
           />
 
           <TouchableOpacity
