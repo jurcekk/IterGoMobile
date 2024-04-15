@@ -25,8 +25,6 @@ const drawerContent = (props) => {
 
   const { userData } = useContext(AuthContext);
 
-  console.log(userData);
-
   return (
     <DrawerContentScrollView
       {...props}

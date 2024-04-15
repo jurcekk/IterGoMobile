@@ -138,8 +138,6 @@ const OrderProvider = (props) => {
           }
           const orders = snapshot.val();
           const order = Object.values(orders).find((order) => {
-            console.log(order);
-            console.log(auth.currentUser.uid);
             return (
               (order.userId === auth.currentUser.uid &&
                 order.status === 'accepted') ||
