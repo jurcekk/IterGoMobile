@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Home from '../screens/Home';
@@ -6,8 +6,7 @@ import EditProfile from '../screens/EditProfile';
 import BecomeDriver from '../screens/BecomeDriver';
 import Driver from '../screens/Driver';
 import DrawerContent from '../components/DrawerContent';
-import { AuthContext } from '../provider/AuthProvider';
-import OnBoarding from './OnBoardingStack';
+import UserOrders from '../screens/UserOrders';
 
 const Drawer = createDrawerNavigator();
 const Main = () => {
@@ -43,11 +42,11 @@ const Main = () => {
         options={{ headerShown: false }}
       />
 
-      {/* <Drawer.Screen
-        name='onBoarding'
-        component={OnBoarding}
+      <Drawer.Screen
+        name='UserOrders'
+        component={UserOrders}
         options={{ headerShown: false }}
-      /> */}
+      />
     </Drawer.Navigator>
   );
 };

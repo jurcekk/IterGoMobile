@@ -38,8 +38,7 @@ const NewOrderSheet = ({
 
   const snapPoints = useMemo(() => ['50%', '90%'], []);
 
-  const { checkOrderStatus, createOrder, checkIfUserHasActiveOrder } =
-    useContext(OrderContext);
+  const { createOrder, checkIfUserHasActiveOrder } = useContext(OrderContext);
 
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
@@ -229,9 +228,7 @@ const NewOrderSheet = ({
 
                 handleClose();
                 setIsEndLocationVisible(true);
-                createOrder(location, endLocation).then(() => {
-                  checkOrderStatus();
-                });
+                await createOrder(location, endLocation);
               }}
             >
               <Text style={{ color: 'white', fontWeight: 'bold' }}>

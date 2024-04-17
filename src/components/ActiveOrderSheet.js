@@ -4,6 +4,7 @@ import React, {
   useRef,
   useCallback,
   useMemo,
+  useContext,
 } from 'react';
 import {
   View,
@@ -20,10 +21,12 @@ import { ref, get, onValue } from 'firebase/database';
 import useOrder from '../hooks/useOrder';
 import useDistance from '../hooks/useDistance';
 import { Image } from 'expo-image';
+import { OrderContext } from '../provider/OrderProvider';
 
 const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
   const [activeOrder, setActiveOrder] = useState(null);
   const [driverData, setDriverData] = useState(null);
+  const { setOrder } = useContext(OrderContext);
 
   // const { checkIfUserHasActiveOrder } = useOrder();
   const { getDistance } = useDistance();
@@ -108,6 +111,7 @@ const ActiveOrderSheet = ({ setEndLocation, setIsEndLocationVisible }) => {
             setEndLocation({
               latitude: order?.endLocation?.latitude,
               longitude: order?.endLocation?.longitude,
+              locationString: order?.endLocation?.locationString,
             });
 
             setIsEndLocationVisible(true);

@@ -1,5 +1,5 @@
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -12,9 +12,10 @@ import { Feather, AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { FIREBASE_AUTH, FIREBASE_DB } from '../../firebaseConfig';
 import { signOut } from 'firebase/auth';
-import { ref, get, onValue } from 'firebase/database';
+import { ref, get } from 'firebase/database';
 import Toast from 'react-native-toast-message';
 import { AuthContext } from '../provider/AuthProvider';
+import { OrderContext } from '../provider/OrderProvider';
 import { Image } from 'expo-image';
 
 const drawerContent = (props) => {
@@ -24,6 +25,16 @@ const drawerContent = (props) => {
   const db = FIREBASE_DB;
 
   const { userData } = useContext(AuthContext);
+  const { userOrders } = useContext(OrderContext);
+
+  const getDistanceOfOrders = () => {
+    let distance = 0;
+    for (let i = 0; i < userOrders.length; i++) {
+      const order = userOrders[i];
+      distance += +order.distance;
+    }
+    return distance.toFixed(2).toString();
+  };
 
   return (
     <DrawerContentScrollView
@@ -107,7 +118,7 @@ const drawerContent = (props) => {
 
       <View style={styles.menuContainer}>
         {/* Broj voznji */}
-        <View
+        <TouchableOpacity
           style={[
             styles.menuItemsCard,
             {
@@ -116,6 +127,9 @@ const drawerContent = (props) => {
               flex: 1,
             },
           ]}
+          onPress={() => {
+            navigation.navigate('UserOrders');
+          }}
         >
           <View style={styles.menuItemContainer}>
             <FontAwesome5 name='car-alt' size={24} color='#ff6e2a' />
@@ -126,7 +140,7 @@ const drawerContent = (props) => {
                 fontWeight: 'bold',
               }}
             >
-              2
+              {userOrders?.length}
             </Text>
             <Text
               style={{
@@ -137,9 +151,9 @@ const drawerContent = (props) => {
               Broj vožnji
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
         {/* Duzina puteva */}
-        <View
+        <TouchableOpacity
           style={[
             styles.menuItemsCard,
             {
@@ -148,6 +162,9 @@ const drawerContent = (props) => {
               flex: 1,
             },
           ]}
+          onPress={() => {
+            navigation.navigate('UserOrders');
+          }}
         >
           <View style={styles.menuItemContainer}>
             <FontAwesome5 name='road' size={24} color='#ff6e2a' />
@@ -158,7 +175,7 @@ const drawerContent = (props) => {
                 fontWeight: 'bold',
               }}
             >
-              2
+              {getDistanceOfOrders() + ' km'}
             </Text>
             <Text
               style={{
@@ -169,7 +186,7 @@ const drawerContent = (props) => {
               Dužina puteva
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </View>
       {userData?.role === 'driver' ? (
         <TouchableOpacity

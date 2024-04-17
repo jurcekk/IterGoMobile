@@ -82,13 +82,13 @@ const useOrder = () => {
       taxiId: '',
       status: 'pending',
       startLocation: {
-        latitude: location.latitude,
-        longitude: location.longitude,
+        latitude: location.latitude.toFixed(6),
+        longitude: location.longitude.toFixed(6),
         locationString: location?.locationString,
       },
       endLocation: {
-        latitude: endLocation.latitude,
-        longitude: endLocation.longitude,
+        latitude: endLocation.latitude.toFixed(6),
+        longitude: endLocation.longitude.toFixed(6),
         locationString: endLocation?.locationString,
       },
       distance: endLocation.distance + ' km',

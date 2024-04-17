@@ -12,12 +12,72 @@ import { LocationContext } from '../context/LocationContext';
 
 const OrderContext = createContext();
 const OrderProvider = (props) => {
-  const { userData } = useContext(AuthContext);
-  const { location, endLocation } = useContext(LocationContext);
+  // const { userData } = useContext(AuthContext);
+  const { location, endLocation, setEndLocation } = useContext(LocationContext);
   const [order, setOrder] = useState(null);
+  const [userOrders, setUserOrders] = useState([]);
 
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
+
+  const getOrdersByUser = async () => {
+    const snapshot = await get(ref(db, 'orders'));
+    const userData = await get(ref(db, 'users/' + auth.currentUser.uid));
+
+    if (!userData.exists()) {
+      return;
+    }
+
+    if (snapshot.exists()) {
+      const orders = snapshot.val();
+      const userOrders = Object.values(orders).filter((order) => {
+        if (userData.role === 'driver') {
+          return (
+            order.driverId === auth.currentUser.uid ||
+            order.status === 'completed'
+          );
+        } else {
+          return (
+            order.userId === auth.currentUser.uid ||
+            order.status === 'completed'
+          );
+        }
+      });
+      console.log('userOrders:', userOrders);
+      setUserOrders(userOrders);
+    } else {
+      console.log('No data available');
+    }
+  };
+
+  const finishOrder = async () => {
+    const snapshot = await get(ref(db, 'orders'));
+    if (snapshot.exists()) {
+      const orders = snapshot.val();
+      const order = Object.values(orders).find((order) => {
+        return (
+          (order.userId === auth.currentUser.uid &&
+            order.status === 'accepted') ||
+          (order.driverId === auth.currentUser.uid &&
+            order.status === 'accepted')
+        );
+      });
+
+      if (!order)
+        return console.log('No order found with that id and status accepted');
+
+      set(ref(db, 'orders/' + order.orderId + '/status'), 'completed')
+        .then(async () => {
+          console.log('Order status changed to completed');
+          await getOrdersByUser();
+        })
+        .catch(() => {
+          console.log('Error changing order status to completed:');
+        });
+    } else {
+      console.log('No data available');
+    }
+  };
 
   const getAllUserOrders = async () => {
     const snapshot = await get(ref(db, 'orders'));
@@ -64,7 +124,7 @@ const OrderProvider = (props) => {
         locationString: endLocation?.locationString,
       },
       distance: endLocation.distance,
-      price: 150 + endLocation.distance * 100,
+      price: (150 + endLocation.distance * 150).toFixed(0),
     };
 
     const orderRef = push(ref(db, 'orders'));
@@ -128,34 +188,57 @@ const OrderProvider = (props) => {
     }
   };
 
-  function checkOrder() {
+  const checkOrder = () => {
     try {
-      if (userData) {
-        const dbRef = ref(db, 'orders');
-        onValue(dbRef, (snapshot) => {
+      get(ref(db, 'users/' + auth.currentUser.uid))
+        .then((snapshot) => {
           if (!snapshot.exists()) {
             return;
           }
-          const orders = snapshot.val();
-          const order = Object.values(orders).find((order) => {
-            return (
-              (order.userId === auth.currentUser.uid &&
-                order.status === 'accepted') ||
-              (order.driverId === auth.currentUser.uid &&
-                order.status === 'accepted')
-            );
-          });
-          setOrder(order);
+          const userData = snapshot.val();
+
+          if (userData) {
+            console.log('Checking order');
+            const dbRef = ref(db, 'orders');
+            onValue(dbRef, (snapshot) => {
+              if (!snapshot.exists()) {
+                return;
+              }
+              const orders = snapshot.val();
+
+              const order = Object.values(orders).find((order) => {
+                return (
+                  (order.userId === auth.currentUser.uid &&
+                    order.status === 'accepted') ||
+                  (order.driverId === auth.currentUser.uid &&
+                    order.status === 'accepted')
+                );
+              });
+              setOrder(order);
+
+              if (userData.role === 'driver') {
+                setEndLocation({
+                  latitude: order?.startLocation?.latitude,
+                  longitude: order?.startLocation?.longitude,
+                  locationString: order?.startLocation?.locationString,
+                });
+              } else {
+                setEndLocation({
+                  latitude: order?.endLocation?.latitude,
+                  longitude: order?.endLocation?.longitude,
+                  locationString: order?.endLocation?.locationString,
+                });
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          console.error(error);
         });
-      }
     } catch (e) {
       console.log(e);
     }
-  }
-
-  useEffect(() => {
-    checkOrder();
-  }, [userData]);
+  };
 
   useEffect(() => {
     if (!order) return;
@@ -170,7 +253,12 @@ const OrderProvider = (props) => {
         }
         const order = snapshot.val();
         if (order === 'canceled') {
-          setOrder(null);
+          setOrder((prevState) => {
+            return {
+              ...prevState,
+              status: 'canceled',
+            };
+          });
         } else if (order === 'accepted') {
           console.log('Order accepted');
           clearTimeout(timer);
@@ -182,15 +270,27 @@ const OrderProvider = (props) => {
     }
   }, [order]);
 
+  useEffect(() => {
+    // make async function to get all user orders
+    (async () => {
+      getOrdersByUser();
+    })();
+  }, []);
+
   return (
     <OrderContext.Provider
       value={{
         order,
+        setOrder,
         getOrderStatus,
         cancelOrder,
         createOrder,
         checkIfUserHasActiveOrder,
         getAllUserOrders,
+        checkOrder,
+        finishOrder,
+        getOrdersByUser,
+        userOrders,
       }}
     >
       {props.children}

@@ -12,7 +12,6 @@ const AuthProvider = (props) => {
 
   const checkLogin = () => {
     onAuthStateChanged(auth, (u) => {
-      console.log('AUTH STATE CHANGED', u);
       if (u) {
         console.log('LOGIN');
         const dbRef = ref(db, 'users/' + auth?.currentUser?.uid);

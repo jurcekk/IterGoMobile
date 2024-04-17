@@ -53,12 +53,14 @@ const Home = () => {
   const [driverAccepted, setDriverAccepted] = useState(false);
   const [noDriverModalVisible, setNoDriverModalVisible] = useState(false);
   const [waitingModalVisible, setWaitingModalVisible] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
 
   const { userData } = useContext(AuthContext);
-  const { order, cancelOrder } = useContext(OrderContext);
+  const { order, cancelOrder, checkOrder, finishOrder } =
+    useContext(OrderContext);
   const { location, setLocation, endLocation, setEndLocation } =
     useContext(LocationContext);
 
@@ -70,6 +72,21 @@ const Home = () => {
   const navigation = useNavigation();
 
   const bottomSheetRef = useRef(null);
+
+  const startRide = () => {
+    setEndLocation({
+      latitude: order.endLocation.latitude,
+      longitude: order.endLocation.longitude,
+      locationString: order.endLocation.locationString,
+    });
+    setIsStarted(true);
+  };
+
+  const endRide = () => {
+    setIsStarted(false);
+    setEndLocation(null);
+    finishOrder();
+  };
 
   const handleClose = useCallback(() => {
     console.log('CLOSE', height.value);
@@ -164,13 +181,21 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (order?.status === 'pending') {
+    if (order?.status === 'pending' && userData.role === 'user') {
       setWaitingModalVisible(true);
     }
-    if (waitingModalVisible && order?.status === 'accepted') {
+    if (
+      waitingModalVisible &&
+      order?.status === 'accepted' &&
+      userData.role === 'user'
+    ) {
       setWaitingModalVisible(false);
     }
   }, [order]);
+
+  useEffect(() => {
+    checkOrder();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -225,10 +250,12 @@ const Home = () => {
 
         {endLocation?.latitude && endLocation?.longitude && (
           <MapViewDirections
-            origin={{
-              latitude: location?.latitude,
-              longitude: location?.longitude,
-            }}
+            origin={
+              location && {
+                latitude: location?.latitude,
+                longitude: location?.longitude,
+              }
+            }
             destination={{
               latitude: endLocation?.latitude,
               longitude: endLocation?.longitude,
@@ -240,6 +267,33 @@ const Home = () => {
           />
         )}
       </MapView>
+      {userData?.role === 'driver' && order ? (
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 30,
+            height: 200,
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 15,
+          }}
+        >
+          {isStarted ? (
+            <TouchableOpacity style={styles.startRideButton} onPress={endRide}>
+              <Text style={styles.startRideButtonText}>Završi vožnju</Text>
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity
+              style={styles.startRideButton}
+              onPress={startRide}
+            >
+              <Text style={styles.startRideButtonText}>Započni vožnju</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      ) : null}
+
       <Animated.View style={styles.animatedView}>
         <TouchableOpacity
           title='Center Map'
@@ -381,6 +435,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ff6e2a',
+  },
+
+  startRideButton: {
+    backgroundColor: '#ff6e2a',
+    padding: 15,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+
+  startRideButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 

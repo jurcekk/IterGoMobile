@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import {
   View,
   Text,
@@ -15,17 +15,21 @@ import { ref, get, onValue, update } from 'firebase/database';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import MapMarker from '../components/MapMarker';
 import Toast from 'react-native-toast-message';
+import { OrderContext } from '../provider/OrderProvider';
+import { LocationContext } from '../context/LocationContext';
 
 const Driver = (props) => {
   const [data, setData] = useState([]);
+  const { setOrder } = useContext(OrderContext);
+  const { endLocation, setEndLocation } = useContext(LocationContext);
   const auth = FIREBASE_AUTH;
   const db = FIREBASE_DB;
 
   const navigation = useNavigation();
   const mapRef = useRef(null);
 
-  const assignOrder = async (orderId) => {
-    const dbRef = ref(db, 'orders/' + orderId);
+  const assignOrder = async (item) => {
+    const dbRef = ref(db, 'orders/' + item.orderId);
 
     update(dbRef, {
       status: 'accepted',
@@ -43,6 +47,12 @@ const Driver = (props) => {
         });
 
         console.log('Driver id added to order');
+        setOrder(item);
+        setEndLocation({
+          latitude: item?.startLocation.latitude,
+          longitude: item?.startLocation.longitude,
+          locationString: item?.startLocation.locationString,
+        });
       })
       .catch(() => {
         Toast.show({
@@ -291,7 +301,7 @@ const Driver = (props) => {
                   }}
                   onPress={() => {
                     console.log('PRESSED');
-                    assignOrder(item.orderId);
+                    assignOrder(item);
                   }}
                 >
                   <Text
