@@ -22,7 +22,7 @@ const ForgotPassword = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: { email: 'jurcekdavid@gmail.com' },
+    defaultValues: { email: '' },
   });
 
   const onSubmit = async (data) => {
