@@ -39,7 +39,7 @@ const First = () => {
       firstName: 'David',
       lastName: 'Jurcek',
       email: '',
-      phoneNumber: '0617223626',
+      phoneNumber: '',
       profileImage: null,
     },
   });
