@@ -25,8 +25,8 @@ const Register = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: 'jurcekdavid@gmail.com',
-      password: 'david007',
+      email: '',
+      password: '',
     },
   });
   const [showPassword, setShowPassword] = useState(true);
